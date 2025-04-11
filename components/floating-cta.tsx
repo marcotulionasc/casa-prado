@@ -33,7 +33,7 @@ export default function FloatingCta() {
           <div className="text-xs text-gray-600">Pré-lançamento exclusivo</div>
         </div>
         <Button
-          className="bg-figueira-purple hover:bg-figueira-indigo text-white h-10 md:h-12 px-3 md:px-4 text-sm"
+          className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
           asChild
         >
           <Link href="#lead-form">Ver preços e plantas</Link>

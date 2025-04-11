@@ -190,7 +190,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg rounded-full">
+            <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-100">
               Ver tabela e plantas exclusivas
             </Button>
             <p className="text-xs text-gray-500 mt-2">Informações enviadas sem compromisso em até 24h</p>
@@ -354,7 +354,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg rounded-full">
+            <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120">
               Quero conhecer o projeto completo
             </Button>
           </div>
@@ -463,7 +463,7 @@ export default function Home() {
 
       {/* Oferta por tempo limitado / Barra de progresso */}
       <div className="relative bg-white/10 backdrop-blur p-8 rounded-xl shadow-2xl mb-16">
-        <h3 className="text-2xl font-bold text-figueira-lavender mb-4">
+        <h3 className="text-2xl font-bold text-figueira-lavender mt-4 mb-4">
           Oferta por tempo limitado
         </h3>
         <p className="text-gray-300 mb-4">
@@ -482,7 +482,7 @@ export default function Home() {
         </p>
 
         {/* Selo de urgência / destaque (opcional) */}
-        <div className="absolute top-6 right-6 px-3 py-1 bg-red-600 rounded-full text-xs font-bold animate-pulse">
+        <div className="absolute top-2 right-6 px-4 py-2 bg-red-600 rounded-full text-xs font-bold animate-pulse">
           Restam apenas 12 unidades
         </div>
       </div>
@@ -490,15 +490,7 @@ export default function Home() {
       {/* Botão Call-to-Action */}
       <Button
         className="
-          bg-figueira-purple 
-          hover:bg-figueira-indigo 
-          text-white px-10 py-4 
-          text-lg font-bold 
-          rounded-full shadow-xl 
-          transition-transform 
-          hover:-translate-y-1 
-          mb-16 
-          animate-bounce
+          w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120
         "
       >
         Ver preços e plantas agora
@@ -606,7 +598,7 @@ export default function Home() {
               prioritária. Restam poucas unidades com preço promocional.
             </p>
             <Button
-              className="bg-figueira-purple hover:bg-figueira-indigo text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg rounded-full"
+              className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
               asChild
             >
               <Link href="#lead-form">Quero garantir minha unidade</Link>
