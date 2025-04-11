@@ -53,6 +53,7 @@ export default function Home() {
 
         <div className="container relative z-10 px-4 py-4 md:py-8 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Coluna da esquerda com o texto */}
             <div className="space-y-6">
               <div className="inline-block px-3 py-1 text-xs font-medium bg-figueira-100/90 text-figueira-blue rounded-full">
                 Pré-lançamento exclusivo
@@ -63,16 +64,15 @@ export default function Home() {
               <p className="text-lg md:text-xl text-white/90">
                 Pré-lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
               </p>
-              <div className="hidden lg:block max-w-md">
-                <LeadForm />
-              </div>
             </div>
-            <div className="lg:hidden" id="lead-form">
+            {/* Coluna da direita com o formulário */}
+            <div>
               <LeadForm />
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Trusted Partners Section */}
       <TrustedPartners />
@@ -209,7 +209,7 @@ export default function Home() {
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-50" id="localizacao">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Localização Privilegiada</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Tudo a distância de um passo!</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Viva com tudo ao seu alcance em um dos endereços mais valorizados de Campinas
             </p>
