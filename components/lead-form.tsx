@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { User, Mail, Phone } from "lucide-react"
+import { AvatarImage } from "@radix-ui/react-avatar"
+import { Avatar, AvatarFallback } from "./ui/avatar"
 
 export default function LeadForm() {
   interface FormData {
@@ -45,13 +47,16 @@ export default function LeadForm() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
+  ): void => {
     const { name, value } = e.target as HTMLInputElement
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }))
 
+    // Valida conforme o usuário digita ou sai do campo
     if (e.type === "blur" || value.length > 3) {
       setErrors((prev) => ({
         ...prev,
@@ -70,7 +75,7 @@ export default function LeadForm() {
       phone: validateField("phone", formData.phone),
     }
 
-    // Se houver algum erro, não envia o formulário
+    // Se houver algum erro, interrompe o envio
     if (Object.values(newErrors).some((error) => error !== "")) {
       setErrors(newErrors)
       return
@@ -110,7 +115,7 @@ export default function LeadForm() {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative">
-            <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="text"
               name="name"
@@ -126,7 +131,7 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="email"
               name="email"
@@ -142,7 +147,7 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="tel"
               name="phone"
@@ -165,9 +170,28 @@ export default function LeadForm() {
             {isSubmitting ? "Enviando..." : "Quero receber informações"}
           </Button>
 
-          <p className="text-sm text-gray-500 text-center">
-            Seus dados estão seguros. Não compartilhamos suas informações.
-          </p>
+          {/* Ajuste para exibir as bolinhas lado a lado (igual ao exemplo da imagem) */}
+          <div className="flex items-center justify-center gap-4 mt-4">
+          <div className="flex -space-x-2 overflow-hidden mb-4">
+                <Avatar className="border-2 border-white">
+                  <AvatarImage src="/bancos/bradesco.png" />
+                  <AvatarFallback></AvatarFallback>
+                </Avatar>
+                <Avatar className="border-2 border-white">
+                  <AvatarImage src="/bancos/banco-do-brasil.png" />
+                  <AvatarFallback></AvatarFallback>
+                </Avatar>
+                <Avatar className="border-2 border-white">
+                  <AvatarImage src="/bancos/caixa-economica.png" />
+                  <AvatarFallback></AvatarFallback>
+                </Avatar>
+                <Avatar className="border-2 border-white">
+                  <AvatarImage src="/bancos/inter.png" />
+                  <AvatarFallback></AvatarFallback>
+                </Avatar>          
+               </div>
+              <p className="text-sm text-gray-400">Pessoas que já fizeram sua reserva</p>
+          </div>
         </form>
       )}
     </div>
