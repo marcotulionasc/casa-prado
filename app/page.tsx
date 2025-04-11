@@ -31,6 +31,9 @@ import LeisureAreas from "@/components/leisure-areas"
 import LifestyleSection from "@/components/lifestyle-section"
 import PenthouseSection from "@/components/penthouse-section"
 import CountdownTimer from "@/components/countdown-timer"
+import {FiStar, FiLock, FiGrid} from "react-icons/fi"
+import { MdArchitecture } from "react-icons/md"
+import { FaTree, FaLeaf } from "react-icons/fa"
 
 
 export default function Home() {
@@ -277,45 +280,75 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Primeiro lançamento</div>
+              <div className="flex items-center justify-center mb-2">
+                <FiStar className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Primeiro lançamento
+              </div>
               <p className="text-gray-700">
                 Primeiro lançamento do bairro planejado Casa Figueira, com infraestrutura completa e planejamento urbano
                 de excelência, estabelecendo um novo padrão para Campinas.
               </p>
             </div>
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Arquitetura diferenciada</div>
+              <div className="flex items-center justify-center mb-2">
+                <MdArchitecture className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Arquitetura diferenciada
+              </div>
               <p className="text-gray-700">
                 Fachada viva com brises móveis que proporcionam conforto térmico e visual único, assinada pelo renomado
                 escritório Dal Pian, vencedor de múltiplos prêmios de arquitetura.
               </p>
             </div>
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Exclusividade</div>
+              <div className="flex items-center justify-center mb-2">
+                <FiLock className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Exclusividade
+              </div>
               <p className="text-gray-700">
                 Apenas 80 apartamentos em torre única, garantindo privacidade e exclusividade para os moradores, com
                 controle de acesso e segurança 24 horas.
               </p>
             </div>
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Paisagismo Floresta de Bolso®</div>
+              <div className="flex items-center justify-center mb-2">
+                <FaTree className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Paisagismo Floresta de Bolso®
+              </div>
               <p className="text-gray-700">
-                Paisagismo assinado por Ricardo Cardim, com o conceito Floresta de Bolso® que traz a natureza para
-                dentro do empreendimento, com espécies nativas que atraem pássaros e borboletas.
+                Paisagismo assinado por Ricardo Cardim, com o conceito Floresta de Bolso® que traz a natureza para dentro do
+                empreendimento, com espécies nativas que atraem pássaros e borboletas.
               </p>
             </div>
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Ampla área livre</div>
+              <div className="flex items-center justify-center mb-2">
+                <FiGrid className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Ampla área livre
+              </div>
               <p className="text-gray-700">
                 Condomínio com ampla área livre: apenas 12% do terreno construído, priorizando áreas verdes e espaços de
                 convivência, criando um oásis urbano em meio à cidade.
               </p>
             </div>
             <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="text-figueira-purple font-bold text-lg mb-2">Sustentabilidade</div>
+              <div className="flex items-center justify-center mb-2">
+                <FaLeaf className="text-figueira-purple text-2xl" />
+              </div>
+              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
+                Sustentabilidade
+              </div>
               <p className="text-gray-700">
-                Projeto com certificação AQUA de sustentabilidade, captação de água da chuva, painéis solares e
-                iluminação LED em todas as áreas comuns, reduzindo o impacto ambiental e o custo do condomínio.
+                Projeto com certificação AQUA de sustentabilidade, captação de água da chuva, painéis solares e iluminação LED
+                em todas as áreas comuns, reduzindo o impacto ambiental e o custo do condomínio.
               </p>
             </div>
           </div>
@@ -371,74 +404,74 @@ export default function Home() {
       </section>
 
       <section className="py-16 lg:py-24 bg-gradient-to-b from-neutral-900 to-black text-white">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Título e descrição */}
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-8">
-            Por que agora é o momento ideal?
-          </h2>
-          <p className="text-gray-300 text-lg mb-12">
-            O pré-lançamento do Avenida 105 oferece condições exclusivas que não estarão disponíveis posteriormente.
-            É a sua oportunidade de escolher as melhores unidades com valor diferenciado.
-          </p>
-
-          {/* Cards de destaque */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
-              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
-                Preços de lançamento
-              </h3>
-              <p className="text-gray-300">
-                Valores até 15% abaixo do mercado, disponíveis apenas nesta fase inicial por tempo limitado.
-              </p>
-            </div>
-            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
-              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
-                Escolha prioritária
-              </h3>
-              <p className="text-gray-300">
-                Selecione as melhores unidades, andares e vistas antes que sejam reservadas.
-              </p>
-            </div>
-            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
-              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
-                Condições exclusivas
-              </h3>
-              <p className="text-gray-300">
-                Entrada facilitada, financiamento direto e possibilidade de personalização das unidades.
-              </p>
-            </div>
-          </div>
-
-          {/* Oferta por tempo limitado */}
-          <div className="bg-neutral-800 p-8 rounded-xl shadow-xl mb-12 relative">
-            <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
-              Oferta por tempo limitado
-            </h3>
-            <p className="text-gray-300 mb-4">
-              As condições especiais de pré-lançamento estão disponíveis apenas para as primeiras 30 unidades ou até 30/06/2025, o que ocorrer primeiro. Já temos 18 unidades reservadas.
+        <div className="container px-4 mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Título e descrição */}
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-8">
+              Por que agora é o momento ideal?
+            </h2>
+            <p className="text-gray-300 text-lg mb-12">
+              O pré-lançamento do Avenida 105 oferece condições exclusivas que não estarão disponíveis posteriormente.
+              É a sua oportunidade de escolher as melhores unidades com valor diferenciado.
             </p>
-            <div className="mt-4 bg-neutral-700 rounded-full h-6 overflow-hidden">
-              <div
-                className="bg-figueira-lavender h-full rounded-full transition-all duration-500"
-                style={{ width: "60%" }}
-              ></div>
+
+            {/* Cards de destaque */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+                <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                  Preços de lançamento
+                </h3>
+                <p className="text-gray-300">
+                  Valores até 15% abaixo do mercado, disponíveis apenas nesta fase inicial por tempo limitado.
+                </p>
+              </div>
+              <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+                <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                  Escolha prioritária
+                </h3>
+                <p className="text-gray-300">
+                  Selecione as melhores unidades, andares e vistas antes que sejam reservadas.
+                </p>
+              </div>
+              <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+                <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                  Condições exclusivas
+                </h3>
+                <p className="text-gray-300">
+                  Entrada facilitada, financiamento direto e possibilidade de personalização das unidades.
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-gray-400 mt-2">
-              60% das unidades com condições especiais já foram reservadas
-            </p>
+
+            {/* Oferta por tempo limitado */}
+            <div className="bg-neutral-800 p-8 rounded-xl shadow-xl mb-12 relative">
+              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                Oferta por tempo limitado
+              </h3>
+              <p className="text-gray-300 mb-4">
+                As condições especiais de pré-lançamento estão disponíveis apenas para as primeiras 30 unidades ou até 30/06/2025, o que ocorrer primeiro. Já temos 18 unidades reservadas.
+              </p>
+              <div className="mt-4 bg-neutral-700 rounded-full h-6 overflow-hidden">
+                <div
+                  className="bg-figueira-lavender h-full rounded-full transition-all duration-500"
+                  style={{ width: "60%" }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-400 mt-2">
+                60% das unidades com condições especiais já foram reservadas
+              </p>
+            </div>
+
+            {/* Call-to-Action */}
+            <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-8 py-4 text-lg rounded-full mb-12">
+              Ver preços e plantas agora
+            </Button>
+
+            {/* Componente de Contagem Regressiva */}
+            <CountdownTimer targetDate="2025-06-30T00:00:00" />
           </div>
-
-          {/* Call-to-Action */}
-          <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-8 py-4 text-lg rounded-full mb-12">
-            Ver preços e plantas agora
-          </Button>
-
-          {/* Componente de Contagem Regressiva */}
-          <CountdownTimer targetDate="2025-06-30T00:00:00" />
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-white" id="faq">
