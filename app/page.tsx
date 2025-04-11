@@ -51,7 +51,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
         </div>
 
-        <div className="container relative z-10 px-4 py-12 md:py-24 mx-auto">
+        <div className="container relative z-10 px-4 py-4 md:py-8 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <div className="inline-block px-3 py-1 text-xs font-medium bg-figueira-100/90 text-figueira-blue rounded-full">

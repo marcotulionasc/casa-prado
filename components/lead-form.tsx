@@ -21,7 +21,7 @@ export default function LeadForm() {
     phone: "",
   })
 
-  const validateField = (name, value) => {
+  const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
       case "name":
         return value.length < 3 ? "Nome deve ter pelo menos 3 caracteres" : ""
@@ -34,32 +34,41 @@ export default function LeadForm() {
     }
   }
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target as HTMLInputElement
+    setFormData((prev: FormData) => ({
       ...prev,
       [name]: value,
     }))
 
-    // Validate on blur or when user stops typing
     if (e.type === "blur" || value.length > 3) {
-      setErrors((prev) => ({
+      setErrors((prev: FormErrors) => ({
         ...prev,
-        [name]: validateField(name, value),
+        [name]: validateField(name as keyof FormData, value),
       }))
     }
   }
 
-  const handleSubmit = (e) => {
+  interface FormData {
+    name: string
+    email: string
+    phone: string
+  }
+
+  interface FormErrors {
+    name: string
+    email: string
+    phone: string
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false)
       setIsSubmitted(true)
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false)
         setFormData({
@@ -72,24 +81,24 @@ export default function LeadForm() {
   }
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm p-4 md:p-6 rounded-xl shadow-lg max-w-md w-full">
-      <h3 className="text-xl font-bold mb-4">
+    <div className="bg-white/95 backdrop-blur-sm p-4 md:p-5 rounded-xl shadow-lg max-w-sm w-full mx-auto">
+      <h3 className="text-base md:text-lg font-semibold mb-3 text-center">
         {isSubmitted ? "Obrigado pelo interesse!" : "Quero acessar as informações da pré-venda"}
       </h3>
 
       {isSubmitted ? (
-        <p className="text-green-600">
+        <p className="text-green-600 text-sm text-center">
           Em breve, nossa equipe entrará em contato com mais informações sobre o Avenida 105.
         </p>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
           <div className="relative">
-            <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+            <User className="absolute left-3 top-2.5 h-9 w-4 text-gray-400" />
             <Input
               type="text"
               name="name"
               placeholder="Seu nome"
-              className={`pl-10 h-11 md:h-12 text-sm md:text-base ${errors.name ? "border-red-500" : ""}`}
+              className={`pl-10 h-9 text-sm ${errors.name ? "border-red-500" : ""}`}
               value={formData.name}
               onChange={handleChange}
               onBlur={handleChange}
@@ -99,12 +108,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+            <Mail className="absolute left-3 top-2.5 h-9 w-4 text-gray-400" />
             <Input
               type="email"
               name="email"
               placeholder="Seu e-mail"
-              className="pl-10 h-12 text-base"
+              className="pl-10 h-9 text-sm"
               value={formData.email}
               onChange={handleChange}
               required
@@ -112,12 +121,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+            <Phone className="absolute left-3 top-2.5 h-9 w-4 text-gray-400" />
             <Input
               type="tel"
               name="phone"
               placeholder="Seu telefone"
-              className="pl-10 h-12 text-base"
+              className="pl-10 h-9 text-sm"
               value={formData.phone}
               onChange={handleChange}
               required
@@ -126,13 +135,13 @@ export default function LeadForm() {
 
           <Button
             type="submit"
-            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white py-3 md:py-6 text-base h-auto min-h-[44px] md:min-h-[50px]"
+            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-9"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Enviando..." : "Quero receber informações"}
           </Button>
 
-          <p className="text-xs text-gray-500 text-center">
+          <p className="text-sm text-gray-500 text-center leading-snug">
             Seus dados estão seguros. Não compartilhamos suas informações.
           </p>
         </form>
