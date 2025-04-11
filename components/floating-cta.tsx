@@ -26,19 +26,13 @@ export default function FloatingCta() {
   if (!isVisible || !isMobile) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white p-3 shadow-lg z-50 border-t border-gray-200">
-      <div className="flex items-center justify-between">
-        <div>
-          <div className="font-bold text-xs md:text-sm">Avenida 105</div>
-          <div className="text-xs text-gray-600">Pré-lançamento exclusivo</div>
-        </div>
-        <Button
-          className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
-          asChild
-        >
-          <Link href="#lead-form">Ver preços e plantas</Link>
-        </Button>
-      </div>
+    <div className="fixed bottom-0 left-0 right-0 bg-white p-3 shadow-lg z-50 border-t border-gray-200 flex items-center justify-center">
+      <Button
+      className="bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-220"
+      asChild
+      >
+      <Link href="#lead-form">Ver preços e plantas</Link>
+      </Button>
     </div>
   )
 }
