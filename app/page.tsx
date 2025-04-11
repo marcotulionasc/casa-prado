@@ -218,10 +218,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">Viva com tudo ao seu redor</h3>
-              <p className="text-gray-600">
+              {/* <p className="text-gray-600">
                 Desfrute da liberdade de ter tudo ao alcance: cafés, academias, farmácias, mercados e o Shopping
                 Iguatemi a poucos passos da sua porta.
-              </p>
+              </p> */}
               <p className="text-gray-600">
                 No Avenida 105, você ganha tempo e qualidade de vida com a mobilidade a pé. Esqueça o trânsito e
                 aproveite mais o seu dia em um bairro planejado para o seu bem-estar.
@@ -246,13 +246,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="pt-4">
+              {/* <div className="pt-4">
                 <h4 className="font-bold text-figueira-purple mb-2">Valorização Comprovada</h4>
                 <p className="text-gray-600">
                   A região do Iguatemi Campinas apresentou valorização média de 12% ao ano nos últimos 5 anos, superando
                   a média da cidade em 30%, segundo dados da Associação de Imóveis de Campinas.
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <div className="lg:col-span-7">

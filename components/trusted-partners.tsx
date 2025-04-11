@@ -11,49 +11,32 @@ export default function TrustedPartners() {
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           <div className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
             <Image
-              src="/placeholder-logo.svg"
-              alt="Santander"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain"
-            />
-          </div>
-          <div className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-            <Image
-              src="/placeholder-logo.svg"
+              src="/images/dal pian.png"
               alt="Dal Pian Arquitetos"
               width={120}
               height={40}
-              className="h-8 w-auto object-contain"
+              className="h-32 w-32 object-contain"
             />
           </div>
           <div className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
             <Image
-              src="/placeholder-logo.svg"
-              alt="Cardim Paisagismo"
+              src="/images/s h m.png"
+              alt="S H M"
               width={120}
               height={40}
-              className="h-8 w-auto object-contain"
+              className="h-32 w-32 object-contain"
             />
           </div>
           <div className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
             <Image
-              src="/placeholder-logo.svg"
-              alt="Certificação AQUA"
+              src="/images/cardim.png"
+              alt="Cardim Arquitetura paisagística"
               width={120}
               height={40}
-              className="h-8 w-auto object-contain"
+              className="h-32 w-32 object-contain"
             />
           </div>
-          <div className="grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-            <Image
-              src="/placeholder-logo.svg"
-              alt="Casa Figueira"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain"
-            />
-          </div>
+
         </div>
       </div>
     </section>
