@@ -18,7 +18,7 @@ export default function PenthouseSection() {
         "Terraço gourmet integrado",
         "4 vagas na garagem",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: " /images/planta-a-cobertura.png",
     },
     {
       id: "duplex-b",
@@ -32,7 +32,7 @@ export default function PenthouseSection() {
         "Espaço gourmet com churrasqueira",
         "4 vagas na garagem",
       ],
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/planta-b-cobertura.png",
     },
   ]
 
