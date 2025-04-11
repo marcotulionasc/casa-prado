@@ -190,7 +190,7 @@ export default function LeadForm() {
                   <AvatarFallback></AvatarFallback>
                 </Avatar>          
                </div>
-              <p className="text-sm text-gray-400">Pessoas que já fizeram sua reserva</p>
+              <p className="text-sm text-gray-400">201 pessoas já preencheram o formulário!</p>
           </div>
         </form>
       )}
