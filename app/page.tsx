@@ -327,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Lifestyle Section */}
-      <LifestyleSection />
+      {/* <LifestyleSection /> */}
 
       {/* Construction Timeline */}
       <ConstructionTimeline />
