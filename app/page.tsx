@@ -30,6 +30,8 @@ import GallerySection from "@/components/gallery-section"
 import LeisureAreas from "@/components/leisure-areas"
 import LifestyleSection from "@/components/lifestyle-section"
 import PenthouseSection from "@/components/penthouse-section"
+import CountdownTimer from "@/components/countdown-timer"
+
 
 export default function Home() {
   return (
@@ -368,52 +370,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Now Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-neutral-900 text-white">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Por que agora é o momento ideal?</h2>
-            <p className="text-gray-300 text-lg mb-8">
-              O pré-lançamento do Avenida 105 oferece condições exclusivas que não estarão disponíveis posteriormente. É
-              a sua oportunidade de escolher as melhores unidades com valor diferenciado.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-neutral-800 p-6 rounded-xl">
-                <div className="text-figueira-lavender font-bold text-xl mb-2">Preços de lançamento</div>
-                <p className="text-gray-300">
-                  Valores até 15% abaixo do mercado, disponíveis apenas nesta fase inicial por tempo limitado
-                </p>
-              </div>
-              <div className="bg-neutral-800 p-6 rounded-xl">
-                <div className="text-figueira-lavender font-bold text-xl mb-2">Escolha prioritária</div>
-                <p className="text-gray-300">
-                  Selecione as melhores unidades, andares e vistas antes que sejam reservadas
-                </p>
-              </div>
-              <div className="bg-neutral-800 p-6 rounded-xl">
-                <div className="text-figueira-lavender font-bold text-xl mb-2">Condições exclusivas</div>
-                <p className="text-gray-300">
-                  Entrada facilitada, financiamento direto e possibilidade de personalização das unidades
-                </p>
-              </div>
-            </div>
-            <div className="bg-neutral-800 p-6 rounded-xl mb-8">
-              <div className="text-figueira-lavender font-bold text-xl mb-2">Oferta por tempo limitado</div>
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-neutral-900 to-black text-white">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Título e descrição */}
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-8">
+            Por que agora é o momento ideal?
+          </h2>
+          <p className="text-gray-300 text-lg mb-12">
+            O pré-lançamento do Avenida 105 oferece condições exclusivas que não estarão disponíveis posteriormente.
+            É a sua oportunidade de escolher as melhores unidades com valor diferenciado.
+          </p>
+
+          {/* Cards de destaque */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                Preços de lançamento
+              </h3>
               <p className="text-gray-300">
-                As condições especiais de pré-lançamento estão disponíveis apenas para as primeiras 30 unidades ou até
-                30/06/2025, o que ocorrer primeiro. Já temos 18 unidades reservadas.
+                Valores até 15% abaixo do mercado, disponíveis apenas nesta fase inicial por tempo limitado.
               </p>
-              <div className="mt-4 bg-neutral-700 rounded-full h-4 overflow-hidden">
-                <div className="bg-figueira-lavender h-full rounded-full" style={{ width: "60%" }}></div>
-              </div>
-              <p className="text-xs text-gray-400 mt-2">60% das unidades com condições especiais já foram reservadas</p>
             </div>
-            <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-6 md:px-8 py-4 md:py-6 text-base md:text-lg rounded-full">
-              Ver preços e plantas agora
-            </Button>
+            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                Escolha prioritária
+              </h3>
+              <p className="text-gray-300">
+                Selecione as melhores unidades, andares e vistas antes que sejam reservadas.
+              </p>
+            </div>
+            <div className="bg-neutral-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition">
+              <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+                Condições exclusivas
+              </h3>
+              <p className="text-gray-300">
+                Entrada facilitada, financiamento direto e possibilidade de personalização das unidades.
+              </p>
+            </div>
           </div>
+
+          {/* Oferta por tempo limitado */}
+          <div className="bg-neutral-800 p-8 rounded-xl shadow-xl mb-12 relative">
+            <h3 className="text-figueira-lavender font-bold text-2xl mb-4">
+              Oferta por tempo limitado
+            </h3>
+            <p className="text-gray-300 mb-4">
+              As condições especiais de pré-lançamento estão disponíveis apenas para as primeiras 30 unidades ou até 30/06/2025, o que ocorrer primeiro. Já temos 18 unidades reservadas.
+            </p>
+            <div className="mt-4 bg-neutral-700 rounded-full h-6 overflow-hidden">
+              <div
+                className="bg-figueira-lavender h-full rounded-full transition-all duration-500"
+                style={{ width: "60%" }}
+              ></div>
+            </div>
+            <p className="text-sm text-gray-400 mt-2">
+              60% das unidades com condições especiais já foram reservadas
+            </p>
+          </div>
+
+          {/* Call-to-Action */}
+          <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white px-8 py-4 text-lg rounded-full mb-12">
+            Ver preços e plantas agora
+          </Button>
+
+          {/* Componente de Contagem Regressiva */}
+          <CountdownTimer targetDate="2025-06-30T00:00:00" />
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* FAQ Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-white" id="faq">
