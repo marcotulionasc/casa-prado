@@ -42,7 +42,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   return (
     <div className="mt-8">
-      <h3 className="text-2xl font-bold text-figueira-lavender mb-4">
+      <h3 className="text-2xl font-bold text-white mb-4">
         Tempo restante para garantir sua unidade!
       </h3>
       <div className="flex justify-center">

@@ -28,10 +28,9 @@ import ConstructionTimeline from "@/components/construction-timeline"
 import TrustedPartners from "@/components/trusted-partners"
 import GallerySection from "@/components/gallery-section"
 import LeisureAreas from "@/components/leisure-areas"
-import LifestyleSection from "@/components/lifestyle-section"
 import PenthouseSection from "@/components/penthouse-section"
 import CountdownTimer from "@/components/countdown-timer"
-import {FiStar, FiLock, FiGrid} from "react-icons/fi"
+import { FiStar, FiLock, FiGrid } from "react-icons/fi"
 import { MdArchitecture } from "react-icons/md"
 import { FaTree, FaLeaf } from "react-icons/fa"
 
@@ -403,104 +402,58 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-28 bg-gradient-to-b from-neutral-900 via-black to-neutral-900 text-white">
-  {/* Background brilhante/flutuante (opcional) */}
-  <div className="absolute inset-0 overflow-hidden">
-    <div className="opacity-30 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.15),_transparent)] w-full h-full"></div>
-  </div>
 
-  <div className="relative container px-4 mx-auto">
-    <div className="max-w-5xl mx-auto text-center">
-      {/* Título principal */}
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight leading-tight">
-        Por que <span className="text-figueira-lavender">agora</span> é o momento ideal?
-      </h2>
+      <section className="py-12 md:py-20 relative text-white">
+        {/* Background com imagem (ajuste a URL abaixo ou via Tailwind custom) */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-70"
+          style={{ backgroundImage: "url('/call-to-action/image 2.png')" }}
+        ></div>
 
-      {/* Subtítulo / Copy */}
-      <p className="text-gray-300 text-lg md:text-xl mb-12 max-w-3xl mx-auto">
-        O <strong>pré-lançamento do Avenida 105</strong> oferece condições <strong>exclusivas</strong> que não estarão disponíveis posteriormente. É a oportunidade perfeita para escolher as <span className="text-figueira-lavender font-semibold">melhores unidades</span> com <strong>valor diferenciado</strong> e condições especiais.
-      </p>
+        {/* Overlay com cor sólida + blend */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#3F4FA9]/80 via-[#6E48AE]/80 to-[#A55298]/80 mix-blend-multiply"></div>
 
-      {/* Cards de destaque */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div className="relative p-8 bg-white/10 backdrop-blur rounded-2xl shadow-2xl hover:scale-[1.03] transition-transform">
-          <h3 className="text-2xl font-bold text-figueira-lavender mb-4">
-            Preços de lançamento
-          </h3>
-          <p className="text-gray-300">
-            Valores até <strong>15% abaixo</strong> do mercado, exclusivos apenas nesta fase inicial e <strong>por tempo limitado</strong>.
-          </p>
-          {/* Ícone opcional no canto (exemplo) */}
-          <div className="absolute top-4 right-4 opacity-10 text-7xl">
-            💰
+        <div className="relative z-10 container px-4 mx-auto max-w-3xl text-center">
+          <div className="bg-white/10 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+
+            {/* Selo de urgência */}
+            <div className="absolute top-4 right-4 bg-[#CC607F] text-white px-3 py-1 rounded-full text-xs font-bold uppercase animate-pulse z-10">
+              Últimas 12 unidades
+            </div>
+
+            {/* Título */}
+            <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-white">
+              Oferta Exclusiva por Tempo Limitado
+            </h3>
+
+            {/* Subtítulo */}
+            <p className="text-sm md:text-base text-gray-200 mb-6">
+              Condições especiais válidas para as <strong>30 primeiras unidades</strong> ou até <strong>30/06/2025</strong>.
+              Já temos <strong className="text-white">18 reservas confirmadas</strong>.
+            </p>
+
+            {/* Barra de progresso */}
+            <div className="w-full bg-white/20 rounded-full h-5 mb-2 overflow-hidden shadow-inner">
+              <div className="bg-[#7E60B9] h-full rounded-full transition-all duration-500" style={{ width: "60%" }}></div>
+            </div>
+            <p className="text-xs text-gray-300 mb-6">
+              60% das unidades reservadas — ainda dá tempo de garantir a sua
+            </p>
+
+            {/* Botão CTA */}
+            <Button className="w-full h-12 text-lg font-semibold bg-figueira-wine hover:bg-figueira-magenta text-black transition-all">
+              Ver preços e plantas agora
+            </Button>
+
+            {/* Contador */}
+            <div className="mt-6 text-sm text-gray-200">
+              Oferta válida até: <CountdownTimer targetDate="2025-06-30T00:00:00" />
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="relative p-8 bg-white/10 backdrop-blur rounded-2xl shadow-2xl hover:scale-[1.03] transition-transform">
-          <h3 className="text-2xl font-bold text-figueira-lavender mb-4">
-            Escolha prioritária
-          </h3>
-          <p className="text-gray-300">
-            Selecione as melhores unidades, <strong>andares e vistas</strong> antes que sejam reservadas.
-          </p>
-          <div className="absolute top-4 right-4 opacity-10 text-7xl">
-            ⭐
-          </div>
-        </div>
 
-        <div className="relative p-8 bg-white/10 backdrop-blur rounded-2xl shadow-2xl hover:scale-[1.03] transition-transform">
-          <h3 className="text-2xl font-bold text-figueira-lavender mb-4">
-            Condições exclusivas
-          </h3>
-          <p className="text-gray-300">
-            <strong>Entrada facilitada</strong>, financiamento direto e possibilidade de <strong>personalização</strong> das unidades.
-          </p>
-          <div className="absolute top-4 right-4 opacity-10 text-7xl">
-            ⚡
-          </div>
-        </div>
-      </div>
-
-      {/* Oferta por tempo limitado / Barra de progresso */}
-      <div className="relative bg-white/10 backdrop-blur p-8 rounded-xl shadow-2xl mb-16">
-        <h3 className="text-2xl font-bold text-figueira-lavender mt-4 mb-4">
-          Oferta por tempo limitado
-        </h3>
-        <p className="text-gray-300 mb-4">
-          As <strong>condições especiais</strong> de pré-lançamento estão disponíveis apenas para as primeiras <strong>30 unidades</strong> ou até <strong>30/06/2025</strong>, o que ocorrer primeiro. Já temos <strong>18 unidades</strong> reservadas.
-        </p>
-
-        {/* Barra de progresso + texto */}
-        <div className="mt-4 bg-neutral-700 rounded-full h-6 overflow-hidden">
-          <div
-            className="bg-figueira-lavender h-full rounded-full transition-all duration-500"
-            style={{ width: "60%" }}
-          ></div>
-        </div>
-        <p className="text-sm text-gray-400 mt-2">
-          60% das unidades com condições especiais já foram reservadas
-        </p>
-
-        {/* Selo de urgência / destaque (opcional) */}
-        <div className="absolute top-2 right-6 px-4 py-2 bg-red-600 rounded-full text-xs font-bold animate-pulse">
-          Restam apenas 12 unidades
-        </div>
-      </div>
-
-      {/* Botão Call-to-Action */}
-      <Button
-        className="
-          w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120
-        "
-      >
-        Ver preços e plantas agora
-      </Button>
-
-      {/* Componente de Contagem Regressiva */}
-      <CountdownTimer targetDate="2025-06-30T00:00:00" />
-    </div>
-  </div>
-</section>
 
 
       {/* FAQ Section */}
