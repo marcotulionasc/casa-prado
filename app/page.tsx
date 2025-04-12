@@ -18,7 +18,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Image from "next/image"
 import Link from "next/link"
 import LeadForm from "@/components/lead-form"
-import FloatingCta from "@/components/floating-cta"
 import SiteHeader from "@/components/site-header"
 import ScrollToTop from "@/components/scroll-to-top"
 import TestimonialCard from "@/components/testimonial-card"
@@ -33,12 +32,13 @@ import CountdownTimer from "@/components/countdown-timer"
 import { FiStar, FiLock, FiGrid } from "react-icons/fi"
 import { MdArchitecture } from "react-icons/md"
 import { FaTree, FaLeaf } from "react-icons/fa"
+import { MobileCta } from "@/components/mobile-cta"
 
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <FloatingCta />
+      <MobileCta />
       <SiteHeader />
 
       {/* Hero Section */}
