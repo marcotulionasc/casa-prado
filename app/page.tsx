@@ -417,12 +417,12 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
 
             {/* Selo de urgência */}
-            <div className="absolute top-4 right-4 bg-[#CC607F] text-white px-3 py-1 rounded-full text-xs font-bold uppercase animate-pulse z-10">
+            <div className="absolute top-6 right-4 bg-[#CC607F] text-white px-3 py-1 rounded-full text-xs font-bold uppercase animate-pulse z-10">
               Últimas 12 unidades
             </div>
 
             {/* Título */}
-            <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-white">
+            <h3 className="text-2xl md:text-3xl font-extrabold mt-8 mb-4 text-white">
               Oferta Exclusiva por Tempo Limitado
             </h3>
 
