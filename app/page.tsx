@@ -610,7 +610,7 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/call-to-action/about-us.png"
                 alt="Metrópole Investimentos Imobiliários - Especialista em imóveis de alto padrão em Campinas"
                 fill
                 className="object-cover"
