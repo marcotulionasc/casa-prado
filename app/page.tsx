@@ -416,11 +416,6 @@ export default function Home() {
         <div className="relative z-10 container px-4 mx-auto max-w-3xl text-center">
           <div className="bg-white/10 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
 
-            {/* Selo de urgência */}
-            <div className="absolute top-6 right-4 bg-[#CC607F] text-white px-3 py-1 rounded-full text-xs font-bold uppercase animate-pulse z-10">
-              Últimas 12 unidades
-            </div>
-
             {/* Título */}
             <h3 className="text-2xl md:text-3xl font-extrabold mt-8 mb-4 text-white">
               Oferta Exclusiva por Tempo Limitado
@@ -428,7 +423,7 @@ export default function Home() {
 
             {/* Subtítulo */}
             <p className="text-sm md:text-base text-gray-200 mb-6">
-              Condições especiais válidas para as <strong>30 primeiras unidades</strong> ou até <strong>30/06/2025</strong>.
+              Condições especiais válidas para as <strong>30 primeiras unidades</strong> ou até <strong>10/05/2025</strong>.
               Já temos <strong className="text-white">18 reservas confirmadas</strong>.
             </p>
 
@@ -447,7 +442,7 @@ export default function Home() {
 
             {/* Contador */}
             <div className="mt-6 text-sm text-gray-200">
-              Oferta válida até: <CountdownTimer targetDate="2025-06-30T00:00:00" />
+              Oferta válida até: <CountdownTimer targetDate="2025-05-10T00:00:00" />
             </div>
           </div>
         </div>
