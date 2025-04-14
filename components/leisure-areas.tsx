@@ -10,41 +10,41 @@ export default function LeisureAreas() {
   const itemsPerPage = 6
 
   const leisureAreas = [
-    { id: 1, name: "Academia Externa", image: "/area-lazer/Academia Externa.jpg" },
-    { id: 2, name: "Academia", image: "/area-lazer/Academia.jpg" },
-    { id: 3, name: "Arena de Areia", image: "/area-lazer/Arena de Areia.jpg" },
-    { id: 4, name: "Bicicletário", image: "/area-lazer/Bicicletário.jpg" },
-    { id: 5, name: "Brinquedoteca", image: "/area-lazer/Academia Externa.jpg" },
-    { id: 6, name: "Estares", image: "/area-lazer/Brinquedoteca.jpg" },
-    { id: 7, name: "Casa de Festas", image: "/area-lazer/Casa de Festas.jpg" },
-    { id: 8, name: "Floresta de bolso", image: "/area-lazer/Academia Externa.jpg" },
-    { id: 9, name: "Cobertura Duplex 1", image: "/area-lazer/Cobertura Duplex 1.jpg" },
-    { id: 10, name: "Cobertura Duplex 2", image: "/area-lazer/Cobertura Duplex 2.jpg" },
-    { id: 11, name: "Coworking 1", image: "/area-lazer/Coworking 1.jpg" },
-    { id: 12, name: "Coworking 2", image: "/area-lazer/Coworking 2.jpg" },
-    { id: 13, name: "Entrada das Jabuticabeiras", image: "/area-lazer/Entrada das Jabuticabeiras.jpg" },
-    { id: 14, name: "Espaço Gourmet 1", image: "/area-lazer/Espaço Gourmet 1.jpg" },
-    { id: 15, name: "Espaço Gourmet 2", image: "/area-lazer/Espaço Gourmet 2.jpg" },
-    { id: 16, name: "Espaço Pet", image: "/area-lazer/Espaço Pet.jpg" },
-    { id: 17, name: "Estacionamento", image: "/area-lazer/Estacionamento.jpg" },
-    { id: 18, name: "Estares", image: "/area-lazer/Estares.jpg" },
-    { id: 19, name: "Fachada 1", image: "/area-lazer/Fachada 1.jpg" },
-    { id: 20, name: "Fachada 2", image: "/area-lazer/Fachada 2.jpg" },
-    { id: 21, name: "Floresta de Bolso", image: "/area-lazer/Floresta de Bolso.jpg" },
-    { id: 22, name: "Fogueira", image: "/area-lazer/Fogueira.jpg" },
-    { id: 23, name: "Parquinho Naturalizado 1", image: "/area-lazer/Parquinho Naturalizado 1.jpg" },
-    { id: 24, name: "Parquinho Naturalizado 2", image: "/area-lazer/Parquinho Naturalizado 2.jpg" },
-    { id: 24, name: "Piltaes", image: "/area-lazer/Pilates.jpg" },
-    { id: 25, name: "Piscina 1", image: "/area-lazer/Piscina 1.jpg" },
-    { id: 26, name: "Piscina 2", image: "/area-lazer/Piscina 2.jpg" },
-    { id: 27, name: "Praça Gramada", image: "/area-lazer/Praça Gramada.jpg" },
-    { id: 28, name: "Praça Molhada", image: "/area-lazer/Praça Molhada.jpg" },
-    { id: 29, name: "Sala de Estar", image: "/area-lazer/Sala de Estar.jpg" },
-    { id: 30, name: "Sala de Jantar", image: "/area-lazer/Sala de Jantar.jpg" },
-    { id: 31, name: "Sala de Gaming", image: "/area-lazer/Sala Gaming.jpg" },
-    { id: 32, name: "Sala de Jogos", image: "/area-lazer/Sala de Jogos.jpg" },
-    { id: 33, name: "Suite Master", image: "/area-lazer/Suíte Master.jpg" },
-    { id: 34, name: "Yoga", image: "/area-lazer/Yoga.jpg" }
+    { id: 1, name: "Academia Externa", image: "/area-lazer/Academia Externa.webp" },
+    { id: 2, name: "Academia", image: "/area-lazer/Academia.webp" },
+    { id: 3, name: "Arena de Areia", image: "/area-lazer/Arena de Areia.webp" },
+    { id: 4, name: "Bicicletário", image: "/area-lazer/Bicicletário.webp" },
+    { id: 5, name: "Brinquedoteca", image: "/area-lazer/Academia Externa.webp" },
+    { id: 6, name: "Estares", image: "/area-lazer/Brinquedoteca.webp" },
+    { id: 7, name: "Casa de Festas", image: "/area-lazer/Casa de Festas.webp" },
+    { id: 8, name: "Floresta de bolso", image: "/area-lazer/Academia Externa.webp" },
+    { id: 9, name: "Cobertura Duplex 1", image: "/area-lazer/Cobertura Duplex 1.webp" },
+    { id: 10, name: "Cobertura Duplex 2", image: "/area-lazer/Cobertura Duplex 2.webp" },
+    { id: 11, name: "Coworking 1", image: "/area-lazer/Coworking 1.webp" },
+    { id: 12, name: "Coworking 2", image: "/area-lazer/Coworking 2.webp" },
+    { id: 13, name: "Entrada das Jabuticabeiras", image: "/area-lazer/Entrada das Jabuticabeiras.webp" },
+    { id: 14, name: "Espaço Gourmet 1", image: "/area-lazer/Espaço Gourmet 1.webp" },
+    { id: 15, name: "Espaço Gourmet 2", image: "/area-lazer/Espaço Gourmet 2.webp" },
+    { id: 16, name: "Espaço Pet", image: "/area-lazer/Espaço Pet.webp" },
+    { id: 17, name: "Estacionamento", image: "/area-lazer/Estacionamento.webp" },
+    { id: 18, name: "Estares", image: "/area-lazer/Estares.webp" },
+    { id: 19, name: "Fachada 1", image: "/area-lazer/Fachada 1.webp" },
+    { id: 20, name: "Fachada 2", image: "/area-lazer/Fachada 2.webp" },
+    { id: 21, name: "Floresta de Bolso", image: "/area-lazer/Floresta de Bolso.webp" },
+    { id: 22, name: "Fogueira", image: "/area-lazer/Fogueira.webp" },
+    { id: 23, name: "Parquinho Naturalizado 1", image: "/area-lazer/Parquinho Naturalizado 1.webp" },
+    { id: 24, name: "Parquinho Naturalizado 2", image: "/area-lazer/Parquinho Naturalizado 2.webp" },
+    { id: 24, name: "Piltaes", image: "/area-lazer/Pilates.webp" },
+    { id: 25, name: "Piscina 1", image: "/area-lazer/Piscina 1.webp" },
+    { id: 26, name: "Piscina 2", image: "/area-lazer/Piscina 2.webp" },
+    { id: 27, name: "Praça Gramada", image: "/area-lazer/Praça Gramada.webp" },
+    { id: 28, name: "Praça Molhada", image: "/area-lazer/Praça Molhada.webp" },
+    { id: 29, name: "Sala de Estar", image: "/area-lazer/Sala de Estar.webp" },
+    { id: 30, name: "Sala de Jantar", image: "/area-lazer/Sala de Jantar.webp" },
+    { id: 31, name: "Sala de Gaming", image: "/area-lazer/Sala Gaming.webp" },
+    { id: 32, name: "Sala de Jogos", image: "/area-lazer/Sala de Jogos.webp" },
+    { id: 33, name: "Suite Master", image: "/area-lazer/Suíte Master.webp" },
+    { id: 34, name: "Yoga", image: "/area-lazer/Yoga.webp" }
   ]
 
   const totalPages = Math.ceil(leisureAreas.length / itemsPerPage)
@@ -72,7 +72,7 @@ export default function LeisureAreas() {
           <div className="relative rounded-xl overflow-hidden">
             <div className="relative aspect-[16/9] md:aspect-[21/9] w-full">
               <Image
-                src="/images/planta-geral-lazer.jpg"
+                src="/images/planta-geral-lazer.webp"
                 alt="Planta geral das áreas de lazer"
                 fill
                 className="object-contain"
