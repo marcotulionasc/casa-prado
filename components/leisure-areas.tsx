@@ -72,7 +72,7 @@ export default function LeisureAreas() {
           <div className="relative rounded-xl overflow-hidden">
             <div className="relative aspect-[16/9] md:aspect-[21/9] w-full">
               <Image
-                src="/images/planta-geral-lazer.png"
+                src="/images/planta-geral-lazer.jpg"
                 alt="Planta geral das áreas de lazer"
                 fill
                 className="object-contain"
