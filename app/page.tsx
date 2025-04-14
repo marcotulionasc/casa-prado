@@ -24,7 +24,6 @@ import TestimonialCard from "@/components/testimonial-card"
 import LocationSection from "@/components/location-section"
 import ApartmentPlans from "@/components/apartment-plans"
 import ConstructionTimeline from "@/components/construction-timeline"
-import TrustedPartners from "@/components/trusted-partners"
 import GallerySection from "@/components/gallery-section"
 import LeisureAreas from "@/components/leisure-areas"
 import PenthouseSection from "@/components/penthouse-section"
@@ -46,7 +45,7 @@ export default function Home() {
       <section className="relative w-full pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/vista-ultimo-andar.png"
+            src="/images/vista-ultimo-andar.webp"
             alt="Vista aérea do Avenida 105 Casa Figueira ao pôr do sol"
             fill
             className="object-cover object-center"

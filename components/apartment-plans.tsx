@@ -18,7 +18,7 @@ export default function ApartmentPlans() {
         "Varanda gourmet integrada",
         "3 vagas na garagem",
       ],
-      image: "/images/planta-a.png",
+      image: "/images/planta-a.webp",
     },
     {
       id: "tipo-b",
@@ -32,7 +32,7 @@ export default function ApartmentPlans() {
         "Banho de serviço",
         "3 vagas na garagem",
       ],
-      image: "/images/planta-b.png",
+      image: "/images/planta-b.webp",
     },
     {
       id: "tipo-c",
@@ -46,7 +46,7 @@ export default function ApartmentPlans() {
         "Sala estendida",
         "3 vagas na garagem",
       ],
-      image: "/images/planta-c.png",
+      image: "/images/planta-c.webp",
     },
     {
       id: "tipo-d",
@@ -60,7 +60,7 @@ export default function ApartmentPlans() {
         "Banho de serviço",
         "3 vagas na garagem",
       ],
-      image: "/images/planta-d.png",
+      image: "/images/planta-d.webp",
     },
 
     {
@@ -75,7 +75,7 @@ export default function ApartmentPlans() {
         "Terraço gourmet integrado",
         "4 vagas na garagem",
       ],
-      image: " /images/planta-a-cobertura.png",
+      image: " /images/planta-a-cobertura.webp",
     },
     {
       id: "duplex-b",
@@ -89,7 +89,7 @@ export default function ApartmentPlans() {
         "Espaço gourmet com churrasqueira",
         "4 vagas na garagem",
       ],
-      image: "/images/planta-b-cobertura.png",
+      image: "/images/planta-b-cobertura.webp",
     },
   ]
 

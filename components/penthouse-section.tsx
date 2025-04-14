@@ -18,7 +18,7 @@ export default function PenthouseSection() {
         "Terraço gourmet integrado",
         "4 vagas na garagem",
       ],
-      image: " /images/planta-a-cobertura.png",
+      image: " /images/planta-a-cobertura.webp",
     },
     {
       id: "duplex-b",
@@ -32,7 +32,7 @@ export default function PenthouseSection() {
         "Espaço gourmet com churrasqueira",
         "4 vagas na garagem",
       ],
-      image: "/images/planta-b-cobertura.png",
+      image: "/images/planta-b-cobertura.webp",
     },
   ]
 
@@ -49,7 +49,7 @@ export default function PenthouseSection() {
         {/* Imagem de destaque da cobertura */}
         <div className="relative w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden mb-12">
           <Image
-            src="/images/cobertura-terraco.png"
+            src="/images/cobertura-terraco.webp"
             alt="Terraço exclusivo das coberturas com piscina privativa e vista panorâmica"
             fill
             className="object-cover"

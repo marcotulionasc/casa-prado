@@ -15,7 +15,7 @@ export default function LocationSection() {
       }}
     >
       <Image
-        src="/images/avenida105.png"
+        src="/images/avenida105.webp"
         alt="Vista aérea do Avenida 105 Casa Figueira"
         fill
         className={`object-cover object-center transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}

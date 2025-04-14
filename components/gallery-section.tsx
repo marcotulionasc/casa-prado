@@ -8,12 +8,12 @@ export default function GallerySection() {
   const [currentImage, setCurrentImage] = useState<number | null>(null)
 
   const images = [
-    { src: "/images/fachada.png", alt: "Fachada Avenida 105" },
-    { src: "/images/lobby-entrada.png", alt: "Lobby de entrada" },
-    { src: "/images/piscina.png", alt: "Piscina" },
-    { src: "/images/área gourmet.png", alt: "Espaço gourmet" },
-    { src: "/images/coworking.png", alt: "Coworking" },
-    { src: "/images/vista-ultimo-andar.png", alt: "Vista do apartamento" },
+    { src: "/images/fachada.webp", alt: "Fachada Avenida 105" },
+    { src: "/images/lobby-entrada.webp", alt: "Lobby de entrada" },
+    { src: "/images/piscina.webp", alt: "Piscina" },
+    { src: "/images/área gourmet.webp", alt: "Espaço gourmet" },
+    { src: "/images/coworking.webp", alt: "Coworking" },
+    { src: "/images/vista-ultimo-andar.webp", alt: "Vista do apartamento" },
   ]
 
   const openLightbox = (index: number) => {
