@@ -203,8 +203,8 @@ export default function Home() {
       {/* Apartment Plans Section */}
       <ApartmentPlans />
 
-      {/* Penthouse Section */}
-      <PenthouseSection />
+      {/* Penthouse Section
+      <PenthouseSection /> */}
 
       {/* Leisure Areas Section */}
       <LeisureAreas />

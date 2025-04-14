@@ -62,6 +62,35 @@ export default function ApartmentPlans() {
       ],
       image: "/images/planta-d.png",
     },
+
+    {
+      id: "duplex-a",
+      title: "Cobertura Duplex A",
+      description: "Cobertura duplex com terraço e piscina privativa",
+      features: [
+        "245 m² de área total",
+        "220 m² de área privativa + 25 m² de terraço",
+        "4 suítes com closet",
+        "Piscina privativa com deck",
+        "Terraço gourmet integrado",
+        "4 vagas na garagem",
+      ],
+      image: " /images/planta-a-cobertura.png",
+    },
+    {
+      id: "duplex-b",
+      title: "Cobertura Duplex B",
+      description: "Cobertura duplex com terraço panorâmico",
+      features: [
+        "280 m² de área total",
+        "250 m² de área privativa + 30 m² de terraço",
+        "4 suítes com closet",
+        "Spa privativo com vista panorâmica",
+        "Espaço gourmet com churrasqueira",
+        "4 vagas na garagem",
+      ],
+      image: "/images/planta-b-cobertura.png",
+    },
   ]
 
   return (
