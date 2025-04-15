@@ -3,28 +3,15 @@
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useEffect } from "react"
 
 export default function ObrigadoPage() {
-  const router = useRouter()
-
-  useEffect(() => {
-    const formSubmitted = sessionStorage.getItem("formSubmitted")
-    if (!formSubmitted) {
-      router.push("/")
-    }
-  }, [router])
+  // Removemos o useEffect que checava o sessionStorage e redirecionava caso não houvesse "formSubmitted"
 
   const handleWhatsAppClick = () => {
-    
     const phoneNumber = "5519982535896"
     const message = "Olá! Acabei de me cadastrar no site do Avenida 105 e gostaria de mais informações."
 
-    // Criar URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-
-    // Abrir em uma nova aba
     window.open(whatsappUrl, "_blank")
   }
 
