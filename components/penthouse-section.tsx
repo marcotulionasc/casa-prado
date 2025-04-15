@@ -3,6 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { Link } from "lucide-react"
 
 export default function PenthouseSection() {
   const penthouses = [
@@ -112,7 +113,7 @@ export default function PenthouseSection() {
                       privilegiada da cidade. Apenas 8 unidades disponíveis.
                     </p>
                     <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4">
-                      Solicitar informações e valores
+                    <Link href="#lead-form">Solicitar informações e valores</Link>
                     </Button>
                     <p className="text-xs text-gray-500 mt-2">
                       Receba detalhes completos, incluindo tour virtual 360° e tabela de preços
