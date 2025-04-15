@@ -18,7 +18,7 @@ const leisureAreas = [
   { id: 10, name: "Cobertura Duplex 2", image: "/area-lazer/Cobertura Duplex 2.webp" },
   { id: 11, name: "Coworking 1", image: "/area-lazer/Coworking 1.webp" },
   { id: 12, name: "Coworking 2", image: "/area-lazer/Coworking 2.webp" },
-  { id: 13, name: "Entrada das Jabuticabeiras", image: "/area-lazer/Entrada das Jabuticabeiras.webp" },
+  { id: 13, name: "Entrada das Jabuticabeiras", image: "/area-lazer/Entrada das jabuticabeiras.webp" },
   { id: 14, name: "Espaço Gourmet 1", image: "/area-lazer/Espaço Gourmet 1.webp" },
   { id: 15, name: "Espaço Gourmet 2", image: "/area-lazer/Espaço Gourmet 2.webp" },
   { id: 16, name: "Espaço Pet", image: "/area-lazer/Espaço Pet.webp" },
@@ -45,7 +45,7 @@ const leisureAreas = [
 
 export default function LeisureAreas() {
   const [currentPage, setCurrentPage] = useState(0)
-  const itemsPerPage = 6
+  const itemsPerPage = 9
   const totalPages = Math.ceil(leisureAreas.length / itemsPerPage)
   const currentItems = leisureAreas.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage)
 
