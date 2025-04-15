@@ -627,7 +627,7 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <Mail className="h-4 w-4" />
-                <span>eduardocampai@metropoleinvestimentosimobiliarios.com</span>
+                <span>eduardocampai<br></br>@metropoleinvestimentosimobiliarios.com</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <MapPin className="h-4 w-4" />
@@ -687,7 +687,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
       <ScrollToTop />
     </div>
   )
