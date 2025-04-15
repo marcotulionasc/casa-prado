@@ -188,7 +188,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-100">
-              Ver tabela e plantas exclusivas
+              <Link href="#lead-form">Ver tabela e plantas exclusivas</Link>
             </Button>
             <p className="text-xs text-gray-500 mt-2">Informações enviadas sem compromisso em até 24h</p>
           </div>
