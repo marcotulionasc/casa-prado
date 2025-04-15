@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input"
 import { User, Mail, Phone } from "lucide-react"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Avatar, AvatarFallback } from "./ui/avatar"
+import { useRouter } from "next/navigation"
 
 export default function LeadForm() {
+  const router = useRouter()
   interface FormData {
     name: string
     email: string
@@ -113,23 +115,7 @@ export default function LeadForm() {
         throw new Error(`Erro ao enviar: ${response.status}`)
       }
 
-      // Sucesso
-      setIsSubmitted(true)
-
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false)
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-        })
-        setErrors({
-          name: "",
-          email: "",
-          phone: "",
-        })
-      }, 3000)
+      router.push("/obrigado")
     } catch (error) {
       console.error("Erro ao enviar formulário:", error)
       setSubmitError("Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.")
