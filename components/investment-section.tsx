@@ -35,7 +35,7 @@ export function InvestmentSection() {
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between text-sm mb-1">
-                        <span>Lançamento (2023)</span>
+                        <span>Lançamento (abril de 2025)</span>
                         <span className="font-medium">100%</span>
                       </div>
                       <Progress value={100} className="h-2 bg-gray-100" />
@@ -49,7 +49,7 @@ export function InvestmentSection() {
                     </div>
                     <div>
                       <div className="flex justify-between text-sm mb-1">
-                        <span>Entrega (2026)</span>
+                        <span>Entrega (abril de 2028)</span>
                         <span className="font-medium text-blue-700">+35%</span>
                       </div>
                       <Progress value={130} className="h-2 bg-gray-100" />
@@ -203,14 +203,14 @@ export function InvestmentSection() {
             <div className="space-y-3">
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Lançamento (2023)</span>
+                  <span>Lançamento (abril de 2025)</span>
                   <span className="font-medium">100%</span>
                 </div>
                 <Progress value={100} className="h-2 bg-gray-100" />
               </div>
               <div>
                 <div className="flex justify-between text-sm mb-1">
-                  <span>Entrega (2026)</span>
+                  <span>Entrega (2028)</span>
                   <span className="font-medium text-blue-700">+35%</span>
                 </div>
                 <Progress value={130} className="h-2 bg-gray-100" />
