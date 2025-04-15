@@ -3,7 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { Link } from "lucide-react"
+import Link from "next/link"
 
 export default function ApartmentPlans() {
   const plans = [
