@@ -31,7 +31,7 @@ export default function SiteHeader() {
           <Link href="/" className="flex items-center space-x-2">
             {/* <Building className="h-5 w-5 md:h-6 md:w-6 text-figueira-purple" /> */}
             <img src="/logo-metropole.png" alt="Logo" className="h-8 w-auto rounded-lg" /> 
-            <span className="text-black font-bold text-base md:text-lg">/</span>
+            <span className="text-black font-bold text-base md:text-lg">|</span>
             <span className="text-black font-bold text-base md:text-lg">Avenida 105</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">

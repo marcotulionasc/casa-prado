@@ -79,8 +79,6 @@ export default function LeisureAreas() {
                 width={1200}
                 height={600}
                 className="object-contain w-full h-auto"
-                // Desabilita a otimização do Next caso queira evitar reprocessamento:
-                // unoptimized
               />
             </div>
           </div>
