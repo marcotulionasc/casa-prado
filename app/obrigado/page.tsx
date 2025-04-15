@@ -5,8 +5,7 @@ import { CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export default function ObrigadoPage() {
-  // Removemos o useEffect que checava o sessionStorage e redirecionava caso não houvesse "formSubmitted"
-
+  
   const handleWhatsAppClick = () => {
     const phoneNumber = "5519982535896"
     const message = "Olá! Acabei de me cadastrar no site do Avenida 105 e gostaria de mais informações."
