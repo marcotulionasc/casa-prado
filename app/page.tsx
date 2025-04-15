@@ -33,6 +33,7 @@ import { MdArchitecture } from "react-icons/md"
 import { FaTree, FaLeaf } from "react-icons/fa"
 import { MobileCta } from "@/components/mobile-cta"
 import CasaFigueiraSection from "@/components/casa-figueira"
+import { InvestmentSection } from "@/components/investment-section"
 
 export default function Home() {
   return (
@@ -194,6 +195,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <InvestmentSection />
 
       {/* Gallery Section */}
       <GallerySection />
