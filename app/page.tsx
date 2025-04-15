@@ -34,7 +34,6 @@ import { FaTree, FaLeaf } from "react-icons/fa"
 import { MobileCta } from "@/components/mobile-cta"
 import CasaFigueiraSection from "@/components/casa-figueira"
 
-
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -77,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Aqui vai ser a apresentação do MasterPlan Casa Figueira */}
+      {/* Apresentação do MasterPlan Casa Figueira */}
       <CasaFigueiraSection />
 
       {/* Benefits Section */}
@@ -221,10 +220,6 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 space-y-6">
               <h3 className="text-xl md:text-2xl font-bold">Viva com tudo ao seu redor</h3>
-              {/* <p className="text-gray-600">
-                Desfrute da liberdade de ter tudo ao alcance: cafés, academias, farmácias, mercados e o Shopping
-                Iguatemi a poucos passos da sua porta.
-              </p> */}
               <p className="text-gray-600">
                 No Avenida 105, você ganha tempo e qualidade de vida com a mobilidade a pé. Esqueça o trânsito e
                 aproveite mais o seu dia em um bairro planejado para o seu bem-estar.
@@ -248,14 +243,6 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-
-              {/* <div className="pt-4">
-                <h4 className="font-bold text-figueira-purple mb-2">Valorização Comprovada</h4>
-                <p className="text-gray-600">
-                  A região do Iguatemi Campinas apresentou valorização média de 12% ao ano nos últimos 5 anos, superando
-                  a média da cidade em 30%, segundo dados da Associação de Imóveis de Campinas.
-                </p>
-              </div> */}
             </div>
 
             <div className="lg:col-span-7">
@@ -359,9 +346,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Lifestyle Section */}
-      {/* <LifestyleSection /> */}
-
       {/* Construction Timeline */}
       <ConstructionTimeline />
 
@@ -401,32 +385,24 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="py-12 md:py-20 relative text-white">
-        {/* Background com imagem (ajuste a URL abaixo ou via Tailwind custom) */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-70"
           style={{ backgroundImage: "url('/call-to-action/image 2.png')" }}
         ></div>
 
-        {/* Overlay com cor sólida + blend */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#3F4FA9]/80 via-[#6E48AE]/80 to-[#A55298]/80 mix-blend-multiply"></div>
 
         <div className="relative z-10 container px-4 mx-auto max-w-3xl text-center">
           <div className="bg-white/10 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
-
-            {/* Título */}
             <h3 className="text-2xl md:text-3xl font-extrabold mt-8 mb-4 text-white">
               Oferta Exclusiva por Tempo Limitado
             </h3>
-
-            {/* Subtítulo */}
             <p className="text-sm md:text-base text-gray-200 mb-6">
               Condições especiais válidas para as <strong>30 primeiras unidades</strong> ou até <strong>10/05/2025</strong>.
               Já temos <strong className="text-white">18 reservas confirmadas</strong>.
             </p>
 
-            {/* Barra de progresso */}
             <div className="w-full bg-white/20 rounded-full h-5 mb-2 overflow-hidden shadow-inner">
               <div className="bg-[#7E60B9] h-full rounded-full transition-all duration-500" style={{ width: "60%" }}></div>
             </div>
@@ -434,21 +410,16 @@ export default function Home() {
               60% das unidades reservadas — ainda dá tempo de garantir a sua
             </p>
 
-            {/* Botão CTA */}
             <Button className="w-full h-12 text-lg font-semibold bg-figueira-wine hover:bg-figueira-magenta text-black transition-all">
               Ver preços e plantas agora
             </Button>
 
-            {/* Contador */}
             <div className="mt-6 text-sm text-gray-200">
               Oferta válida até: <CountdownTimer targetDate="2025-05-10T00:00:00" />
             </div>
           </div>
         </div>
       </section>
-
-
-
 
       {/* FAQ Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-white" id="faq">
