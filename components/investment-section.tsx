@@ -244,8 +244,8 @@ export function InvestmentSection() {
 
           <div className="text-center mt-2">
             <Button
-              className="py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-md w-full h-12"
-              onClick={() => document.getElementById("hero-form-mobile")?.scrollIntoView({ behavior: "smooth" })}
+              className="py-3 text-base font-medium bg-figueira-purple hover:bg-blue-700 text-white rounded-md w-full h-12"
+              onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
             >
               Quero receber simulação completa
             </Button>

@@ -23,7 +23,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
   const playerRef = useRef<HTMLDivElement>(null)
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // --- Detectar se é iOS (para forçar webkitEnterFullscreen) ---
+  // Detectar iOS
   const isIOS = typeof window !== "undefined" && /iPhone|iPad|iPod/.test(navigator.userAgent)
 
   // Carregar metadados para pegar duração
@@ -41,7 +41,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     }
   }, [])
 
-  // Atualizar o progresso e o tempo atual
+  // Atualizar progresso
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
@@ -57,16 +57,14 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     }
   }, [])
 
-  // Exibir/ocultar controles com base em movimentação do mouse
+  // Mostrar/ocultar controles via mousemove
   useEffect(() => {
     const handleMouseMove = () => {
       setShowControls(true)
-
       if (controlsTimeoutRef.current) {
         clearTimeout(controlsTimeoutRef.current)
       }
-
-      // Se estiver tocando, após 3s sem mexer o mouse, some controles
+      // Some controles depois de 3s se o vídeo estiver tocando
       controlsTimeoutRef.current = setTimeout(() => {
         if (isPlaying) {
           setShowControls(false)
@@ -86,7 +84,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     }
   }, [isPlaying])
 
-  // Detectar mudanças de fullscreen (desktop/Android)
+  // Detectar fullscreen (Desktop/Android)
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement)
@@ -120,7 +118,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     setIsMuted(!isMuted)
   }
 
-  // Alterar tempo do vídeo
+  // Progresso
   const handleProgressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const video = videoRef.current
     if (!video) return
@@ -133,76 +131,73 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     setProgress(newValue)
   }
 
-  // Fullscreen (com fallback iOS)
+  // Fullscreen
   const toggleFullscreen = () => {
-    const player = playerRef.current
     const video = videoRef.current
-    if (!player || !video) return
+    const container = playerRef.current
+    if (!video || !container) return
 
-    // Se já está em fullscreen no desktop/Android, sai do fullscreen
+    // Se já está fullscreen no desktop...
     if (document.fullscreenElement) {
       document.exitFullscreen()
       return
     }
 
-    // Para iOS, chamar webkitEnterFullscreen direto no <video>
+    // Se for iOS, chamar webkitEnterFullscreen() no <video>
     if (isIOS) {
       const iOSVideo = video as HTMLVideoElement & {
         webkitEnterFullscreen?: () => void
       }
       if (iOSVideo.webkitEnterFullscreen) {
         iOSVideo.webkitEnterFullscreen()
+        // iOS nativo assume o player e sai apenas tocando "Done"
         return
       }
     }
 
-    // Se não for iOS (ou se iOS 16+ suportar requestFullscreen no container)
-    if (player.requestFullscreen) {
-      player
+    // Para desktop/Android, API padrão
+    if (container.requestFullscreen) {
+      container
         .requestFullscreen()
-        .catch((err) => {
-          console.error("Erro ao entrar em fullscreen:", err)
-        })
-    } else {
-      console.log("Fullscreen não suportado neste dispositivo/navegador.")
+        .catch((err) => console.error("Erro ao entrar em fullscreen:", err))
     }
   }
 
-  // Formatar tempo em min:seg
-  const formatTime = (timeInSeconds: number) => {
-    const minutes = Math.floor(timeInSeconds / 60)
-    const seconds = Math.floor(timeInSeconds % 60)
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
   }
 
   return (
     <div
       ref={playerRef}
-      className="relative w-full aspect-video rounded-xl overflow-hidden bg-black group"
+      className="relative w-full aspect-video bg-black rounded-xl overflow-hidden group"
       onMouseEnter={() => setShowControls(true)}
     >
       <video
         ref={videoRef}
         src={videoUrl}
         poster={posterUrl}
-        className="w-full h-full object-cover"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
-        playsInline // no iOS 16+ permite inline, mas com fallback chamamos fullscreen
+        // playsInline desativado no iOS pra forçar fullscreen nativo ao dar play
+        playsInline={!isIOS} 
+        className="w-full h-full object-cover"
       />
 
-      {/* Overlay para exibir o ícone de play quando está pausado */}
-      <div
-        className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center cursor-pointer"
-        onClick={togglePlay}
-      >
-        {!isPlaying && (
-          <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 transition-transform transform hover:scale-110">
-            <Play className="h-12 w-12 text-white fill-white" />
+      {/* Overlay do botão de Play central */}
+      {!isPlaying && (
+        <div
+          className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer"
+          onClick={togglePlay}
+        >
+          <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:scale-110 transition-transform">
+            <Play className="h-12 w-12 text-white" />
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Título do vídeo */}
       {title && (
@@ -214,10 +209,9 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
       {/* Controles */}
       <div
         className={`absolute bottom-0 left-0 right-0 
-          bg-gradient-to-t from-black/70 to-transparent 
+          bg-gradient-to-t from-black/70 to-transparent
           p-4 transition-opacity duration-300
-          ${showControls ? "opacity-100" : "opacity-0"}
-        `}
+          ${showControls ? "opacity-100" : "opacity-0"}`}
       >
         {/* Barra de progresso */}
         <div className="mb-2">
@@ -236,7 +230,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
           />
         </div>
 
-        {/* Botões de controle */}
+        {/* Botões (Play/Pause, Mute, Tempo, Fullscreen) */}
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             {/* Play/Pause */}
@@ -252,16 +246,19 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
               )}
             </button>
 
-            {/* Mute/Unmute */}
+            {/* Mute */}
             <button
               onClick={toggleMute}
               className="text-white hover:text-figueira-lavender transition-colors"
               aria-label={isMuted ? "Ativar som" : "Desativar som"}
             >
-              {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+              {isMuted ? (
+                <VolumeX className="h-5 w-5" />
+              ) : (
+                <Volume2 className="h-5 w-5" />
+              )}
             </button>
 
-            {/* Tempo atual / Duração */}
             <div className="text-white text-sm">
               {formatTime(currentTime)} / {formatTime(duration)}
             </div>
