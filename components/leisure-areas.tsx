@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import LeisureAreasGrid from "./leisure-areas-grid"
 
 const leisureAreas = [
   { id: 1, name: "Academia Externa", image: "/area-lazer/Academia Externa.webp" },
@@ -69,7 +70,7 @@ export default function LeisureAreas() {
           </p>
         </div>
 
-        {/* Imagem principal sem placeholder e sem aspect-ratio forçada */}
+        {/* Imagem principal */}
         <div className="mb-12">
           <div className="rounded-xl overflow-hidden">
             <div className="relative w-full h-auto">
@@ -88,56 +89,34 @@ export default function LeisureAreas() {
           <h3 className="text-xl font-bold mb-4">Conheça cada espaço</h3>
         </div>
 
-        <div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {currentItems.map((area) => (
-              <div
-                key={area.id}
-                className="relative w-full h-64 rounded-lg overflow-hidden"
-              >
-                <Image
-                  src={area.image}
-                  alt={area.name}
-                  fill
-                  className="object-cover"
+        {/* Aqui chamamos nosso componente de Grid, passando apenas os itens da página atual */}
+        <LeisureAreasGrid areas={currentItems} />
 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 flex items-center">
-                  <div className="bg-figueira-purple text-white rounded-full w-6 h-6 flex items-center justify-center text-sm mr-2">
-                    {area.id}
-                  </div>
-                  <h4 className="text-white font-medium">{area.name}</h4>
-                </div>
-              </div>
-            ))}
+        {/* Botões de paginação */}
+        <div className="flex justify-center items-center mt-8 space-x-4">
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={prevPage}
+            className="rounded-full"
+            aria-label="Página anterior"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+
+          <div className="text-sm">
+            Página {currentPage + 1} de {totalPages}
           </div>
 
-          <div className="flex justify-center items-center mt-8 space-x-4">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={prevPage}
-              className="rounded-full"
-              aria-label="Página anterior"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-
-            <div className="text-sm">
-              Página {currentPage + 1} de {totalPages}
-            </div>
-
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={nextPage}
-              className="rounded-full"
-              aria-label="Próxima página"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={nextPage}
+            className="rounded-full"
+            aria-label="Próxima página"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
