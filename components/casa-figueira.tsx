@@ -104,9 +104,10 @@ export default function CasaFigueiraSection() {
                   src="/casa-figueira/casa-figueira-master-plan.png"
                   alt="Masterplan do Casa Figueira"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
+
               <div className="space-y-6 order-1 lg:order-2">
                 <h3 className="text-xl md:text-2xl font-bold">Masterplan integrado</h3>
                 <p className="text-gray-600">
