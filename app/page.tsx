@@ -445,17 +445,15 @@ export default function Home() {
               <AccordionItem value="item-2">
                 <AccordionTrigger className="text-left">Tem decorado? Posso visitar?</AccordionTrigger>
                 <AccordionContent>
-                  Estamos em fase de pré-lançamento, e o apartamento decorado está em construção. No entanto, você pode
-                  agendar uma visita ao nosso stand de vendas para conhecer mais detalhes, plantas e maquetes do
-                  projeto. Também oferecemos tour virtual em 3D que permite visualizar os ambientes com realismo.
+                  Estamos em fase de pré-lançamento, e o apartamento decorado já está pronto. No entanto, devido a alta procura, estamos atendendo apenas com horario pré agendado com um de nossos especialistas. Também oferecemos tour virtual em 3D que permite visualizar os ambientes com realismo.
+
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">Quantas unidades são?</AccordionTrigger>
                 <AccordionContent>
-                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os
-                  moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4
-                  unidades por andar, com plantas de 92m², 110m² e 145m² (duplex).
+                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158  263m²
+
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
@@ -479,18 +477,13 @@ export default function Home() {
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left">Quais são as condições de pagamento?</AccordionTrigger>
                 <AccordionContent>
-                  Oferecemos condições flexíveis de pagamento, com entrada facilitada a partir de 20%, possibilidade de
-                  financiamento direto com a incorporadora em até 60 meses ou financiamento bancário com os principais
-                  bancos. Durante a fase de lançamento, temos condições especiais com descontos de até 15% para
-                  pagamentos à vista.
+                  projeto está na fase de pre lançamento e temos condições facilitadas de aquisição e parcelamento da entrada durante os 36 meses de obras
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-7">
                 <AccordionTrigger className="text-left">Qual o prazo de entrega?</AccordionTrigger>
                 <AccordionContent>
-                  O Avenida 105 tem previsão de entrega para dezembro de 2027, com possibilidade de antecipação conforme
-                  o andamento da obra. O cronograma detalhado pode ser consultado em nosso stand de vendas, e
-                  atualizações mensais são enviadas aos compradores.
+                  O Avenida 105 tem previsão de entrega para dezembro de 2027, com possibilidade de antecipação conforme o andamento da obra. O cronograma detalhado pode ser consultado em nosso stand de vendas, e atualizações mensais são enviadas aos compradores.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-8">
