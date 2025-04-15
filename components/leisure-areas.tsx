@@ -4,10 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-// Import do array de dados em arquivo separado:
 import { leisureAreas } from "./leisure-areas-data"
 
-// Import dos componentes que criamos:
 import LeisureAreasHero from "./leisure-areas-hero"
 import LeisureAreasGrid from "./leisure-areas-grid"
 
@@ -16,7 +14,6 @@ export default function LeisureAreas() {
   const itemsPerPage = 9
   const totalPages = Math.ceil(leisureAreas.length / itemsPerPage)
 
-  // Pegamos só os itens daquela página
   const currentItems = leisureAreas.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
