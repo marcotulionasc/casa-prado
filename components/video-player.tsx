@@ -23,6 +23,9 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
   const playerRef = useRef<HTMLDivElement>(null)
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // --- Detectar se é iOS (para forçar webkitEnterFullscreen) ---
+  const isIOS = typeof window !== "undefined" && /iPhone|iPad|iPod/.test(navigator.userAgent)
+
   // Carregar metadados para pegar duração
   useEffect(() => {
     const video = videoRef.current
@@ -63,6 +66,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
         clearTimeout(controlsTimeoutRef.current)
       }
 
+      // Se estiver tocando, após 3s sem mexer o mouse, some controles
       controlsTimeoutRef.current = setTimeout(() => {
         if (isPlaying) {
           setShowControls(false)
@@ -82,7 +86,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     }
   }, [isPlaying])
 
-  // Detectar mudanças de fullscreen (apenas desktop/Android)
+  // Detectar mudanças de fullscreen (desktop/Android)
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement)
@@ -129,7 +133,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
     setProgress(newValue)
   }
 
-  // Fullscreen com fallback para iOS
+  // Fullscreen (com fallback iOS)
   const toggleFullscreen = () => {
     const player = playerRef.current
     const video = videoRef.current
@@ -141,23 +145,24 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
       return
     }
 
-    // Tenta usar Fullscreen API padrão
+    // Para iOS, chamar webkitEnterFullscreen direto no <video>
+    if (isIOS) {
+      const iOSVideo = video as HTMLVideoElement & {
+        webkitEnterFullscreen?: () => void
+      }
+      if (iOSVideo.webkitEnterFullscreen) {
+        iOSVideo.webkitEnterFullscreen()
+        return
+      }
+    }
+
+    // Se não for iOS (ou se iOS 16+ suportar requestFullscreen no container)
     if (player.requestFullscreen) {
       player
         .requestFullscreen()
         .catch((err) => {
           console.error("Erro ao entrar em fullscreen:", err)
         })
-      return
-    }
-
-    // Fallback para iOS Safari (chama webkitEnterFullscreen no <video>)
-    const anyVideo = video as HTMLVideoElement & {
-      webkitEnterFullscreen?: () => void
-      webkitExitFullscreen?: () => void
-    }
-    if (anyVideo.webkitEnterFullscreen) {
-      anyVideo.webkitEnterFullscreen() // abrirá o player nativo do iOS
     } else {
       console.log("Fullscreen não suportado neste dispositivo/navegador.")
     }
@@ -184,7 +189,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
-        playsInline
+        playsInline // no iOS 16+ permite inline, mas com fallback chamamos fullscreen
       />
 
       {/* Overlay para exibir o ícone de play quando está pausado */}
@@ -253,11 +258,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
               className="text-white hover:text-figueira-lavender transition-colors"
               aria-label={isMuted ? "Ativar som" : "Desativar som"}
             >
-              {isMuted ? (
-                <VolumeX className="h-5 w-5" />
-              ) : (
-                <Volume2 className="h-5 w-5" />
-              )}
+              {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
             </button>
 
             {/* Tempo atual / Duração */}
