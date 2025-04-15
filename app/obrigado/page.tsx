@@ -54,12 +54,6 @@ export default function ObrigadoPage() {
             Quero falar no WhatsApp
             <ArrowRight className="h-4 w-4" />
           </Button>
-
-          <div className="mt-6 text-center">
-            <Link href="/" className="text-sm text-blue-600 hover:underline">
-              Voltar para a página inicial
-            </Link>
-          </div>
         </div>
       </main>
     </div>
