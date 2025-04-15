@@ -90,7 +90,6 @@ export default function LeadForm() {
 
     setIsSubmitting(true)
 
-    // Preparar o payload conforme o formato solicitado
     const payload = {
       name: formData.name,
       email: formData.email,
@@ -140,7 +139,7 @@ export default function LeadForm() {
   }
 
   return (
-    <div className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg max-w-md w-full mx-auto">
+    <div id="lead-form" className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg max-w-md w-full mx-auto">
       <h3 className="text-lg font-semibold mb-4 text-center">
         {isSubmitted ? "Obrigado pelo interesse!" : "Quero acessar as informações da pré-venda"}
       </h3>
