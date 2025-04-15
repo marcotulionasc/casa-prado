@@ -116,7 +116,7 @@ export default function Home() {
                 },
                 {
                   icon: <TrendingUp className="h-6 w-6 text-figueira-purple" />,
-                  text: "Valorização projetada de 30% em 3 anos",
+                  text: "Valorização projetada de 35% em 3 anos",
                 },
                 {
                   icon: <Shield className="h-6 w-6 text-figueira-purple" />,
@@ -181,7 +181,7 @@ export default function Home() {
               <BenefitCard
                 icon={<TrendingUp className="h-6 w-6 text-figueira-purple" />}
                 title="Investimento Seguro"
-                description="Valorização projetada de 30% em 3 anos, conforme análise do mercado imobiliário de Campinas"
+                description="Valorização projetada de 35% em 3 anos, conforme análise do mercado imobiliário de Campinas"
               />
             </div>
           </div>
@@ -340,7 +340,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120">
-              Quero conhecer o projeto completo
+              <Link href="#lead-form">Quero conhecer o projeto completo</Link>
             </Button>
           </div>
         </div>
@@ -411,7 +411,7 @@ export default function Home() {
             </p>
 
             <Button className="w-full h-12 text-lg font-semibold bg-figueira-wine hover:bg-figueira-magenta text-black transition-all">
-              Ver preços e plantas agora
+              <Link href="#lead-form">Ver preços e plantas agora</Link>
             </Button>
 
             <div className="mt-6 text-sm text-gray-200">
