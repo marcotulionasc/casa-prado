@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* Aqui vai ser a apresentação do MasterPlan Casa Figueira */}
-      <CasaFigueiraSection /> 
+      <CasaFigueiraSection />
 
       {/* Benefits Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-white" id="diferenciais">
@@ -623,15 +623,17 @@ export default function Home() {
               <p className="text-gray-400 mb-4">Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas.</p>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
-                <span>(19) 99999-9999</span>
+                <span>+55 (19) 98253-5896</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <Mail className="h-4 w-4" />
-                <span>contato@metropoleimoveis.com.br</span>
+                <span>eduardocampai@metropoleinvestimentosimobiliarios.com</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <MapPin className="h-4 w-4" />
-                <span>Av. Iguatemi, 105 - Campinas/SP</span>
+                <span>Avenida Nossa Senhora de Fátima, 1325 - Taquaral
+
+                  Campinas/SP</span>
               </div>
             </div>
             <div>
@@ -671,8 +673,8 @@ export default function Home() {
             </div>
             <div>
               <div className="font-bold text-lg mb-4">Informações Legais</div>
-              <p className="text-gray-400 mb-4">Metrópole Investimentos Imobiliários | CRECI 123456-SP</p>
-              <p className="text-gray-400 mb-4">© 2025 Metrópole Imóveis – Todos os direitos reservados.</p>
+              <p className="text-gray-400 mb-4">Metrópole Investimentos Imobiliários | CRECI 34150</p>
+              <p className="text-gray-400 mb-4">© 2025 Metrópole Investimentos Imobiliários – Todos os direitos reservados.</p>
               <div className="flex space-x-4">
                 <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Política de Privacidade
@@ -681,11 +683,6 @@ export default function Home() {
                   Termos de Uso
                 </Link>
               </div>
-              <p className="text-xs text-gray-500 mt-4">
-                As imagens são meramente ilustrativas. O mobiliário e os equipamentos não fazem parte do contrato.
-                Registro de Incorporação R-XX na matrícula nº XXXXX do Xº Cartório de Registro de Imóveis de
-                Campinas/SP.
-              </p>
             </div>
           </div>
         </div>
