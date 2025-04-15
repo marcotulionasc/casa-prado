@@ -102,7 +102,7 @@ export default function LeadForm() {
     }
 
     try {
-      const response = await fetch("http://localhost:8081/metropole/v1/send", {
+      const response = await fetch("https://backend-ingressar.onrender.com/metropole/v1/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
