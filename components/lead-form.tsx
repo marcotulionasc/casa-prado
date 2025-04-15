@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -28,6 +30,7 @@ export default function LeadForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const [errors, setErrors] = useState<FormErrors>({
     name: "",
     email: "",
@@ -47,9 +50,7 @@ export default function LeadForm() {
     }
   }
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
-  ): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
     const { name, value } = e.target as HTMLInputElement
     setFormData((prev) => ({
       ...prev,
@@ -65,8 +66,14 @@ export default function LeadForm() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const formatPhoneNumber = (phone: string): string => {
+    // Remove todos os caracteres não numéricos
+    return phone.replace(/\D/g, "")
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
+    setSubmitError("")
 
     // Validação completa antes do envio
     const newErrors: FormErrors = {
@@ -82,10 +89,35 @@ export default function LeadForm() {
     }
 
     setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false)
+
+    // Preparar o payload conforme o formato solicitado
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      cellPhone: formatPhoneNumber(formData.phone),
+      interessePrincipal: null,
+      field01: "morador",
+      field02: null,
+      field03: null,
+    }
+
+    try {
+      const response = await fetch("http://localhost:8081/metropole/v1/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Erro ao enviar: ${response.status}`)
+      }
+
+      // Sucesso
       setIsSubmitted(true)
 
+      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false)
         setFormData({
@@ -99,7 +131,12 @@ export default function LeadForm() {
           phone: "",
         })
       }, 3000)
-    }, 1000)
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error)
+      setSubmitError("Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -162,6 +199,8 @@ export default function LeadForm() {
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
 
+          {submitError && <p className="text-red-500 text-xs text-center">{submitError}</p>}
+
           <Button
             type="submit"
             className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10"
@@ -172,25 +211,21 @@ export default function LeadForm() {
 
           {/* Ajuste para exibir as bolinhas lado a lado (igual ao exemplo da imagem) */}
           <div className="flex items-center justify-center gap-4 mt-4">
-          <div className="flex -space-x-2 overflow-hidden mb-4">
-                <Avatar className="border-2 border-white">
-                  <AvatarImage src="/clientes/aurora.jpg" />
-                  <AvatarFallback></AvatarFallback>
-                </Avatar>
-                <Avatar className="border-2 border-white">
-                  <AvatarImage src="/clientes/gil.jpg" />
-                  <AvatarFallback></AvatarFallback>
-                </Avatar>
-                <Avatar className="border-2 border-white">
-                  <AvatarImage src="/clientes/monica.jpg" />
-                  <AvatarFallback></AvatarFallback>
-                </Avatar>
-                {/* <Avatar className="border-2 border-white">
-                  <AvatarImage src="/clientes/monica.jpg" />
-                  <AvatarFallback></AvatarFallback>
-                </Avatar>           */}
-               </div>
-              <p className="text-sm text-gray-400">201 pessoas já preencheram o formulário!</p>
+            <div className="flex -space-x-2 overflow-hidden mb-4">
+              <Avatar className="border-2 border-white">
+                <AvatarImage src="/clientes/aurora.jpg" />
+                <AvatarFallback></AvatarFallback>
+              </Avatar>
+              <Avatar className="border-2 border-white">
+                <AvatarImage src="/clientes/gil.jpg" />
+                <AvatarFallback></AvatarFallback>
+              </Avatar>
+              <Avatar className="border-2 border-white">
+                <AvatarImage src="/clientes/monica.jpg" />
+                <AvatarFallback></AvatarFallback>
+              </Avatar>
+            </div>
+            <p className="text-sm text-gray-400">201 pessoas já preencheram o formulário!</p>
           </div>
         </form>
       )}
