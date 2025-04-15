@@ -350,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* Construction Timeline */}
-      <ConstructionTimeline />
+      {/* <ConstructionTimeline /> */}
 
       {/* Testimonials Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-50">
@@ -366,21 +366,21 @@ export default function Home() {
             <TestimonialCard
               name="Carlos Mendes"
               role="Empresário"
-              image="/placeholder.svg?height=100&width=100"
+              image="/homem01.png"
               rating={5}
               testimonial="Investir com a Metrópole foi uma decisão acertada. O atendimento personalizado e a qualidade dos empreendimentos superaram minhas expectativas. Já estou no terceiro imóvel."
             />
             <TestimonialCard
               name="Ana Luiza Costa"
               role="Médica"
-              image="/placeholder.svg?height=100&width=100"
+              image="/mulher01.png"
               rating={5}
               testimonial="A localização e o acabamento do meu apartamento são impecáveis. O processo de compra foi tranquilo e transparente. Recomendo a todos que buscam qualidade."
             />
             <TestimonialCard
               name="Roberto Almeida"
               role="Advogado"
-              image="/placeholder.svg?height=100&width=100"
+              image="/homem02.png"
               rating={5}
               testimonial="A valorização do meu imóvel superou as projeções iniciais. O compromisso da Metrópole com a qualidade e os prazos faz toda a diferença no mercado."
             />
@@ -456,7 +456,7 @@ export default function Home() {
 
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-4">
+              {/* <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left">O projeto é confiável?</AccordionTrigger>
                 <AccordionContent>
                   Sim, o Avenida 105 é desenvolvido pela Casa Figueira Incorporadora, com mais de 20 anos de mercado e
@@ -464,7 +464,7 @@ export default function Home() {
                   vendas, atua há mais de 5 anos no mercado de alto padrão com centenas de clientes satisfeitos. O
                   projeto conta com financiamento aprovado pelo Santander e seguro de entrega.
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
               <AccordionItem value="item-5">
                 <AccordionTrigger className="text-left">Serve para morar ou investir?</AccordionTrigger>
                 <AccordionContent>
