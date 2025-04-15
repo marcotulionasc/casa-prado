@@ -26,7 +26,7 @@ export function InvestmentSection() {
           <Tabs defaultValue="appreciation" className="w-full">
             <TabsList className="grid w-full max-w-xl mx-auto grid-cols-2">
               <TabsTrigger value="appreciation">Valorização</TabsTrigger>
-              <TabsTrigger value="comparison">Comparativo</TabsTrigger>
+              {/* <TabsTrigger value="comparison">Comparativo</TabsTrigger> */}
             </TabsList>
             <TabsContent value="appreciation" className="mt-6">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -109,7 +109,7 @@ export function InvestmentSection() {
                 </div>
               </div>
             </TabsContent>
-            <TabsContent value="comparison" className="mt-6">
+            {/* <TabsContent value="comparison" className="mt-6">
               <div className="bg-white p-6 rounded-lg border max-w-4xl mx-auto">
                 <h3 className="text-lg font-medium mb-4">Comparativo com outros bairros de Campinas</h3>
                 <div className="overflow-x-auto">
@@ -191,7 +191,7 @@ export function InvestmentSection() {
                   Dados baseados em relatórios imobiliários de 2023 e projeções para 2024-2026
                 </p>
               </div>
-            </TabsContent>
+            </TabsContent> */}
 
           </Tabs>
         </div>
