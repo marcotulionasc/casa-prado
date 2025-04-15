@@ -26,7 +26,7 @@ export default function CasaFigueiraSection() {
 
         <div className="mb-12">
           <VideoPlayer
-            videoUrl="/video/apresentation.mp4"
+            videoUrl="https://ia601509.us.archive.org/17/items/apresentation/apresentation.mp4"
             posterUrl="/casa-figueira/foto-video.png"
             title="Conheça o Casa Figueira - Um novo conceito de bairro planejado"
           />
