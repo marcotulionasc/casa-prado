@@ -54,13 +54,13 @@ export function InvestmentSection() {
                       </div>
                       <Progress value={130} className="h-2 bg-gray-100" />
                     </div>
-                    <div>
+                    {/* <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span>3 anos após entrega (2029)</span>
                         <span className="font-medium text-blue-800">+45%</span>
                       </div>
                       <Progress value={145} className="h-2 bg-gray-100" />
-                    </div>
+                    </div> */}
                   </div>
                   <p className="text-xs text-muted-foreground mt-4">
                     Valores estimados com base no histórico de valorização de empreendimentos similares na região
