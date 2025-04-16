@@ -40,6 +40,9 @@ export default function RootLayout({
           <GradientBackground />
           {children}
         </ThemeProvider>
+        
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   )
