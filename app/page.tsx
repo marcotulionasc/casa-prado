@@ -599,7 +599,6 @@ export default function Home() {
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <MapPin className="h-4 w-4" />
                 <span>Avenida Nossa Senhora de Fátima, 1325 - Taquaral
-
                   Campinas/SP</span>
               </div>
             </div>
