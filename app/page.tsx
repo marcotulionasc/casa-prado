@@ -477,7 +477,7 @@ export default function Home() {
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left">Quais são as condições de pagamento?</AccordionTrigger>
                 <AccordionContent>
-                  projeto está na fase de pre lançamento e temos condições facilitadas de aquisição e parcelamento da entrada durante os 36 meses de obras
+                  O projeto está na fase de pre lançamento e temos condições facilitadas de aquisição e parcelamento da entrada durante os 36 meses de obras
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-7">
