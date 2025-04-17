@@ -452,7 +452,7 @@ export default function Home() {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">Quantas unidades são?</AccordionTrigger>
                 <AccordionContent>
-                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158  263m²
+                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
 
                 </AccordionContent>
               </AccordionItem>
@@ -483,7 +483,7 @@ export default function Home() {
               <AccordionItem value="item-7">
                 <AccordionTrigger className="text-left">Qual o prazo de entrega?</AccordionTrigger>
                 <AccordionContent>
-                  O Avenida 105 tem previsão de entrega para dezembro de 2027, com possibilidade de antecipação conforme o andamento da obra. O cronograma detalhado pode ser consultado em nosso stand de vendas, e atualizações mensais são enviadas aos compradores.
+                  O Avenida 105 tem previsão de entrega para Abril 2028, com possibilidade de antecipação conforme o andamento da obra. O cronograma detalhado pode ser consultado em nosso stand de vendas, e atualizações mensais são enviadas aos compradores.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-8">
