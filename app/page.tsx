@@ -452,7 +452,7 @@ export default function Home() {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">Quantas unidades são?</AccordionTrigger>
                 <AccordionContent>
-                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
+                O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
 
                 </AccordionContent>
               </AccordionItem>
