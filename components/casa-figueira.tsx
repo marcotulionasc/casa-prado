@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import VideoPlayer from "./video-player"
 import { MapPin, Building, Leaf, ArrowRight } from "lucide-react"
+import { MasterplanDesktop, MasterplanMobile } from "./master-plan/masterplan-component"
 
 export default function CasaFigueiraSection() {
   const [activeTab, setActiveTab] = useState("visao-geral")
@@ -64,11 +65,10 @@ export default function CasaFigueiraSection() {
           {/* Tabs – Mobile / Tablet */}
           <TabsList
             className="
-    grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
-    md:flex md:flex-wrap md:gap-0
-    lg:hidden
-  "
-          >
+                grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
+                md:flex md:flex-wrap md:gap-0
+                lg:hidden">
+
             <TabsTrigger
               value="visao-geral"
               className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
@@ -136,15 +136,9 @@ export default function CasaFigueiraSection() {
           </TabsContent>
 
           <TabsContent value="masterplan" className="mt-0">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative h-[500px] rounded-xl overflow-hidden order-2 lg:order-1">
-                <Image
-                  src="/casa-figueira/casa-figueira-master-plan.png"
-                  alt="Masterplan do Casa Figueira"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
+              <MasterplanDesktop />
+              <MasterplanMobile />
 
               <div className="space-y-6 order-1 lg:order-2">
                 <h3 className="text-xl md:text-2xl font-bold">Masterplan integrado</h3>

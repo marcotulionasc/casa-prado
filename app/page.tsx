@@ -80,121 +80,82 @@ export default function Home() {
       {/* Apresentação do MasterPlan Casa Figueira */}
       <CasaFigueiraSection />
 
-      {/* Benefits Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-white" id="diferenciais">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Diferenciais Exclusivos</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Diferenciais Exclusivos</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-base">
               Um empreendimento único que redefine o conceito de morar bem em Campinas, com arquitetura premiada e
               localização estratégica
             </p>
           </div>
 
-          {/* Versão mobile simplificada */}
-          <div className="md:hidden">
-            <div className="space-y-4">
-              {[
-                {
-                  icon: <MapPin className="h-6 w-6 text-figueira-purple" />,
-                  text: "Ao lado do Shopping Iguatemi Campinas",
-                },
-                {
-                  icon: <Building className="h-6 w-6 text-figueira-purple" />,
-                  text: "Torre única com vista panorâmica",
-                },
-                {
-                  icon: <Palette className="h-6 w-6 text-figueira-purple" />,
-                  text: "Arquitetura autoral da Dal Pian (Natura, Nubank)",
-                },
-                {
-                  icon: <Leaf className="h-6 w-6 text-figueira-purple" />,
-                  text: "Paisagismo Floresta de Bolso® de Ricardo Cardim",
-                },
-                {
-                  icon: <Coffee className="h-6 w-6 text-figueira-purple" />,
-                  text: "Lazer completo com coworking e espaço gourmet",
-                },
-                {
-                  icon: <TrendingUp className="h-6 w-6 text-figueira-purple" />,
-                  text: "Valorização projetada de 35% em 3 anos",
-                },
-                {
-                  icon: <Shield className="h-6 w-6 text-figueira-purple" />,
-                  text: "Segurança 24h com tecnologia de ponta",
-                },
-                {
-                  icon: <Award className="h-6 w-6 text-figueira-purple" />,
-                  text: "Certificação de sustentabilidade AQUA",
-                },
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-neutral-50 rounded-lg">
-                  <div>{item.icon}</div>
-                  <div className="font-medium">{item.text}</div>
+          {/* Dados centralizados para evitar duplicação */}
+          {(() => {
+            const benefits = [
+              {
+                icon: <MapPin className="h-6 w-6 text-figueira-purple" />,
+                title: "Localização Premium",
+                description: "Ao lado do Shopping Iguatemi Campinas, com toda conveniência ao seu alcance",
+              },
+              {
+                icon: <Building className="h-6 w-6 text-figueira-purple" />,
+                title: "Torre Única",
+                description: "Vista panorâmica e apenas 80 apartamentos exclusivos para máxima privacidade",
+              },
+              {
+                icon: <Palette className="h-6 w-6 text-figueira-purple" />,
+                title: "Arquitetura Premiada",
+                description: "Assinada pelo renomado escritório Dal Pian (Natura, Nubank)",
+              },
+              {
+                icon: <Leaf className="h-6 w-6 text-figueira-purple" />,
+                title: "Paisagismo Exclusivo",
+                description: "Projeto Floresta de Bolso® de Ricardo Cardim valorizando a biodiversidade",
+              },
+              {
+                icon: <Coffee className="h-6 w-6 text-figueira-purple" />,
+                title: "Lazer Completo",
+                description: "Coworking, espaço gourmet e áreas de lazer para todas as idades",
+              },
+              {
+                icon: <Award className="h-6 w-6 text-figueira-purple" />,
+                title: "Sustentabilidade AQUA",
+                description: "Certificação AQUA, eficiência energética e reuso de água",
+              },
+            ]
+
+            return (
+              <>
+                {/* Mobile / Tablet – lista simples */}
+                <div className="md:hidden space-y-4">
+                  {benefits.map((b, i) => (
+                    <div key={i} className="flex items-center space-x-3 p-4 bg-neutral-50 rounded-lg">
+                      {b.icon}
+                      <span className="font-medium">{b.title}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Versão desktop completa */}
-          <div className="hidden md:block">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <BenefitCard
-                icon={<MapPin className="h-6 w-6 text-figueira-purple" />}
-                title="Localização Premium"
-                description="A apenas 2 minutos a pé do Shopping Iguatemi Campinas, com toda conveniência ao seu alcance"
-              />
-              <BenefitCard
-                icon={<Building className="h-6 w-6 text-figueira-purple" />}
-                title="Torre Única"
-                description="Torre única com vista panorâmica e apenas 80 apartamentos exclusivos para máxima privacidade"
-              />
-              <BenefitCard
-                icon={<Palette className="h-6 w-6 text-figueira-purple" />}
-                title="Arquitetura Premiada"
-                description="Assinada pelo renomado escritório Dal Pian, responsável por projetos icônicos como Natura e Nubank"
-              />
-              <BenefitCard
-                icon={<Leaf className="h-6 w-6 text-figueira-purple" />}
-                title="Paisagismo Exclusivo"
-                description="Paisagismo assinado por Ricardo Cardim com o conceito Floresta de Bolso® que valoriza a biodiversidade"
-              />
-            </div>
-          </div>
-
-          <div className="hidden md:block">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-              <BenefitCard
-                icon={<Coffee className="h-6 w-6 text-figueira-purple" />}
-                title="Lazer Completo"
-                description="Coworking, brinquedoteca, espaço gourmet, piscina e academia equipada com vista para o jardim"
-              />
-              <BenefitCard
-                icon={<Shield className="h-6 w-6 text-figueira-purple" />}
-                title="Segurança Avançada"
-                description="Sistema de segurança 24h com reconhecimento facial, controle de acesso e monitoramento inteligente"
-              />
-              <BenefitCard
-                icon={<Wifi className="h-6 w-6 text-figueira-purple" />}
-                title="Infraestrutura Inteligente"
-                description="Energia subterrânea, wi-fi nas áreas comuns e preparação para automação residencial"
-              />
-              <BenefitCard
-                icon={<TrendingUp className="h-6 w-6 text-figueira-purple" />}
-                title="Investimento Seguro"
-                description="Valorização projetada de 35% em 3 anos, conforme análise do mercado imobiliário de Campinas"
-              />
-            </div>
-          </div>
+                {/* Desktop – grade 3 × 3 */}
+                <div className="hidden md:grid grid-cols-3 gap-6">
+                  {benefits.map((b, i) => (
+                    <BenefitCard key={i} icon={b.icon} title={b.title} description={b.description} />
+                  ))}
+                </div>
+              </>
+            )
+          })()}
 
           <div className="mt-12 text-center">
-            <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-100">
+            <Button className="w-96 bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10">
               <Link href="#lead-form">Ver tabela e plantas exclusivas</Link>
             </Button>
-            <p className="text-xs text-gray-500 mt-2">Informações enviadas sem compromisso em até 24h</p>
+            <p className="text-xs text-gray-500 mt-2">Informações enviadas sem compromisso em até 24h</p>
           </div>
         </div>
       </section>
+
 
       <InvestmentSection />
 
@@ -452,7 +413,7 @@ export default function Home() {
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left">Quantas unidades são?</AccordionTrigger>
                 <AccordionContent>
-                O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
+                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
 
                 </AccordionContent>
               </AccordionItem>
