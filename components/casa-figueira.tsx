@@ -77,7 +77,7 @@ export default function CasaFigueiraSection() {
                     <div className="text-sm text-gray-600">m² de área total</div>
                   </div>
                   <div className="bg-figueira-50 p-4 rounded-lg text-center">
-                    <div className="font-bold text-2xl text-figueira-purple">40%</div>
+                    <div className="font-bold text-2xl text-figueira-purple">24%</div>
                     <div className="text-sm text-gray-600">de áreas verdes</div>
                   </div>
                   <div className="bg-figueira-50 p-4 rounded-lg text-center">
@@ -140,7 +140,7 @@ export default function CasaFigueiraSection() {
                     <div>
                       <div className="font-bold">Parques e áreas verdes</div>
                       <p className="text-gray-600 text-sm">
-                        Mais de 400 mil m² de áreas verdes, incluindo parques, praças e corredores ecológicos
+                        Mais de 240 mil m² de áreas verdes, incluindo parques, praças e corredores ecológicos
                       </p>
                     </div>
                   </div>
@@ -205,14 +205,12 @@ export default function CasaFigueiraSection() {
                 </div>
               </div>
               <div className="lg:col-span-5 space-y-6">
-                <h3 className="text-xl md:text-2xl font-bold">Avenida 105: o primeiro lançamento</h3>
+                <h3 className="text-xl md:text-2xl font-bold">Avenida 105: o primeiro lançamento do Casa Figueira</h3>
                 <p className="text-gray-600">
-                  O Avenida 105 é o primeiro empreendimento a ser lançado no Casa Figueira, estabelecendo um novo padrão
-                  de qualidade e sofisticação para os futuros lançamentos do bairro planejado.
+                O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo patamar de sofisticação e qualidade para os futuros lançamentos da região.
                 </p>
                 <p className="text-gray-600">
-                  Localizado estrategicamente ao lado do Shopping Iguatemi, o Avenida 105 combina a exclusividade de um
-                  projeto boutique com apenas 80 unidades e a infraestrutura completa de um bairro planejado.
+                Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura completa de um bairro concebido para o futuro.
                 </p>
                 <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white mt-2 group">
                   Conheça o Avenida 105

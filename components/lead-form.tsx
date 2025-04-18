@@ -127,7 +127,13 @@ export default function LeadForm() {
   return (
     <div id="lead-form" className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg max-w-md w-full mx-auto">
       <h3 className="text-lg font-semibold mb-4 text-center">
-        {isSubmitted ? "Obrigado pelo interesse!" : "Quero acessar as informações da pré-venda"}
+        {isSubmitted ? "Obrigado pelo interesse!" : (
+          <>
+            Quero acessar as informações da
+            <br />
+            pré-venda
+          </>
+        )}
       </h3>
 
       {isSubmitted ? (
