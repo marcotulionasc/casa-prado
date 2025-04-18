@@ -33,14 +33,18 @@ export default function CasaFigueiraSection() {
         </div>
 
         <Tabs defaultValue="visao-geral" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="flex flex-wrap w-full mb-8 overflow-x-auto">
+          {/* Tabs – Desktop */}
+          <TabsList className="hidden lg:flex flex-wrap w-full mb-8 overflow-x-auto">
             <TabsTrigger
               value="visao-geral"
               className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
             >
               Visão Geral
             </TabsTrigger>
-            <TabsTrigger value="masterplan" className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
+            <TabsTrigger
+              value="masterplan"
+              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+            >
               Masterplan
             </TabsTrigger>
             <TabsTrigger
@@ -52,6 +56,40 @@ export default function CasaFigueiraSection() {
             <TabsTrigger
               value="avenida-105"
               className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+            >
+              Avenida 105
+            </TabsTrigger>
+          </TabsList>
+
+          {/* Tabs – Mobile / Tablet */}
+          <TabsList
+            className="
+    grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
+    md:flex md:flex-wrap md:gap-0
+    lg:hidden
+  "
+          >
+            <TabsTrigger
+              value="visao-geral"
+              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+            >
+              Visão Geral
+            </TabsTrigger>
+            <TabsTrigger
+              value="masterplan"
+              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+            >
+              Masterplan
+            </TabsTrigger>
+            <TabsTrigger
+              value="sustentabilidade"
+              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+            >
+              Sustentabilidade
+            </TabsTrigger>
+            <TabsTrigger
+              value="avenida-105"
+              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
             >
               Avenida 105
             </TabsTrigger>
@@ -207,10 +245,10 @@ export default function CasaFigueiraSection() {
               <div className="lg:col-span-5 space-y-6">
                 <h3 className="text-xl md:text-2xl font-bold">Avenida 105: o primeiro lançamento do Casa Figueira</h3>
                 <p className="text-gray-600">
-                O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo patamar de sofisticação e qualidade para os futuros lançamentos da região.
+                  O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo patamar de sofisticação e qualidade para os futuros lançamentos da região.
                 </p>
                 <p className="text-gray-600">
-                Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura completa de um bairro concebido para o futuro.
+                  Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura completa de um bairro concebido para o futuro.
                 </p>
                 <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white mt-2 group">
                   Conheça o Avenida 105
