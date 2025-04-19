@@ -34,80 +34,50 @@ export default function CasaFigueiraSection() {
         </div>
 
         <Tabs defaultValue="visao-geral" className="w-full" onValueChange={setActiveTab}>
-          {/* Tabs – Desktop */}
           <TabsList className="hidden lg:flex flex-wrap w-full mb-8 overflow-x-auto">
-            <TabsTrigger
-              value="visao-geral"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="visao-geral" className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Visão Geral
             </TabsTrigger>
-            <TabsTrigger
-              value="masterplan"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="masterplan" className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Masterplan
             </TabsTrigger>
-            <TabsTrigger
-              value="sustentabilidade"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="sustentabilidade" className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Sustentabilidade
             </TabsTrigger>
-            <TabsTrigger
-              value="avenida-105"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="avenida-105" className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Avenida 105
             </TabsTrigger>
           </TabsList>
 
-          {/* Tabs – Mobile / Tablet */}
           <TabsList
             className="
-                grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
-                md:flex md:flex-wrap md:gap-0
-                lg:hidden">
+              grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
+              md:flex md:flex-wrap md:gap-0
+              lg:hidden">
 
-            <TabsTrigger
-              value="visao-geral"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="visao-geral" className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Visão Geral
             </TabsTrigger>
-            <TabsTrigger
-              value="masterplan"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="masterplan" className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Masterplan
             </TabsTrigger>
-            <TabsTrigger
-              value="sustentabilidade"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="sustentabilidade" className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Sustentabilidade
             </TabsTrigger>
-            <TabsTrigger
-              value="avenida-105"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
+            <TabsTrigger value="avenida-105" className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto">
               Avenida 105
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="visao-geral" className="mt-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="space-y-6">
+              <div className="space-y-6 order-2 lg:order-1">
                 <h3 className="text-xl md:text-2xl font-bold">Um novo conceito de viver bem</h3>
                 <p className="text-gray-600">
-                  O Casa Figueira é um bairro planejado que redefine o conceito de viver bem em Campinas. Com mais de 1
-                  milhão de m² de área total, o projeto integra residências, comércio, serviços e amplas áreas verdes em
-                  um ambiente planejado para proporcionar qualidade de vida.
+                  O Casa Figueira é um bairro planejado que redefine o conceito de viver bem em Campinas. Com mais de 1 milhão de m² de área total, o projeto integra residências, comércio, serviços e amplas áreas verdes em um ambiente planejado para proporcionar qualidade de vida.
                 </p>
                 <p className="text-gray-600">
-                  Desenvolvido com base nos princípios de urbanismo sustentável, o Casa Figueira prioriza a mobilidade a
-                  pé, a preservação ambiental e a criação de espaços de convivência que promovem o bem-estar e a conexão
-                  entre os moradores.
+                  Desenvolvido com base nos princípios de urbanismo sustentável, o Casa Figueira prioriza a mobilidade a pé, a preservação ambiental e a criação de espaços de convivência que promovem o bem-estar e a conexão entre os moradores.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
                   <div className="bg-figueira-50 p-4 rounded-lg text-center">
@@ -124,7 +94,7 @@ export default function CasaFigueiraSection() {
                   </div>
                 </div>
               </div>
-              <div className="relative h-[400px] rounded-xl overflow-hidden">
+              <div className="relative h-[400px] rounded-xl overflow-hidden order-1 lg:order-2">
                 <Image
                   src="/casa-figueira/a-casa-figueira.webp"
                   alt="Vista aérea do bairro planejado Casa Figueira"
@@ -137,15 +107,14 @@ export default function CasaFigueiraSection() {
 
           <TabsContent value="masterplan" className="mt-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
-              <MasterplanDesktop />
-              <MasterplanMobile />
-
-              <div className="space-y-6 order-1 lg:order-2">
+              <div className="order-1 lg:order-1">
+                <MasterplanDesktop />
+                <MasterplanMobile />
+              </div>
+              <div className="space-y-6 order-2 lg:order-2">
                 <h3 className="text-xl md:text-2xl font-bold">Masterplan integrado</h3>
                 <p className="text-gray-600">
-                  O masterplan do Casa Figueira foi desenvolvido por um time de urbanistas renomados, com foco na
-                  criação de um bairro completo e autossuficiente, onde os moradores encontram tudo o que precisam a
-                  poucos minutos de casa.
+                  O masterplan do Casa Figueira foi desenvolvido por um time de urbanistas renomados, com foco na criação de um bairro completo e autossuficiente, onde os moradores encontram tudo o que precisam a poucos minutos de casa.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
@@ -153,8 +122,7 @@ export default function CasaFigueiraSection() {
                     <div>
                       <div className="font-bold">Setorização inteligente</div>
                       <p className="text-gray-600 text-sm">
-                        Áreas residenciais, comerciais e de lazer estrategicamente posicionadas para garantir
-                        conveniência e tranquilidade
+                        Áreas residenciais, comerciais e de lazer estrategicamente posicionadas para garantir conveniência e tranquilidade
                       </p>
                     </div>
                   </div>
@@ -183,12 +151,10 @@ export default function CasaFigueiraSection() {
 
           <TabsContent value="sustentabilidade" className="mt-0">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 space-y-6">
+              <div className="lg:col-span-5 space-y-6 order-2 lg:order-1">
                 <h3 className="text-xl md:text-2xl font-bold">Compromisso com a sustentabilidade</h3>
                 <p className="text-gray-600">
-                  O Casa Figueira foi concebido com base em princípios de sustentabilidade e respeito ao meio ambiente.
-                  Todos os empreendimentos seguem rigorosos critérios de eficiência energética, gestão de recursos
-                  hídricos e utilização de materiais sustentáveis.
+                  O Casa Figueira foi concebido com base em princípios de sustentabilidade e respeito ao meio ambiente. Todos os empreendimentos seguem rigorosos critérios de eficiência energética, gestão de recursos hídricos e utilização de materiais sustentáveis.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="bg-figueira-50 p-4 rounded-lg">
@@ -211,7 +177,7 @@ export default function CasaFigueiraSection() {
                   </div>
                 </div>
               </div>
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-7 order-1 lg:order-2">
                 <div className="relative h-[400px] rounded-xl overflow-hidden">
                   <Image
                     src="/casa-figueira/sustentabilidade.webp"
@@ -226,7 +192,7 @@ export default function CasaFigueiraSection() {
 
           <TabsContent value="avenida-105" className="mt-0">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7">
+              <div className="lg:col-span-7 order-1 lg:order-1">
                 <div className="relative h-[400px] rounded-xl overflow-hidden">
                   <Image
                     src="/casa-figueira/avenida105.webp"
@@ -236,7 +202,7 @@ export default function CasaFigueiraSection() {
                   />
                 </div>
               </div>
-              <div className="lg:col-span-5 space-y-6">
+              <div className="lg:col-span-5 space-y-6 order-2 lg:order-2">
                 <h3 className="text-xl md:text-2xl font-bold">Avenida 105: o primeiro lançamento do Casa Figueira</h3>
                 <p className="text-gray-600">
                   O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo patamar de sofisticação e qualidade para os futuros lançamentos da região.
