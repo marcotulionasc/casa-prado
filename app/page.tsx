@@ -31,6 +31,7 @@ import LocalizacaoSection from "@/components/localizacao/localizacao"
 import HeroSection from "@/components/hero/hero"
 import AboutSection from "@/components/about/about"
 import ApartmentPlans from "@/components/apartment-plans"
+import FAQSection from "@/components/faq/faq-section"
 
 export default function Home() {
   return (
@@ -121,92 +122,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-white" id="faq">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold">Perguntas Frequentes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-4">Tire suas dúvidas sobre o Avenida 105</p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">Onde fica o projeto?</AccordionTrigger>
-                <AccordionContent>
-                  O Avenida 105 está localizado em Campinas/SP, ao lado do Shopping Iguatemi, em uma das regiões mais
-                  valorizadas da cidade, com fácil acesso às principais vias e serviços. O endereço exato é Avenida
-                  Iguatemi, 105, a apenas 200 metros da entrada principal do shopping.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">Tem decorado? Posso visitar?</AccordionTrigger>
-                <AccordionContent>
-                  Estamos em fase de pré-lançamento, e o apartamento decorado já está pronto. No entanto, devido a alta procura, estamos atendendo apenas com horario pré agendado com um de nossos especialistas. Também oferecemos tour virtual em 3D que permite visualizar os ambientes com realismo.
-
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">Quantas unidades são?</AccordionTrigger>
-                <AccordionContent>
-                  O Avenida 105 possui apenas 80 unidades exclusivas, garantindo privacidade e exclusividade para os moradores. A torre única com vista aberta proporciona uma experiência de moradia diferenciada. São 4 unidades por andar, com plantas de 154, 158 263m² - 154, 158 e 263m²
-
-                </AccordionContent>
-              </AccordionItem>
-              {/* <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left">O projeto é confiável?</AccordionTrigger>
-                <AccordionContent>
-                  Sim, o Avenida 105 é desenvolvido pela Casa Figueira Incorporadora, com mais de 20 anos de mercado e
-                  15 empreendimentos entregues em Campinas. A Metrópole Investimentos Imobiliários, responsável pelas
-                  vendas, atua há mais de 5 anos no mercado de alto padrão com centenas de clientes satisfeitos. O
-                  projeto conta com financiamento aprovado pelo Santander e seguro de entrega.
-                </AccordionContent>
-              </AccordionItem> */}
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-left">Serve para morar ou investir?</AccordionTrigger>
-                <AccordionContent>
-                  O Avenida 105 é excelente tanto para moradia quanto para investimento. Para moradia, oferece qualidade
-                  de vida, localização privilegiada e infraestrutura completa. Como investimento, apresenta alto
-                  potencial de valorização devido à sua localização estratégica e exclusividade. A região apresenta alta
-                  demanda para locação, com rentabilidade média de 0,6% ao mês, acima da média de Campinas.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6">
-                <AccordionTrigger className="text-left">Quais são as condições de pagamento?</AccordionTrigger>
-                <AccordionContent>
-                  O projeto está na fase de pre lançamento e temos condições facilitadas de aquisição e parcelamento da entrada durante os 36 meses de obras
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-7">
-                <AccordionTrigger className="text-left">Qual o prazo de entrega?</AccordionTrigger>
-                <AccordionContent>
-                  O Avenida 105 tem previsão de entrega para Abril 2028, com possibilidade de antecipação conforme o andamento da obra. O cronograma detalhado pode ser consultado em nosso stand de vendas, e atualizações mensais são enviadas aos compradores.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-8">
-                <AccordionTrigger className="text-left">
-                  Quais são os diferenciais de sustentabilidade?
-                </AccordionTrigger>
-                <AccordionContent>
-                  O Avenida 105 possui certificação AQUA de sustentabilidade e incorpora diversas tecnologias
-                  eco-friendly: captação e reuso de água da chuva, iluminação LED com
-                  sensores de presença, estações para carregamento de veículos elétricos e o exclusivo paisagismo
-                  Floresta de Bolso® que utiliza espécies nativas e contribui para a biodiversidade local.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       {/* Final CTA Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-100">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Não perca esta oportunidade única</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Uma oportunidade rara em Campinas!</h2>
             <p className="text-gray-600 text-lg mb-8">
-              Apenas 80 unidades disponíveis no pré-lançamento. Garanta já a sua com condições especiais e escolha
-              prioritária. Restam poucas unidades com preço promocional.
+            São apenas 80 unidades exclusivas no pré-lançamento. Antecipe-se, aproveite condições especiais e garanta prioridade na escolha da sua unidade. Restam poucas opções com valores promocionais.
             </p>
             <Button
               className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
@@ -242,7 +166,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-bold">Especialistas em alto padrão</div>
-                  <div className="text-gray-600">Conhecimento profundo do mercado premium de Campinas</div>
+                  <div className="text-gray-600">Conhecimento profundo do mercado premium de Campinas.</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -251,7 +175,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-bold">Atendimento personalizado</div>
-                  <div className="text-gray-600">Consultoria imobiliária exclusiva com profissionais certificados</div>
+                  <div className="text-gray-600">Consultoria imobiliária exclusiva com profissionais certificados.</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -261,7 +185,7 @@ export default function Home() {
                 <div>
                   <div className="font-bold">Reconhecimento do mercado</div>
                   <div className="text-gray-600">
-                    Premiada como melhor imobiliária de alto padrão de Campinas em 2023
+                  Reconhecida por sua excelência no atendimento e indicada por quem valoriza exclusividade e segurança na hora de investir.
                   </div>
                 </div>
               </div>
