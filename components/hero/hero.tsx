@@ -20,7 +20,7 @@ export default function HeroSection() {
       {/* Conteúdo acima da imagem */}
       <div className="relative z-10 h-full">
         <div className="container h-full px-4 mx-auto flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-20">
             {/* Texto */}
             <div className="space-y-6">
               <div className="inline-block px-3 py-1 text-xs font-medium bg-figueira-100/90 text-figueira-blue rounded-full">
