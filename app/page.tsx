@@ -33,6 +33,7 @@ import AboutSection from "@/components/about/about"
 import ApartmentPlans from "@/components/apartment-plans"
 import FAQSection from "@/components/faq/faq-section"
 import VimeoPlayer from "@/components/vimeo/video-vimeo"
+import CallToAction from "@/components/call-to-action/call-to-action"
 
 export default function Home() {
   return (
@@ -91,41 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 relative text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-70"
-          style={{ backgroundImage: "url('/call-to-action/image 2.png')" }}
-        ></div>
-
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3F4FA9]/80 via-[#6E48AE]/80 to-[#A55298]/80 mix-blend-multiply"></div>
-
-        <div className="relative z-10 container px-4 mx-auto max-w-3xl text-center">
-          <div className="bg-white/10 backdrop-blur-lg p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
-            <h3 className="text-2xl md:text-3xl font-extrabold mt-8 mb-4 text-white">
-              Oferta Exclusiva por Tempo Limitado
-            </h3>
-            <p className="text-sm md:text-base text-gray-200 mb-6">
-              Condições especiais válidas para as <strong>30 primeiras unidades</strong> ou até <strong>10/05/2025</strong>.
-              Já temos <strong className="text-white">18 reservas confirmadas</strong>.
-            </p>
-
-            <div className="w-full bg-white/20 rounded-full h-5 mb-2 overflow-hidden shadow-inner">
-              <div className="bg-[#7E60B9] h-full rounded-full transition-all duration-500" style={{ width: "60%" }}></div>
-            </div>
-            <p className="text-xs text-gray-300 mb-6">
-              60% das unidades reservadas — ainda dá tempo de garantir a sua
-            </p>
-
-            <Button className="w-full h-12 text-lg font-semibold bg-figueira-wine hover:bg-figueira-magenta text-black transition-all">
-              <Link href="#lead-form">Ver preços e plantas agora</Link>
-            </Button>
-
-            <div className="mt-6 text-sm text-gray-200">
-              Oferta válida até: <CountdownTimer targetDate="2025-05-10T00:00:00" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <CallToAction />
 
       <FAQSection />
 
