@@ -7,13 +7,6 @@
     "image": "/area-lazer/Academia.webp"
   },
   {
-    "id": 5,
-    "category": "Área Interna",
-    "title": "Brinquedoteca",
-    "subtitle": "Área Interna",
-    "image": "/area-lazer/Academia Externa.webp"
-  },
-  {
     "id": 30,
     "category": "Área Interna",
     "title": "Sala de Estar",
@@ -62,13 +55,7 @@
     "subtitle": "Área Externa",
     "image": "/area-lazer/Arena de Areia.webp"
   },
-  {
-    "id": 8,
-    "category": "Área Externa",
-    "title": "Floresta de Bolso",
-    "subtitle": "Área Externa",
-    "image": "/area-lazer/Academia Externa.webp"
-  },
+
   {
     "id": 21,
     "category": "Área Externa",
