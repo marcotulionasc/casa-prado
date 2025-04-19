@@ -63,7 +63,6 @@ export default function ApartmentPlans() {
       ],
       image: "/images/planta-d.webp",
     },
-
     {
       id: "duplex-a",
       title: "Cobertura Duplex A",
@@ -76,59 +75,46 @@ export default function ApartmentPlans() {
         "Terraço gourmet integrado",
         "4 vagas na garagem",
       ],
-      image: " /images/planta-a-cobertura.webp",
-    },
-    {
-      id: "duplex-b",
-      title: "Cobertura Duplex B",
-      description: "Cobertura duplex com terraço panorâmico",
-      features: [
-        "280 m² de área total",
-        "250 m² de área privativa + 30 m² de terraço",
-        "4 suítes com closet",
-        "Spa privativo com vista panorâmica",
-        "Espaço gourmet com churrasqueira",
-        "4 vagas na garagem",
-      ],
-      image: "/images/planta-b-cobertura.webp",
-    },
+      image: "/images/planta-a-cobertura.webp",
+    }
   ]
 
   return (
     <section className="py-12 md:py-24 bg-neutral-50">
       <style jsx global>{`
-  @media (max-width: 640px) {
-    .tabs-list {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    
-    .tabs-list [data-state="active"] {
-      background-color: #6E48AE;
-      color: white;
-    }
-    
-    .tabs-list button {
-      border-radius: 0;
-      border-bottom: 1px solid #e5e7eb;
-      justify-content: flex-start;
-      padding-left: 1rem;
-      text-align: left;
-    }
-    
-    .tabs-list button:first-child {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-    }
-    
-    .tabs-list button:last-child {
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      border-bottom: none;
-    }
-  }
-`}</style>
+        @media (max-width: 640px) {
+          .tabs-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .tabs-list [data-state="active"] {
+            background-color: #6e48ae;
+            color: white;
+          }
+
+          .tabs-list button {
+            border-radius: 0;
+            border-bottom: 1px solid #e5e7eb;
+            justify-content: flex-start;
+            padding-left: 1rem;
+            text-align: left;
+          }
+
+          .tabs-list button:first-child {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+          }
+
+          .tabs-list button:last-child {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom: none;
+          }
+        }
+      `}</style>
+
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Plantas e Especificações</h2>
@@ -137,38 +123,49 @@ export default function ApartmentPlans() {
           </p>
         </div>
 
-        <Tabs defaultValue="tipo-a" className="w-full">
-          <TabsList className="flex flex-wrap w-full mb-6 md:mb-8 overflow-x-auto tabs-list">
+        <Tabs defaultValue={plans[0].id} className="w-full">
+          {/* Tabs desktop */}
+          <TabsList className="hidden lg:flex flex-wrap w-full mb-8 overflow-x-auto">
             {plans.map((plan) => (
               <TabsTrigger
                 key={plan.id}
                 value={plan.id}
-                className="flex-1 py-3 px-2 md:py-2 md:px-3 text-xs md:text-sm whitespace-nowrap min-w-[120px] h-auto"
+                className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
               >
                 {plan.title}
               </TabsTrigger>
             ))}
           </TabsList>
 
+          {/* Tabs mobile – 3 em cima, 2 embaixo */}
+          <TabsList
+            className="
+              grid grid-cols-3 grid-rows-2 gap-2 py-5 w-full h-full mb-8
+              md:flex md:flex-wrap md:gap-0
+              lg:hidden"
+          >
+            {plans.map((plan) => (
+              <TabsTrigger
+                key={plan.id}
+                value={plan.id}
+                className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+              >
+                {plan.title}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {/* Conteúdo das plantas */}
           {plans.map((plan) => (
             <TabsContent key={plan.id} value={plan.id} className="mt-0">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="relative h-[300px] md:h-[500px] rounded-xl overflow-hidden bg-white">
-                  {plan.id === "tipo-a" ? (
-                    <Image
-                      src={plan.image || "/placeholder.svg"}
-                      alt={`Planta ${plan.title}`}
-                      fill
-                      className="object-contain"
-                    />
-                  ) : (
-                    <Image
-                      src={plan.image || "/placeholder.svg"}
-                      alt={`Planta ${plan.title}`}
-                      fill
-                      className="object-contain"
-                    />
-                  )}
+                  <Image
+                    src={plan.image}
+                    alt={`Planta ${plan.title}`}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
 
                 <div className="space-y-6">
@@ -188,7 +185,7 @@ export default function ApartmentPlans() {
 
                   <div className="pt-4">
                     <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4">
-                     <Link href="#lead-form">Solicitar informações e valores</Link>
+                      <Link href="#lead-form">Solicitar informações e valores</Link>
                     </Button>
                     <p className="text-xs text-gray-500 mt-2">
                       Receba detalhes completos, incluindo tour virtual 360° e tabela de preços

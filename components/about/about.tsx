@@ -1,5 +1,7 @@
+"use client"
+
 import Link from "next/link";
-import { Button } from "react-day-picker";
+import { Button } from "@/components/ui/button";
 import { FaLeaf, FaTree } from "react-icons/fa";
 import { FiGrid, FiLock, FiStar } from "react-icons/fi";
 import { MdArchitecture } from "react-icons/md";

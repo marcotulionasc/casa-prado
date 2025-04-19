@@ -19,7 +19,7 @@ export default function LocationSection() {
         alt="Vista aérea do Avenida 105 Casa Figueira"
         fill
         className={`object-cover object-center transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
-        onLoadingComplete={() => setIsLoaded(true)}
+        onLoad={() => setIsLoaded(true)}
         priority
         sizes="(max-width: 768px) 100vw, 50vw"
       />
