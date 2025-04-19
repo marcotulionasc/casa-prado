@@ -11,6 +11,18 @@ import { MasterplanDesktop, MasterplanMobile } from "./master-plan/masterplan-co
 export default function CasaFigueiraSection() {
   const [activeTab, setActiveTab] = useState("visao-geral")
 
+  // Definindo as tabs para facilitar a manipulação
+  const tabs = [
+    { id: "visao-geral", title: "Visão Geral" },
+    { id: "masterplan", title: "Masterplan" },
+    { id: "sustentabilidade", title: "Sustentabilidade" },
+    { id: "avenida-105", title: "Avenida 105" },
+  ]
+
+  // Dividindo as tabs para o layout mobile (2 na primeira linha, 2 na segunda)
+  const firstRowTabs = tabs.slice(0, 2)
+  const secondRowTabs = tabs.slice(2)
+
   return (
     <section className="py-12 md:py-24 bg-white">
       <div className="container px-4 mx-auto">
@@ -35,65 +47,46 @@ export default function CasaFigueiraSection() {
 
         <Tabs defaultValue="visao-geral" className="w-full" onValueChange={setActiveTab}>
           {/* Tabs – Desktop */}
-          <TabsList className="hidden lg:flex flex-wrap w-full mb-8 overflow-x-auto">
-            <TabsTrigger
-              value="visao-geral"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Visão Geral
-            </TabsTrigger>
-            <TabsTrigger
-              value="masterplan"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Masterplan
-            </TabsTrigger>
-            <TabsTrigger
-              value="sustentabilidade"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Sustentabilidade
-            </TabsTrigger>
-            <TabsTrigger
-              value="avenida-105"
-              className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Avenida 105
-            </TabsTrigger>
+          <TabsList className="hidden lg:flex flex-wrap w-full mb-8">
+            {tabs.map((tab) => (
+              <TabsTrigger
+                key={tab.id}
+                value={tab.id}
+                className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
+              >
+                {tab.title}
+              </TabsTrigger>
+            ))}
           </TabsList>
 
-          {/* Tabs – Mobile / Tablet */}
-          <TabsList
-            className="
-                grid grid-cols-2 grid-rows-2 gap-2 py-5 w-full h-full mb-8
-                md:flex md:flex-wrap md:gap-0
-                lg:hidden">
+          {/* Tabs – Mobile / Tablet - Com segunda linha centralizada */}
+          <div className="lg:hidden w-full mb-8">
+            {/* Primeira linha - 2 tabs */}
+            <TabsList className="flex w-full mb-2">
+              {firstRowTabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.id}
+                  value={tab.id}
+                  className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto shadow-sm border border-gray-100 data-[state=inactive]:bg-white/80 data-[state=inactive]:hover:bg-white data-[state=inactive]:hover:shadow-md transition-all"
+                >
+                  {tab.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-            <TabsTrigger
-              value="visao-geral"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Visão Geral
-            </TabsTrigger>
-            <TabsTrigger
-              value="masterplan"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Masterplan
-            </TabsTrigger>
-            <TabsTrigger
-              value="sustentabilidade"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Sustentabilidade
-            </TabsTrigger>
-            <TabsTrigger
-              value="avenida-105"
-              className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-            >
-              Avenida 105
-            </TabsTrigger>
-          </TabsList>
+            {/* Segunda linha - centralizada */}
+            <TabsList className="flex justify-center w-full">
+              {secondRowTabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.id}
+                  value={tab.id}
+                  className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] max-w-[160px] h-auto shadow-sm border border-gray-100 data-[state=inactive]:bg-white/80 data-[state=inactive]:hover:bg-white data-[state=inactive]:hover:shadow-md transition-all"
+                >
+                  {tab.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           <TabsContent value="visao-geral" className="mt-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -239,10 +232,13 @@ export default function CasaFigueiraSection() {
               <div className="lg:col-span-5 space-y-6">
                 <h3 className="text-xl md:text-2xl font-bold">Avenida 105: o primeiro lançamento do Casa Figueira</h3>
                 <p className="text-gray-600">
-                  O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo patamar de sofisticação e qualidade para os futuros lançamentos da região.
+                  O Avenida 105 é o empreendimento inaugural do bairro planejado Casa Figueira, estabelecendo um novo
+                  patamar de sofisticação e qualidade para os futuros lançamentos da região.
                 </p>
                 <p className="text-gray-600">
-                  Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura completa de um bairro concebido para o futuro.
+                  Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a
+                  exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura
+                  completa de um bairro concebido para o futuro.
                 </p>
                 <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white mt-2 group">
                   Conheça o Avenida 105
