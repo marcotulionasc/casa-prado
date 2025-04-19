@@ -32,15 +32,21 @@ import HeroSection from "@/components/hero/hero"
 import AboutSection from "@/components/about/about"
 import ApartmentPlans from "@/components/apartment-plans"
 import FAQSection from "@/components/faq/faq-section"
+import VimeoPlayer from "@/components/vimeo/video-vimeo"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      
+
       <MobileCta />
       <SiteHeader />
       <HeroSection />
       <CasaFigueiraSection />
+      <VimeoPlayer
+        url="https://player.vimeo.com/video/993635020?playsinline=1&badge=0"
+        options={{ loop: true }}
+      />
+
       <DiferenciasSection />
       <InvestmentSection />
       <VisaoGeralSection />
@@ -130,7 +136,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Uma oportunidade rara em Campinas!</h2>
             <p className="text-gray-600 text-lg mb-8">
-            São apenas 80 unidades exclusivas no pré-lançamento. Antecipe-se, aproveite condições especiais e garanta prioridade na escolha da sua unidade. Restam poucas opções com valores promocionais.
+              São apenas 80 unidades exclusivas no pré-lançamento. Antecipe-se, aproveite condições especiais e garanta prioridade na escolha da sua unidade. Restam poucas opções com valores promocionais.
             </p>
             <Button
               className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
@@ -185,7 +191,7 @@ export default function Home() {
                 <div>
                   <div className="font-bold">Reconhecimento do mercado</div>
                   <div className="text-gray-600">
-                  Reconhecida por sua excelência no atendimento e indicada por quem valoriza exclusividade e segurança na hora de investir.
+                    Reconhecida por sua excelência no atendimento e indicada por quem valoriza exclusividade e segurança na hora de investir.
                   </div>
                 </div>
               </div>
