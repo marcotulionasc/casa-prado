@@ -76,45 +76,15 @@ export default function ApartmentPlans() {
         "4 vagas na garagem",
       ],
       image: "/images/planta-a-cobertura.webp",
-    }
+    },
   ]
+
+  // Dividindo as tabs para o layout mobile (3 na primeira linha, 2 na segunda)
+  const firstRowPlans = plans.slice(0, 3)
+  const secondRowPlans = plans.slice(3)
 
   return (
     <section className="py-12 md:py-24 bg-neutral-50">
-      <style jsx global>{`
-        @media (max-width: 640px) {
-          .tabs-list {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-          }
-
-          .tabs-list [data-state="active"] {
-            background-color: #6e48ae;
-            color: white;
-          }
-
-          .tabs-list button {
-            border-radius: 0;
-            border-bottom: 1px solid #e5e7eb;
-            justify-content: flex-start;
-            padding-left: 1rem;
-            text-align: left;
-          }
-
-          .tabs-list button:first-child {
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
-          }
-
-          .tabs-list button:last-child {
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
-            border-bottom: none;
-          }
-        }
-      `}</style>
-
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Plantas e Especificações</h2>
@@ -137,23 +107,34 @@ export default function ApartmentPlans() {
             ))}
           </TabsList>
 
-          {/* Tabs mobile – 3 em cima, 2 embaixo */}
-          <TabsList
-            className="
-              grid grid-cols-3 grid-rows-2 gap-2 py-5 w-full h-full mb-8
-              md:flex md:flex-wrap md:gap-0
-              lg:hidden"
-          >
-            {plans.map((plan) => (
-              <TabsTrigger
-                key={plan.id}
-                value={plan.id}
-                className="py-3 px-4 text-sm whitespace-nowrap min-w-[120px] h-auto"
-              >
-                {plan.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          {/* Tabs mobile - com segunda linha centralizada */}
+          <div className="lg:hidden w-full mb-8">
+            {/* Primeira linha - 3 tabs */}
+            <TabsList className="flex w-full mb-2">
+              {firstRowPlans.map((plan) => (
+                <TabsTrigger
+                  key={plan.id}
+                  value={plan.id}
+                  className="flex-1 py-3 px-4 text-sm whitespace-nowrap min-w-[100px] h-auto shadow-sm border border-gray-100 data-[state=inactive]:bg-white/80 data-[state=inactive]:hover:bg-white data-[state=inactive]:hover:shadow-md transition-all"
+                >
+                  {plan.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {/* Segunda linha - centralizada */}
+            <TabsList className="flex justify-center w-full">
+              {secondRowPlans.map((plan) => (
+                <TabsTrigger
+                  key={plan.id}
+                  value={plan.id}
+                  className="py-3 px-4 text-sm whitespace-nowrap min-w-[100px] max-w-[160px] h-auto shadow-sm border border-gray-100 data-[state=inactive]:bg-white/80 data-[state=inactive]:hover:bg-white data-[state=inactive]:hover:shadow-md transition-all mx-1"
+                >
+                  {plan.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           {/* Conteúdo das plantas */}
           {plans.map((plan) => (
@@ -161,7 +142,7 @@ export default function ApartmentPlans() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div className="relative h-[300px] md:h-[500px] rounded-xl overflow-hidden bg-white">
                   <Image
-                    src={plan.image}
+                    src={plan.image || "/placeholder.svg"}
                     alt={`Planta ${plan.title}`}
                     fill
                     className="object-contain"

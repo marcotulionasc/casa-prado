@@ -209,7 +209,7 @@ export function InvestmentSection() {
 
           <div className="text-center mt-2">
             <Button
-              className="py-3 text-base font-medium bg-figueira-purple hover:bg-blue-700 text-white rounded-md w-full h-12"
+              className="py-3 text-base font-medium bg-figueira-purple hover:bg-blue-700 text-white rounded-md w-[380px] h-12"
               onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
             >
               Quero receber simulação completa
