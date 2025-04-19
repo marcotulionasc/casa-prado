@@ -37,202 +37,26 @@ import { InvestmentSection } from "@/components/investment-section"
 import VisaoGeralSection from "@/components/visao-geral/VisaoGeral"
 import PortfolioSection from "@/components/portfolio/Portfolio"
 import DiferenciasSection from "@/components/diferencias/diferencias"
+import LocalizacaoSection from "@/components/localizacao/localizacao"
+import HeroSection from "@/components/hero/hero"
+import AboutSection from "@/components/about/about"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      
       <MobileCta />
       <SiteHeader />
-
-      {/* Hero Section */}
-      <section className="relative w-full pt-20">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/vista-ultimo-andar.webp"
-            alt="Vista aérea do Avenida 105 Casa Figueira ao pôr do sol"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
-        </div>
-
-        <div className="container relative z-10 px-4 py-4 md:py-8 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Coluna da esquerda com o texto */}
-            <div className="space-y-6">
-              <div className="inline-block px-3 py-1 text-xs font-medium bg-figueira-100/90 text-figueira-blue rounded-full">
-                Pré-lançamento exclusivo
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-                Apartamentos de Alto Padrão ao Lado do Iguatemi Campinas
-              </h1>
-              <p className="text-lg md:text-xl text-white/90">
-                Pré-lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
-              </p>
-            </div>
-            {/* Coluna da direita com o formulário */}
-            <div>
-              <LeadForm />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <HeroSection />
       <CasaFigueiraSection />
-
       <DiferenciasSection />
-
       <InvestmentSection />
-
       <VisaoGeralSection />
-
       <ApartmentPlans />
-
       <PortfolioSection />
+      <LocalizacaoSection />
+      <AboutSection />
 
-      {/* Neighborhood Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-neutral-50" id="localizacao">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Tudo a distância de um passo!</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Viva com tudo ao seu alcance em um dos endereços mais valorizados de Campinas
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-5 space-y-6">
-              <h3 className="text-xl md:text-2xl font-bold">Viva com tudo ao seu redor</h3>
-              <p className="text-gray-600">
-                No Avenida 105, você ganha tempo e qualidade de vida com a mobilidade a pé. Esqueça o trânsito e
-                aproveite mais o seu dia em um bairro planejado para o seu bem-estar.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-3">
-                  <h4 className="font-bold text-figueira-purple">Lazer e Compras</h4>
-                  <ul className="space-y-3">
-                    <FeatureItem text="Shopping Iguatemi a 2 minutos a pé" />
-                    <FeatureItem text="Restaurantes e cafés a poucos passos" />
-                    <FeatureItem text="Academias e áreas de lazer próximas" />
-                  </ul>
-                </div>
-                <div className="space-y-3">
-                  <h4 className="font-bold text-figueira-purple">Conveniência</h4>
-                  <ul className="space-y-3">
-                    <FeatureItem text="Farmácias e mercados na vizinhança" />
-                    <FeatureItem text="Escolas e universidades próximas" />
-                    <FeatureItem text="Hospitais e clínicas a menos de 10 min" />
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <LocationSection />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Project Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-white" id="projeto">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold">Sobre o Avenida 105</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-              Um projeto único que redefine o conceito de morar bem em Campinas, combinando sofisticação,
-              sustentabilidade e exclusividade
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <FiStar className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Primeiro lançamento
-              </div>
-              <p className="text-gray-700">
-                Primeiro lançamento do bairro planejado Casa Figueira, com infraestrutura completa e planejamento urbano
-                de excelência, estabelecendo um novo padrão para Campinas.
-              </p>
-            </div>
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <MdArchitecture className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Arquitetura diferenciada
-              </div>
-              <p className="text-gray-700">
-                Fachada viva com brises móveis que proporcionam conforto térmico e visual único, assinada pelo renomado
-                escritório Dal Pian, vencedor de múltiplos prêmios de arquitetura.
-              </p>
-            </div>
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <FiLock className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Exclusividade
-              </div>
-              <p className="text-gray-700">
-                Apenas 80 apartamentos em torre única, garantindo privacidade e exclusividade para os moradores, com
-                controle de acesso e segurança 24 horas.
-              </p>
-            </div>
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <FaTree className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Paisagismo Floresta de Bolso®
-              </div>
-              <p className="text-gray-700">
-                Paisagismo assinado por Ricardo Cardim, com o conceito Floresta de Bolso® que traz a natureza para dentro do
-                empreendimento, com espécies nativas que atraem pássaros e borboletas.
-              </p>
-            </div>
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <FiGrid className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Ampla área livre
-              </div>
-              <p className="text-gray-700">
-                Condomínio com ampla área livre: apenas 12% do terreno construído, priorizando áreas verdes e espaços de
-                convivência, criando um oásis urbano em meio à cidade.
-              </p>
-            </div>
-            <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-              <div className="flex items-center justify-center mb-2">
-                <FaLeaf className="text-figueira-purple text-2xl" />
-              </div>
-              <div className="text-figueira-purple font-bold text-lg mb-2 text-center">
-                Sustentabilidade
-              </div>
-              <p className="text-gray-700">
-                Projeto com certificação AQUA de sustentabilidade, captação de água da chuva, painéis solares e iluminação LED
-                em todas as áreas comuns, reduzindo o impacto ambiental e o custo do condomínio.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120">
-              <Link href="#lead-form">Quero conhecer o projeto completo</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Construction Timeline */}
-      {/* <ConstructionTimeline /> */}
 
       {/* Testimonials Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-50">
@@ -540,21 +364,3 @@ export default function Home() {
   )
 }
 
-function BenefitCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <div className="bg-neutral-50 p-4 md:p-6 rounded-xl">
-      <div className="mb-4">{icon}</div>
-      <h3 className="font-bold text-lg mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  )
-}
-
-function FeatureItem({ text }: { text: string }) {
-  return (
-    <div className="flex items-center space-x-3">
-      <CheckCircle className="h-5 w-5 text-figueira-purple flex-shrink-0" />
-      <span className="text-gray-700">{text}</span>
-    </div>
-  )
-}
