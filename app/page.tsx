@@ -46,7 +46,6 @@ export default function Home() {
         url="https://player.vimeo.com/video/993635020?playsinline=1&badge=0"
         options={{ loop: true }}
       />
-
       <DiferenciasSection />
       <InvestmentSection />
       <VisaoGeralSection />
