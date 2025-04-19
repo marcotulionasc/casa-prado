@@ -17,17 +17,13 @@ export function InvestmentSection() {
             Retorno sobre investimento superior ao mercado
           </h2>
           <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-            Dados reais que comprovam o potencial de valorização do seu investimento no Avenida 105.
+            Dados estimados que demonstram o potencial de valorização do seu investimento no Avenida 105.
           </p>
         </div>
 
         {/* Desktop version with tabs */}
         <div className="hidden md:block">
           <Tabs defaultValue="appreciation" className="w-full">
-            <TabsList className="grid w-full max-w-xl mx-auto grid-cols-2">
-              <TabsTrigger value="appreciation">Valorização</TabsTrigger>
-              {/* <TabsTrigger value="comparison">Comparativo</TabsTrigger> */}
-            </TabsList>
             <TabsContent value="appreciation" className="mt-6">
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div className="bg-white p-6 rounded-lg border">
@@ -39,14 +35,7 @@ export function InvestmentSection() {
                         <span className="font-medium">100%</span>
                       </div>
                       <Progress value={100} className="h-2 bg-gray-100" />
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span>Durante a obra (2025)</span>
-                        <span className="font-medium text-blue-600">+15%</span>
-                      </div>
-                      <Progress value={115} className="h-2 bg-gray-100" />
-                    </div>
+                    </div>  
                     <div>
                       <div className="flex justify-between text-sm mb-1">
                         <span>Entrega (abril de 2028)</span>
@@ -215,30 +204,6 @@ export function InvestmentSection() {
                 </div>
                 <Progress value={130} className="h-2 bg-gray-100" />
               </div>
-            </div>
-          </div>
-
-          <div className="bg-white p-5 rounded-lg border">
-            <h3 className="text-base font-medium mb-3">Retorno de aluguel</h3>
-            <div className="space-y-3">
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span>Média de Campinas</span>
-                  <span className="font-medium">0,4% a.m.</span>
-                </div>
-                <Progress value={40} max={100} className="h-2 bg-gray-100" />
-              </div>
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span>Avenida 105</span>
-                  <span className="font-medium text-blue-700">0,6% a.m.</span>
-                </div>
-                <Progress value={60} max={100} className="h-2 bg-gray-100" />
-              </div>
-            </div>
-            <div className="bg-blue-50 p-3 rounded-lg mt-3">
-              <p className="text-xs font-medium">Retorno total estimado: 22,2% a.a.</p>
-              <p className="text-xs text-muted-foreground">(7,2% aluguel + 15% valorização)</p>
             </div>
           </div>
 

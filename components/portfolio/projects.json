@@ -1,0 +1,247 @@
+[
+  {
+    "id": 2,
+    "category": "Área Interna",
+    "title": "Academia",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Academia.webp"
+  },
+  {
+    "id": 5,
+    "category": "Área Interna",
+    "title": "Brinquedoteca",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Academia Externa.webp"
+  },
+  {
+    "id": 30,
+    "category": "Área Interna",
+    "title": "Sala de Estar",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Sala de Estar.webp"
+  },
+  {
+    "id": 31,
+    "category": "Área Interna",
+    "title": "Sala de Jantar",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Sala de Jantar.webp"
+  },
+  {
+    "id": 32,
+    "category": "Área Interna",
+    "title": "Sala de Gaming",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Sala Gaming.webp"
+  },
+  {
+    "id": 33,
+    "category": "Área Interna",
+    "title": "Sala de Jogos",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Sala de Jogos.webp"
+  },
+  {
+    "id": 34,
+    "category": "Área Interna",
+    "title": "Suíte Master",
+    "subtitle": "Área Interna",
+    "image": "/area-lazer/Suíte Master.webp"
+  },
+  {
+    "id": 1,
+    "category": "Área Externa",
+    "title": "Academia Externa",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Academia Externa.webp"
+  },
+  {
+    "id": 3,
+    "category": "Área Externa",
+    "title": "Arena de Areia",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Arena de Areia.webp"
+  },
+  {
+    "id": 8,
+    "category": "Área Externa",
+    "title": "Floresta de Bolso",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Academia Externa.webp"
+  },
+  {
+    "id": 21,
+    "category": "Área Externa",
+    "title": "Floresta de Bolso",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Floresta de Bolso.webp"
+  },
+  {
+    "id": 22,
+    "category": "Área Externa",
+    "title": "Fogueira",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Fogueira.webp"
+  },
+  {
+    "id": 23,
+    "category": "Área Externa",
+    "title": "Parquinho Naturalizado 1",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Parquinho Naturalizado 1.webp"
+  },
+  {
+    "id": 24,
+    "category": "Área Externa",
+    "title": "Parquinho Naturalizado 2",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Parquinho Naturalizado 2.webp"
+  },
+  {
+    "id": 26,
+    "category": "Área Externa",
+    "title": "Piscina 1",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Piscina 1.webp"
+  },
+  {
+    "id": 27,
+    "category": "Área Externa",
+    "title": "Piscina 2",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Piscina 2.webp"
+  },
+  {
+    "id": 28,
+    "category": "Área Externa",
+    "title": "Praça Gramada",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Praça Gramada.webp"
+  },
+  {
+    "id": 29,
+    "category": "Área Externa",
+    "title": "Praça Molhada",
+    "subtitle": "Área Externa",
+    "image": "/area-lazer/Praça Molhada.webp"
+  },
+  {
+    "id": 4,
+    "category": "Espaços Comuns",
+    "title": "Bicicletário",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Bicicletário.webp"
+  },
+  {
+    "id": 13,
+    "category": "Espaços Comuns",
+    "title": "Entrada das Jabuticabeiras",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Entrada das jabuticabeiras.webp"
+  },
+  {
+    "id": 17,
+    "category": "Espaços Comuns",
+    "title": "Estacionamento",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Estacionamento.webp"
+  },
+  {
+    "id": 19,
+    "category": "Espaços Comuns",
+    "title": "Fachada 1",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Fachada 1.webp"
+  },
+  {
+    "id": 20,
+    "category": "Espaços Comuns",
+    "title": "Fachada 2",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Fachada 2.webp"
+  },
+  {
+    "id": 18,
+    "category": "Espaços Comuns",
+    "title": "Estares",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Estares.webp"
+  },
+  {
+    "id": 6,
+    "category": "Espaços Comuns",
+    "title": "Estares",
+    "subtitle": "Espaços Comuns",
+    "image": "/area-lazer/Brinquedoteca.webp"
+  },
+  {
+    "id": 7,
+    "category": "Espaços de Lazer",
+    "title": "Casa de Festas",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Casa de Festas.webp"
+  },
+  {
+    "id": 9,
+    "category": "Espaços de Lazer",
+    "title": "Cobertura Duplex 1",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Cobertura Duplex 1.webp"
+  },
+  {
+    "id": 10,
+    "category": "Espaços de Lazer",
+    "title": "Cobertura Duplex 2",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Cobertura Duplex 2.webp"
+  },
+  {
+    "id": 11,
+    "category": "Espaços de Lazer",
+    "title": "Coworking 1",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Coworking 1.webp"
+  },
+  {
+    "id": 12,
+    "category": "Espaços de Lazer",
+    "title": "Coworking 2",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Coworking 2.webp"
+  },
+  {
+    "id": 14,
+    "category": "Espaços de Lazer",
+    "title": "Espaço Gourmet 1",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Espaço Gourmet 1.webp"
+  },
+  {
+    "id": 15,
+    "category": "Espaços de Lazer",
+    "title": "Espaço Gourmet 2",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Espaço Gourmet 2.webp"
+  },
+  {
+    "id": 16,
+    "category": "Espaços de Lazer",
+    "title": "Espaço Pet",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Espaço Pet.webp"
+  },
+  {
+    "id": 25,
+    "category": "Espaços de Lazer",
+    "title": "Pilates",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Pilates.webp"
+  },
+  {
+    "id": 35,
+    "category": "Espaços de Lazer",
+    "title": "Yoga",
+    "subtitle": "Espaços de Lazer",
+    "image": "/area-lazer/Yoga.webp"
+  }
+]

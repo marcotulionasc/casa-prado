@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "category": "Fachada Avenida 105",
+    "title": "Fachada ",
+    "subtitle": "Avenida 105",
+    "image": "/images/fachada.webp"
+  },
+  {
+    "id": 2,
+    "category": "Lobby de entrada",
+    "title": "Lobby de entrada",
+    "subtitle": "Avenida 105",
+    "image": "/images/lobby-entrada.webp"
+  },
+  {
+    "id": 3,
+    "category": "Piscina",
+    "title": "Piscina",
+    "subtitle": "Avenida 105",
+    "image": "/images/piscina.webp"
+  },
+  {
+    "id": 4,
+    "category": "Espaço gourmet",
+    "title": "Vista do apartamento",
+    "subtitle": "Avenida 105",
+    "image": "/images/área gourmet.webp"
+  },
+  {
+    "id": 5,
+    "category": "Coworking",
+    "title": "Vista do apartamento",
+    "subtitle": "Avenida 105",
+    "image": "/images/coworking.webp"
+  },
+  {
+    "id": 6,
+    "category": "Vista do apartamento",
+    "title": "Vista do apartamento",
+    "subtitle": "Avenida 105",
+    "image": "/images/vista-ultimo-andar.webp"
+  }
+]
