@@ -87,7 +87,7 @@ export default function AboutSection() {
                             Sustentabilidade
                         </div>
                         <p className="text-gray-700">
-                            Projeto com certificação AQUA de sustentabilidade, captação de água da chuva, painéis solares e iluminação LED
+                            Projeto com certificação AQUA de sustentabilidade, captação de água da chuva e iluminação LED
                             em todas as áreas comuns, reduzindo o impacto ambiental e o custo do condomínio.
                         </p>
                     </div>

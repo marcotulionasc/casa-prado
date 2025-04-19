@@ -189,7 +189,7 @@ export default function Home() {
                 </AccordionTrigger>
                 <AccordionContent>
                   O Avenida 105 possui certificação AQUA de sustentabilidade e incorpora diversas tecnologias
-                  eco-friendly: captação e reuso de água da chuva, painéis solares para áreas comuns, iluminação LED com
+                  eco-friendly: captação e reuso de água da chuva, iluminação LED com
                   sensores de presença, estações para carregamento de veículos elétricos e o exclusivo paisagismo
                   Floresta de Bolso® que utiliza espécies nativas e contribui para a biodiversidade local.
                 </AccordionContent>
