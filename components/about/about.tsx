@@ -94,7 +94,7 @@ export default function AboutSection() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <Button className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120">
+                    <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4">
                         <Link href="#lead-form">Quero conhecer o projeto completo</Link>
                     </Button>
                 </div>

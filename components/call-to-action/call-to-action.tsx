@@ -121,9 +121,9 @@ export default function CallToAction() {
                 ></div>
               </div>
 
-              <Button className="w-full mt-8 md:w-auto px-20 h-14 text-lg font-semibold bg-white hover:bg-gray-100 text-[#3F4FA9] transition-all">
-                <Link href="#lead-form" className="flex items-center gap-2">
-                  Quero receber informações <ArrowRight />
+              <Button className="w-full mt-8 md:w-auto px-14 h-14 text-lg font-semibold bg-white hover:bg-gray-100 text-[#3F4FA9] transition-all">
+                <Link href="#lead-form" className="flex items-center">
+                  Quero receber informações
                 </Link>
               </Button>
             </div>

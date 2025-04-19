@@ -75,7 +75,7 @@ export default function DiferenciasSection(): JSX.Element {
           })()}
 
           <div className="mt-12 text-center">
-            <Button className="w-96 bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10">
+            <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4">
               <Link href="#lead-form">Ver tabela e plantas exclusivas</Link>
             </Button>
             <p className="text-xs text-gray-500 mt-2">Informações enviadas sem compromisso em até 24h</p>

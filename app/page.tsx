@@ -105,7 +105,7 @@ export default function Home() {
               São apenas 80 unidades exclusivas no pré-lançamento. Antecipe-se, aproveite condições especiais e garanta prioridade na escolha da sua unidade. Restam poucas opções com valores promocionais.
             </p>
             <Button
-              className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10 w-120"
+              className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4"
               asChild
             >
               <Link href="#lead-form">Quero garantir minha unidade</Link>

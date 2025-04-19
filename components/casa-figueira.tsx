@@ -210,7 +210,7 @@ export default function CasaFigueiraSection() {
                 <p className="text-gray-600">
                   Localizado em posição estratégica, ao lado do Shopping Iguatemi Campinas, o Avenida 105 une a exclusividade de um projeto boutique — com torre única e arquitetura autoral — à infraestrutura completa de um bairro concebido para o futuro.
                 </p>
-                <Button className="bg-figueira-purple hover:bg-figueira-indigo text-white mt-2 group">
+                <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4">
                   Conheça o Avenida 105
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
