@@ -65,7 +65,7 @@ export default function ApartmentPlans() {
     },
     {
       id: "duplex-a",
-      title: "Cobertura Duplex A",
+      title: "Cobertura Duplex",
       description: "Cobertura duplex com terraço e piscina privativa",
       features: [
         "245 m² de área total",
