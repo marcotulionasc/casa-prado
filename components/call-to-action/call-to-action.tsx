@@ -77,7 +77,7 @@ export default function CallToAction() {
       {/* Background with subtle pattern */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/call-to-action/image 2.png')" }}
+        style={{ backgroundImage: "url('/call-to-action/image 2.webp')" }}
       ></div>
 
       {/* Gradient overlay with better color blend */}

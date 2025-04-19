@@ -28,7 +28,7 @@ export default function CasaFigueiraSection() {
         <div className="mb-12">
           <VideoPlayer
             videoUrl="https://ia601509.us.archive.org/17/items/apresentation/apresentation.mp4"
-            posterUrl="/casa-figueira/foto-video.png"
+            posterUrl="/casa-figueira/foto-video.webp"
             title="Conheça o Casa Figueira - Um novo conceito de bairro planejado"
           />
         </div>
@@ -126,7 +126,7 @@ export default function CasaFigueiraSection() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/casa-figueira/a-casa-figueira.png"
+                  src="/casa-figueira/a-casa-figueira.webp"
                   alt="Vista aérea do bairro planejado Casa Figueira"
                   fill
                   className="object-cover"
@@ -214,7 +214,7 @@ export default function CasaFigueiraSection() {
               <div className="lg:col-span-7">
                 <div className="relative h-[400px] rounded-xl overflow-hidden">
                   <Image
-                    src="/casa-figueira/sustentabilidade.png"
+                    src="/casa-figueira/sustentabilidade.webp"
                     alt="Áreas verdes e sustentabilidade no Casa Figueira"
                     fill
                     className="object-cover"
@@ -229,7 +229,7 @@ export default function CasaFigueiraSection() {
               <div className="lg:col-span-7">
                 <div className="relative h-[400px] rounded-xl overflow-hidden">
                   <Image
-                    src="/casa-figueira/avenida105.png"
+                    src="/casa-figueira/avenida105.webp"
                     alt="Avenida 105 - O primeiro empreendimento do Casa Figueira"
                     fill
                     className="object-cover"

@@ -204,15 +204,15 @@ export default function LeadForm() {
           <div className="flex items-center justify-center gap-4 mt-4">
             <div className="flex -space-x-2 overflow-hidden mb-4">
               <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/aurora.jpg" />
+                <AvatarImage src="/clientes/aurora.webp" />
                 <AvatarFallback></AvatarFallback>
               </Avatar>
               <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/gil.jpg" />
+                <AvatarImage src="/clientes/gil.webp" />
                 <AvatarFallback></AvatarFallback>
               </Avatar>
               <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/monica.jpg" />
+                <AvatarImage src="/clientes/monica.webp" />
                 <AvatarFallback></AvatarFallback>
               </Avatar>
             </div>

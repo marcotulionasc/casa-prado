@@ -4,7 +4,7 @@ const MasterplanDesktop = () => {
   return (
     <div className="relative h-[500px] rounded-xl overflow-hidden hidden lg:block">
       <Image
-        src="/casa-figueira/casa-figueira-master-plan.png"
+        src="/casa-figueira/casa-figueira-master-plan.webp"
         alt="Masterplan do Casa Figueira"
         fill
         className="object-cover object-center"
@@ -17,7 +17,7 @@ const MasterplanMobile = () => {
   return (
     <div className="relative h-[460px] rounded-xl overflow-hidden block lg:hidden">
       <Image
-        src="/casa-figueira/casa-figueira-master-plan.png"
+        src="/casa-figueira/casa-figueira-master-plan.webp"
         alt="Masterplan do Casa Figueira"
         fill
         className="object-contain object-center"

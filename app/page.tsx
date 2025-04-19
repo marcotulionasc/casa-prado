@@ -70,21 +70,21 @@ export default function Home() {
             <TestimonialCard
               name="Carlos Mendes"
               role="Empresário"
-              image="/homem01.png"
+              image="/homem01.webp"
               rating={5}
               testimonial="Investir com a Metrópole foi uma decisão acertada. O atendimento personalizado e a qualidade dos empreendimentos superaram minhas expectativas. Já estou no terceiro imóvel."
             />
             <TestimonialCard
               name="Ana Luiza Costa"
               role="Médica"
-              image="/mulher01.png"
+              image="/mulher01.webp"
               rating={5}
               testimonial="A localização e o acabamento do meu apartamento são impecáveis. O processo de compra foi tranquilo e transparente. Recomendo a todos que buscam qualidade."
             />
             <TestimonialCard
               name="Roberto Almeida"
               role="Advogado"
-              image="/homem02.png"
+              image="/homem02.webp"
               rating={5}
               testimonial="A valorização do meu imóvel superou as projeções iniciais. O compromisso da Metrópole com a qualidade e os prazos faz toda a diferença no mercado."
             />
@@ -164,7 +164,7 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/call-to-action/about-us.png"
+                src="/call-to-action/about-us.webp"
                 alt="Metrópole Investimentos Imobiliários - Especialista em imóveis de alto padrão em Campinas"
                 fill
                 className="object-cover"
