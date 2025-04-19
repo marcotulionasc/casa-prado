@@ -183,7 +183,7 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
         // playsInline desativado no iOS pra forçar fullscreen nativo ao dar play
-        playsInline={!isIOS} 
+        playsInline={!isIOS}
         className="w-full h-full object-cover"
       />
 
@@ -221,13 +221,15 @@ export default function VideoPlayer({ videoUrl, posterUrl, title }: VideoPlayerP
             max="100"
             value={progress}
             onChange={handleProgressChange}
+            aria-label="Barra de progresso do vídeo"
             className="w-full h-1 bg-white/30 rounded-full appearance-none cursor-pointer
-              [&::-webkit-slider-thumb]:appearance-none
-              [&::-webkit-slider-thumb]:h-3
-              [&::-webkit-slider-thumb]:w-3
-              [&::-webkit-slider-thumb]:rounded-full
-              [&::-webkit-slider-thumb]:bg-white"
+    [&::-webkit-slider-thumb]:appearance-none
+    [&::-webkit-slider-thumb]:h-3
+    [&::-webkit-slider-thumb]:w-3
+    [&::-webkit-slider-thumb]:rounded-full
+    [&::-webkit-slider-thumb]:bg-white"
           />
+
         </div>
 
         {/* Botões (Play/Pause, Mute, Tempo, Fullscreen) */}
