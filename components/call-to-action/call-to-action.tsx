@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { CalendarClock, CheckCircle } from "lucide-react"
+import { ArrowLeft, ArrowRight, CalendarClock, CheckCircle } from "lucide-react"
 
 interface CountdownTimerProps {
   targetDate: string
@@ -110,7 +110,7 @@ export default function CallToAction() {
               <div className="flex items-center gap-2 mb-2">
                 <CheckCircle className="h-5 w-5 text-green-300" />
                 <p className="text-base font-medium">
-                  <span className="font-bold text-white">18 reservas</span> já confirmadas
+                  <span className="font-bold text-white">{percentReserved} das unidades</span> já reservadas! 
                 </p>
               </div>
 
@@ -121,12 +121,10 @@ export default function CallToAction() {
                 ></div>
               </div>
 
-              <p className="text-sm text-gray-200 mb-6">
-                {percentReserved}% das unidades reservadas — Restam apenas {totalUnits - reservedUnits} unidades
-              </p>
-
-              <Button className="w-full md:w-auto px-8 h-14 text-lg font-semibold bg-white hover:bg-gray-100 text-[#3F4FA9] transition-all">
-                <Link href="#lead-form">Ver preços e plantas</Link>
+              <Button className="w-full mt-8 md:w-auto px-20 h-14 text-lg font-semibold bg-white hover:bg-gray-100 text-[#3F4FA9] transition-all">
+                <Link href="#lead-form" className="flex items-center gap-2">
+                  Quero receber informações <ArrowRight />
+                </Link>
               </Button>
             </div>
 
