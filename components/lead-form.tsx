@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -24,20 +23,11 @@ export default function LeadForm() {
     phone: string
   }
 
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    phone: "",
-  })
-
+  const [formData, setFormData] = useState<FormData>({ name: "", email: "", phone: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState("")
-  const [errors, setErrors] = useState<FormErrors>({
-    name: "",
-    email: "",
-    phone: "",
-  })
+  const [errors, setErrors] = useState<FormErrors>({ name: "", email: "", phone: "" })
 
   const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
@@ -54,37 +44,22 @@ export default function LeadForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>): void => {
     const { name, value } = e.target as HTMLInputElement
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-
-    // Valida conforme o usuário digita ou sai do campo
+    setFormData((prev) => ({ ...prev, [name]: value }))
     if (e.type === "blur" || value.length > 3) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: validateField(name as keyof FormData, value),
-      }))
+      setErrors((prev) => ({ ...prev, [name]: validateField(name as keyof FormData, value) }))
     }
   }
 
-  const formatPhoneNumber = (phone: string): string => {
-    // Remove todos os caracteres não numéricos
-    return phone.replace(/\D/g, "")
-  }
+  const formatPhoneNumber = (phone: string): string => phone.replace(/\D/g, "")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
     setSubmitError("")
-
-    // Validação completa antes do envio
     const newErrors: FormErrors = {
       name: validateField("name", formData.name),
       email: validateField("email", formData.email),
       phone: validateField("phone", formData.phone),
     }
-
-    // Se houver algum erro, interrompe o envio
     if (Object.values(newErrors).some((error) => error !== "")) {
       setErrors(newErrors)
       return
@@ -105,16 +80,11 @@ export default function LeadForm() {
     try {
       const response = await fetch("https://backend-ingressar.onrender.com/metropole/v1/send", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       })
 
-      if (!response.ok) {
-        throw new Error(`Erro ao enviar: ${response.status}`)
-      }
-
+      if (!response.ok) throw new Error(`Erro ao enviar: ${response.status}`)
       router.push("/obrigado")
     } catch (error) {
       console.error("Erro ao enviar formulário:", error)
@@ -125,8 +95,11 @@ export default function LeadForm() {
   }
 
   return (
-    <div id="lead-form" className="bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-lg max-w-md w-full mx-auto">
-      <h3 className="text-lg font-semibold mb-4 text-center">
+    <div
+      id="lead-form"
+      className="bg-white/95 backdrop-blur-sm px-4 py-6 sm:p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md mx-auto"
+    >
+      <h3 className="text-base sm:text-lg font-semibold mb-4 text-center">
         {isSubmitted ? "Obrigado pelo interesse!" : (
           <>
             Quero acessar as informações da
@@ -141,14 +114,14 @@ export default function LeadForm() {
           Em breve, nossa equipe entrará em contato com mais informações sobre o Avenida 105.
         </p>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="text"
               name="name"
               placeholder="Seu nome"
-              className={`pl-10 h-10 w-full text-sm ${errors.name ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-sm ${errors.name ? "border-red-500" : ""}`}
               value={formData.name}
               onChange={handleChange}
               onBlur={handleChange}
@@ -159,12 +132,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="email"
               name="email"
               placeholder="Seu e-mail"
-              className={`pl-10 h-10 w-full text-sm ${errors.email ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-sm ${errors.email ? "border-red-500" : ""}`}
               value={formData.email}
               onChange={handleChange}
               onBlur={handleChange}
@@ -175,12 +148,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
               type="tel"
               name="phone"
               placeholder="Seu telefone"
-              className={`pl-10 h-10 w-full text-sm ${errors.phone ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-sm ${errors.phone ? "border-red-500" : ""}`}
               value={formData.phone}
               onChange={handleChange}
               onBlur={handleChange}
@@ -200,23 +173,16 @@ export default function LeadForm() {
             {isSubmitting ? "Enviando..." : "Quero receber informações"}
           </Button>
 
-          {/* Ajuste para exibir as bolinhas lado a lado (igual ao exemplo da imagem) */}
           <div className="flex items-center justify-center gap-4 mt-4">
             <div className="flex -space-x-2 overflow-hidden mb-4">
-              <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/aurora.webp" alt="Cliente 01" />
-                <AvatarFallback></AvatarFallback>
-              </Avatar>
-              <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/gil.webp" alt="Cliente 01" />
-                <AvatarFallback></AvatarFallback>
-              </Avatar>
-              <Avatar className="border-2 border-white">
-                <AvatarImage src="/clientes/monica.webp" alt="Cliente 01" />
-                <AvatarFallback></AvatarFallback>
-              </Avatar>
+              {["aurora", "gil", "monica"].map((img, i) => (
+                <Avatar key={i} className="border-2 border-white w-8 h-8">
+                  <AvatarImage src={`/clientes/${img}.webp`} alt={`Cliente ${i + 1}`} />
+                  <AvatarFallback />
+                </Avatar>
+              ))}
             </div>
-            <p className="text-sm text-gray-400">201 pessoas já preencheram o formulário!</p>
+            <p className="text-xs text-gray-400">201 pessoas já preencheram</p>
           </div>
         </form>
       )}
