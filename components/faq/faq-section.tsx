@@ -50,7 +50,7 @@ export default function FAQSection() {
             <AccordionItem value="item-6">
               <AccordionTrigger className="text-left">Qual é o prazo de entrega?</AccordionTrigger>
               <AccordionContent>
-              Informações detalhadas estão disponíveis no stand de vendas e atualizações mensais são enviadas aos compradores
+                A previsão de entrega é abril de 2028, com possibilidade de antecipação conforme o andamento da obra.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">
