@@ -91,7 +91,7 @@ export default function CallToAction() {
               <div className="flex items-start gap-2 mb-2">
                 <CheckCircle className="h-5 w-5 text-green-300 shrink-0" />
                 <p className="text-base font-medium break-words">
-                  <span className="font-bold text-white">{percentReserved}% das unidades</span> já reservadas!
+                  <span className="font-bold text-white"><strong>+50 clientes</strong> já com pastas montadas para o evento de lançamento.</span>
                 </p>
               </div>
 
