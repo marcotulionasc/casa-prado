@@ -34,6 +34,7 @@ import ApartmentPlans from "@/components/apartment-plans"
 import FAQSection from "@/components/faq/faq-section"
 import VimeoPlayer from "@/components/vimeo/video-vimeo"
 import CallToAction from "@/components/call-to-action/call-to-action"
+import { AutoVideoPlayer } from "@/components/video/auto-video-player"
 
 export default function Home() {
   return (
@@ -43,9 +44,13 @@ export default function Home() {
       <SiteHeader />
       <HeroSection />
       <CasaFigueiraSection />
-      <VimeoPlayer
+      {/* <VimeoPlayer
         url="https://player.vimeo.com/video/993635020?playsinline=1&badge=0"
         options={{ loop: true }}
+      /> */}
+      <AutoVideoPlayer
+        src="/casafigueira.mp4"
+        title="Big Buck Bunny"
       />
       <DiferenciasSection />
       <InvestmentSection />
