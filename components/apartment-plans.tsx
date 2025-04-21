@@ -14,7 +14,7 @@ export default function ApartmentPlans() {
       features: [
         "154 m² de área total",
         "150,8 m² de área privativa",
-        "Pé-direito de 3,2m",
+        "3,2 m² de depósito",
         "Suíte master com closet",
         "Varanda gourmet integrada",
         "3 vagas na garagem",
