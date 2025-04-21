@@ -22,7 +22,7 @@ export default function VimeoPlayer({
     const player = new Player(containerRef.current, {
       url,
       autoplay: true,
-      muted: true,
+      muted: false,
       responsive: true,
       autopause: false,
       ...options,
