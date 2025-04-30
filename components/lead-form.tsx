@@ -1,16 +1,19 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { User, Mail, Phone } from "lucide-react"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { useRouter } from "next/navigation"
+import { useUTM } from "../hooks/useUTM"
 
 export default function LeadForm() {
   const router = useRouter()
+  const { sendUTMData } = useUTM()
+
   interface FormData {
     name: string
     email: string
@@ -78,6 +81,7 @@ export default function LeadForm() {
     }
 
     try {
+      // Envia o formulário principal
       const response = await fetch("https://backend-ingressar.onrender.com/metropole/v1/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -85,6 +89,15 @@ export default function LeadForm() {
       })
 
       if (!response.ok) throw new Error(`Erro ao enviar: ${response.status}`)
+
+      // Envia os dados UTM
+      try {
+        await sendUTMData(formData.email)
+      } catch (utmError) {
+        console.error("Erro ao enviar dados UTM:", utmError)
+        // Não bloqueia o fluxo principal se falhar o envio do UTM
+      }
+
       router.push("/obrigado")
     } catch (error) {
       console.error("Erro ao enviar formulário:", error)
