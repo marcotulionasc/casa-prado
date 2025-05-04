@@ -101,6 +101,24 @@ export default function Home() {
 
       <FAQSection />
 
+      {/* Filtro leve antes do CTA final */}
+      <section className="py-8 md:py-12 bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-2xl mx-auto bg-figueira-50 border border-figueira-purple/20 rounded-xl p-6 text-center shadow-md">
+            <h3 className="text-lg md:text-xl font-bold mb-4 text-figueira-purple">Este lançamento é voltado para quem deseja:</h3>
+            <ul className="text-gray-700 text-base md:text-lg mb-4 space-y-2 text-left max-w-md mx-auto">
+              <li>– Morar com sofisticação e mobilidade ao lado do Iguatemi</li>
+              <li>– Investir em um imóvel com entrada a partir de R$ 1 milhão</li>
+              <li>– Qualidade de vida com estrutura de alto padrão</li>
+            </ul>
+            <p className="text-base md:text-lg font-medium text-gray-800 mb-6">Se você busca algo assim, fale com um especialista agora.</p>
+            <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-base py-3 px-6 font-semibold" asChild>
+              <Link href="#lead-form">Falar com um especialista</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-100">
         <div className="container px-4 mx-auto">
