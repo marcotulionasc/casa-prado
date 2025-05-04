@@ -9,7 +9,7 @@ export function MobileCta() {
         className="py-3 px-6 text-base font-medium bg-figueira-purple hover:bg-figueira-indigo text-white rounded-md w-full py-6"
         onClick={() => document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })}
       >
-        Quero acessar a pré-venda
+        Ver valores e plantas da pré-venda
       </Button>
     </div>
   )

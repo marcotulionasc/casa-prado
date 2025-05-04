@@ -31,6 +31,7 @@ export default function LeadForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState("")
   const [errors, setErrors] = useState<FormErrors>({ name: "", email: "", phone: "" })
+  const [selectedRange, setSelectedRange] = useState("")
 
   const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
@@ -76,7 +77,7 @@ export default function LeadForm() {
       cellPhone: formatPhoneNumber(formData.phone),
       interessePrincipal: null,
       field01: "morador",
-      field02: null,
+      field02: selectedRange || null,
       field03: null,
     }
 
@@ -113,13 +114,9 @@ export default function LeadForm() {
       className="bg-white/95 backdrop-blur-sm px-4 py-6 sm:p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-4 text-center">
-        {isSubmitted ? "Obrigado pelo interesse!" : (
-          <>
-            Quero acessar as informações da
-            <br />
-            pré-venda
-          </>
-        )}
+        Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.<br />
+        Indicado para quem busca localização premium, conforto e exclusividade.<br />
+        <span role="img" aria-label="objetivo">📍</span> Objetivo: Filtrar curiosos e gerar consciência de valor antes do clique.
       </h3>
 
       {isSubmitted ? (
@@ -176,6 +173,47 @@ export default function LeadForm() {
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
 
+          {/* Pergunta de qualificação opcional */}
+          <div className="mt-2">
+            <label className="block text-sm font-medium text-gray-700 mb-2">Faixa de valor que você está considerando neste momento:</label>
+            <div className="flex flex-col gap-2">
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="valor-range"
+                  value="Até R$ 800 mil"
+                  checked={selectedRange === "Até R$ 800 mil"}
+                  onChange={() => setSelectedRange("Até R$ 800 mil")}
+                  className="accent-figueira-purple"
+                />
+                Até R$ 800 mil
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="valor-range"
+                  value="R$ 1 milhão a R$ 1,5 milhão"
+                  checked={selectedRange === "R$ 1 milhão a R$ 1,5 milhão"}
+                  onChange={() => setSelectedRange("R$ 1 milhão a R$ 1,5 milhão")}
+                  className="accent-figueira-purple"
+                />
+                R$ 1 milhão a R$ 1,5 milhão
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="valor-range"
+                  value="Acima de R$ 1,5 milhão"
+                  checked={selectedRange === "Acima de R$ 1,5 milhão"}
+                  onChange={() => setSelectedRange("Acima de R$ 1,5 milhão")}
+                  className="accent-figueira-purple"
+                />
+                Acima de R$ 1,5 milhão
+              </label>
+            </div>
+            <p className="text-xs text-gray-400 mt-1">(Opcional)</p>
+          </div>
+
           {submitError && <p className="text-red-500 text-xs text-center">{submitError}</p>}
 
           <Button
@@ -183,7 +221,7 @@ export default function LeadForm() {
             className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Enviando..." : "Quero receber informações"}
+            {isSubmitting ? "Enviando..." : "Acessar a tabela completa com prioridade"}
           </Button>
 
           <SocialProofBlock />
