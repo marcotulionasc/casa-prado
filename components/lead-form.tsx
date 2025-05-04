@@ -186,19 +186,37 @@ export default function LeadForm() {
             {isSubmitting ? "Enviando..." : "Quero receber informações"}
           </Button>
 
-          <div className="flex items-center justify-center gap-4 mt-4">
-            <div className="flex -space-x-2 overflow-hidden mb-4">
-              {["aurora", "gil", "monica"].map((img, i) => (
-                <Avatar key={i} className="border-2 border-white w-8 h-8">
-                  <AvatarImage src={`/clientes/${img}.webp`} alt={`Cliente ${i + 1}`} />
-                  <AvatarFallback />
-                </Avatar>
-              ))}
-            </div>
-            <p className="text-xs text-gray-400">201 pessoas já preencheram</p>
-          </div>
+          <SocialProofBlock />
         </form>
       )}
+    </div>
+  )
+}
+
+function SocialProofBlock() {
+  const [count, setCount] = useState(201)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prev) => prev + 1)
+    }, 10000) // 10 segundos
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-1 mt-4">
+      <div className="flex -space-x-2 overflow-hidden">
+        {["aurora", "gil", "monica"].map((img, i) => (
+          <Avatar key={i} className="border-2 border-white w-8 h-8">
+            <AvatarImage src={`/clientes/${img}.webp`} alt={`Cliente ${i + 1}`} />
+            <AvatarFallback />
+          </Avatar>
+        ))}
+      </div>
+      <p className="text-xs text-gray-700 font-medium mt-1">
+        Pré-venda ativa: Interessados desde o lançamento {count}
+      </p>
+      <p className="text-[11px] text-gray-400">Atualizado em tempo real</p>
     </div>
   )
 }
