@@ -114,10 +114,9 @@ export default function LeadForm() {
       className="bg-white/95 backdrop-blur-sm px-4 py-6 sm:p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-4 text-center">
-        Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.<br />
-        Indicado para quem busca localização premium, conforto e exclusividade.<br />
-        <span role="img" aria-label="objetivo">📍</span> Objetivo: Filtrar curiosos e gerar consciência de valor antes do clique.
+        Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
       </h3>
+      <h5 className="text-sm text-gray-500 text-center">Indicado para quem busca localização premium, conforto e exclusividade.</h5>
 
       {isSubmitted ? (
         <p className="text-green-600 text-sm text-center">
