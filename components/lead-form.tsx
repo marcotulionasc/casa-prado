@@ -210,7 +210,6 @@ export default function LeadForm() {
                 Acima de R$ 1,5 milhão
               </label>
             </div>
-            <p className="text-xs text-gray-400 mt-1">(Opcional)</p>
           </div>
 
           {submitError && <p className="text-red-500 text-xs text-center">{submitError}</p>}
