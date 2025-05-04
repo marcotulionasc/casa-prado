@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full lg:min-h-screen overflow-hidden">
       {/* Background com imagem */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,7 +18,7 @@ export default function HeroSection() {
       </div>
 
       {/* Conteúdo acima da imagem */}
-      <div className="relative z-10 h-full">
+      <div className="relative z-10 h-full mt-2">
         <div className="container h-full px-4 mx-auto flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full mt-20">
             {/* Texto */}
@@ -35,7 +35,7 @@ export default function HeroSection() {
             </div>
 
             {/* Formulário */}
-            <div>
+            <div className="mt-8 lg:mt-0">
               <LeadForm />
             </div>
           </div>

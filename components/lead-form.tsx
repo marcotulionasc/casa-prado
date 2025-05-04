@@ -111,26 +111,26 @@ export default function LeadForm() {
   return (
     <div
       id="lead-form"
-      className="bg-white/95 backdrop-blur-sm px-4 py-6 sm:p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md mx-auto"
+      className="bg-white/95 backdrop-blur-sm px-2 py-4 sm:px-4 sm:py-6 rounded-xl shadow-lg w-full max-w-xs sm:max-w-md mx-auto"
     >
-      <h3 className="text-base sm:text-lg font-semibold mb-4 text-center">
+      <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
         Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
       </h3>
-      <h5 className="text-sm text-gray-500 text-center">Indicado para quem busca localização premium, conforto e exclusividade.</h5>
+      <h5 className="text-sm text-gray-500 text-center mb-4">Indicado para quem busca localização premium, conforto e exclusividade.</h5>
 
       {isSubmitted ? (
         <p className="text-green-600 text-sm text-center">
           Em breve, nossa equipe entrará em contato com mais informações sobre o Avenida 105.
         </p>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-6">
           <div className="relative">
-            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="text"
               name="name"
               placeholder="Seu nome"
-              className={`pl-10 h-10 text-sm ${errors.name ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-base ${errors.name ? "border-red-500" : ""}`}
               value={formData.name}
               onChange={handleChange}
               onBlur={handleChange}
@@ -141,12 +141,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="email"
               name="email"
               placeholder="Seu e-mail"
-              className={`pl-10 h-10 text-sm ${errors.email ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-base ${errors.email ? "border-red-500" : ""}`}
               value={formData.email}
               onChange={handleChange}
               onBlur={handleChange}
@@ -157,12 +157,12 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="tel"
               name="phone"
               placeholder="Seu telefone"
-              className={`pl-10 h-10 text-sm ${errors.phone ? "border-red-500" : ""}`}
+              className={`pl-10 h-10 text-base ${errors.phone ? "border-red-500" : ""}`}
               value={formData.phone}
               onChange={handleChange}
               onBlur={handleChange}
@@ -216,7 +216,7 @@ export default function LeadForm() {
 
           <Button
             type="submit"
-            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-sm h-10"
+            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-base h-10 rounded-lg font-semibold"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Enviando..." : "Acessar a tabela completa com prioridade"}
@@ -240,7 +240,7 @@ function SocialProofBlock() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center gap-1 mt-4">
+    <div className="flex flex-col items-center justify-center gap-1 mt-2 mb-10 w-full">
       <div className="flex -space-x-2 overflow-hidden">
         {["aurora", "gil", "monica"].map((img, i) => (
           <Avatar key={i} className="border-2 border-white w-8 h-8">
@@ -249,10 +249,10 @@ function SocialProofBlock() {
           </Avatar>
         ))}
       </div>
-      <p className="text-xs text-gray-700 font-medium mt-1">
+      <p className="text-xs text-gray-700 font-medium mt-1 text-center">
         Pré-venda ativa: Interessados desde o lançamento {count}
       </p>
-      <p className="text-[11px] text-gray-400">Atualizado em tempo real</p>
+      <p className="text-[11px] text-gray-400 text-center">Atualizado em tempo real</p>
     </div>
   )
 }
