@@ -52,15 +52,15 @@ export default function HeroSection() {
             Pré‑lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
           </p>
           {/* COUNTDOWN */}
-          <div className="w-full max-w-[90vw] max-w-xs bg-gradient-to-r from-figueira-50 via-white/80 to-figueira-50/80 border border-figueira-purple/20 shadow-lg rounded-2xl p-4 text-figueira-blue">
+          <div className="w-full max-w-[90vw] max-w-xs bg-gradient-to-r from-figueira-50 via-white/80 to-figueira-50/80 border border-figueira-purple/20 shadow-lg rounded-2xl p-4 text-figueira-purple">
             <h3 className="text-base font-bold mb-3 text-center">A pré‑venda termina em</h3>
             <div className="grid grid-cols-4 gap-3">
               {["Dias", "Horas", "Min", "Seg"].map((l, i) => (
                 <div key={l} className="flex flex-col items-center">
-                  <span className="w-14 h-14 flex items-center justify-center rounded-lg bg-white/20 text-2xl font-extrabold">
+                  <span className="w-14 h-14 flex items-center justify-center rounded-lg bg-figueira-purple/10 text-2xl font-extrabold text-figueira-purple">
                     {Object.values(timeLeft)[i]}
                   </span>
-                  <span className="mt-1 text-xs font-medium">{l}</span>
+                  <span className="mt-1 text-xs font-medium text-figueira-purple">{l}</span>
                 </div>
               ))}
             </div>
