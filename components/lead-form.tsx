@@ -111,7 +111,7 @@ export default function LeadForm() {
   return (
     <div
       id="lead-form"
-      className="bg-white/95 backdrop-blur-sm px-2 py-4 sm:px-4 sm:py-6 rounded-xl shadow-lg w-full max-w-xs sm:max-w-md mx-auto"
+      className="bg-white/95 mt-14 backdrop-blur-sm px-2 py-4 sm:px-4 sm:py-6 rounded-xl shadow-lg w-full max-w-xs sm:max-w-md mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
         Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
