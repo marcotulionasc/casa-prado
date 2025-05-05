@@ -12,6 +12,8 @@ import {
   Award,
   Users,
   Shield,
+  DollarSign,
+  HeartPulse,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -100,24 +102,47 @@ export default function Home() {
       <CallToAction />
 
       <FAQSection />
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-figueira-100 via-white to-white overflow-hidden">
+        {/* glow */}
+        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-figueira-purple/20 blur-3xl" />
 
-      {/* Filtro leve antes do CTA final */}
-      <section className="py-8 md:py-12 bg-white">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-2xl mx-auto bg-figueira-50 border border-figueira-purple/20 rounded-xl p-6 text-center shadow-md">
-            <h3 className="text-lg md:text-xl font-bold mb-4 text-figueira-purple">Este lançamento é voltado para quem deseja:</h3>
-            <ul className="text-gray-700 text-base md:text-lg mb-4 space-y-2 text-left max-w-md mx-auto">
-              <li>– Morar com sofisticação e mobilidade ao lado do Iguatemi</li>
-              <li>– Investir em um imóvel com entrada a partir de R$ 1 milhão</li>
-              <li>– Qualidade de vida com estrutura de alto padrão</li>
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-figueira-purple/30 bg-white/70 p-8 shadow-xl backdrop-blur-sm">
+            <h3 className="mb-6 text-center text-2xl font-extrabold leading-tight text-figueira-purple md:text-3xl">
+              Este lançamento é ideal para quem quer:
+            </h3>
+
+            <ul className="mx-auto mb-10 grid max-w-lg gap-4 text-left text-lg text-gray-800">
+              <li className="flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
+                Morar com sofisticação&nbsp;e&nbsp;mobilidade ao lado do Iguatemi
+              </li>
+              <li className="flex items-start gap-3">
+                <DollarSign className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
+                Investir em um imóvel com entrada a partir de&nbsp;R$ 1 milhão
+              </li>
+              <li className="flex items-start gap-3">
+                <HeartPulse className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
+                Qualidade de vida garantida por estrutura de alto&nbsp;padrão
+              </li>
             </ul>
-            <p className="text-base md:text-lg font-medium text-gray-800 mb-6">Se você busca algo assim, fale com um especialista agora.</p>
-            <Button className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-base py-3 px-6 font-semibold" asChild>
-              <Link href="#lead-form">Falar com um especialista</Link>
-            </Button>
+
+            <p className="mb-8 text-center text-lg font-medium text-gray-900">
+              Se você se identifica, fale agora com um especialista e garanta sua prioridade.
+            </p>
+
+            <div className="flex justify-center">
+              <Button
+                className="w-full max-w-xs bg-gradient-to-r from-figueira-purple to-figueira-indigo text-base font-semibold transition-colors hover:from-figueira-indigo hover:to-figueira-purple md:w-auto"
+                asChild
+              >
+                <Link href="#lead-form">Falar com um especialista</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* Final CTA Section */}
       <section className="py-8 md:py-16 lg:py-24 bg-neutral-100">
@@ -208,10 +233,10 @@ export default function Home() {
                 <Phone className="h-4 w-4" />
                 <span>+55 (19) 98253-5896</span>
               </div>
-                <div className="flex items-center space-x-2 text-gray-400 mt-2">
-                  <Mail className="h-4 w-4" />
-                  <span>eduardocampari<br></br>@metropoleinvestimentosimobiliarios.com</span>
-                </div>
+              <div className="flex items-center space-x-2 text-gray-400 mt-2">
+                <Mail className="h-4 w-4" />
+                <span>eduardocampari<br></br>@metropoleinvestimentosimobiliarios.com</span>
+              </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <MapPin className="h-4 w-4" />
                 <span>Avenida Nossa Senhora de Fátima, 1325 - Taquaral
