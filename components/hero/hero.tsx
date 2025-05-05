@@ -26,7 +26,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-72px)] flex items-center justify-center overflow-x-hidden mb-10 pb-10">
+    <section className="relative w-full pt-14 pb-14 lg:min-h-[calc(100vh-72px)] lg:flex lg:items-center lg:justify-center overflow-x-hidden mb-10">
       {/* BG */}
       <Image
         src="/images/vista-ultimo-andar.webp"
