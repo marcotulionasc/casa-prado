@@ -4,11 +4,12 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { User, Mail, Phone } from "lucide-react"
+import { User, Mail, Phone, CheckCircle, DollarSign, HeartPulse } from "lucide-react"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { useRouter } from "next/navigation"
 import { useUTM } from "../hooks/useUTM"
+import Link from "next/link"
 
 export default function LeadForm() {
   const router = useRouter()
@@ -82,7 +83,6 @@ export default function LeadForm() {
     }
 
     try {
-      // Envia o formulário principal
       const response = await fetch("https://backend-ingressar.onrender.com/metropole/v1/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -91,17 +91,12 @@ export default function LeadForm() {
 
       if (!response.ok) throw new Error(`Erro ao enviar: ${response.status}`)
 
-      // Envia os dados UTM
       try {
         await sendUTMData(formData.email)
-      } catch (utmError) {
-        console.error("Erro ao enviar dados UTM:", utmError)
-        // Não bloqueia o fluxo principal se falhar o envio do UTM
-      }
+      } catch (_) {}
 
       router.push("/obrigado")
     } catch (error) {
-      console.error("Erro ao enviar formulário:", error)
       setSubmitError("Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.")
     } finally {
       setIsSubmitting(false)
@@ -111,12 +106,14 @@ export default function LeadForm() {
   return (
     <div
       id="lead-form"
-      className="bg-white/95 mt-14 backdrop-blur-sm px-2 py-4 sm:px-4 sm:py-6 rounded-xl shadow-lg w-full max-w-xs sm:max-w-md mx-auto"
+      className="bg-white/95 mt-14 backdrop-blur-sm px-4 py-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
         Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
       </h3>
-      <h5 className="text-sm text-gray-500 text-center mb-4">Indicado para quem busca localização premium, conforto e exclusividade.</h5>
+      <h5 className="text-sm text-gray-500 text-center mb-4">
+        Indicado para quem busca localização premium, conforto e exclusividade.
+      </h5>
 
       {isSubmitted ? (
         <p className="text-green-600 text-sm text-center">
@@ -172,9 +169,10 @@ export default function LeadForm() {
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
 
-          {/* Pergunta de qualificação opcional */}
           <div className="mt-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Faixa de valor que você está considerando neste momento:</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Faixa de valor que você está considerando neste momento:
+            </label>
             <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2">
                 <input
@@ -230,12 +228,12 @@ export default function LeadForm() {
 }
 
 function SocialProofBlock() {
-  const [count, setCount] = useState(201)
+  const [count, setCount] = useState(221)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => prev + 1)
-    }, 10000) // 10 segundos
+    }, 10000)
     return () => clearInterval(interval)
   }, [])
 
