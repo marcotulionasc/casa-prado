@@ -43,7 +43,7 @@ export default function HeroSection() {
         {/* COLUNA ESQUERDA */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full lg:w-1/2">
           <span className="inline-block w-max rounded-full bg-figueira-100/90 px-3 py-1 text-xs font-medium text-figueira-blue">
-            Pré-lançamento exclusivo
+            Pré-lançamento EXCLUSIVO
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Apartamentos de Alto&nbsp;Padrão ao&nbsp;Lado do&nbsp;Iguatemi&nbsp;Campinas
