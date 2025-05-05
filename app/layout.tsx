@@ -17,13 +17,14 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="overflow-x-hidden"> {/* garante que nada ultrapasse a viewport */}
       <head />
-      <body className={inter.className}>
+      {/* overflow‑x‑hidden no body corta qualquer artefato lateral */}
+      <body className={`${inter.className} overflow-x-hidden`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -33,14 +34,20 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+
         {/* GTM script */}
         <GTM gtmId="GTM-KRPCGBGH" />
 
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
           <GradientBackground />
           {children}
         </ThemeProvider>
-        
+
         {/* Vercel Analytics */}
         <Analytics />
       </body>

@@ -4,12 +4,11 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { User, Mail, Phone, CheckCircle, DollarSign, HeartPulse } from "lucide-react"
+import { User, Mail, Phone } from "lucide-react"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { useRouter } from "next/navigation"
 import { useUTM } from "../hooks/useUTM"
-import Link from "next/link"
 
 export default function LeadForm() {
   const router = useRouter()
@@ -20,7 +19,6 @@ export default function LeadForm() {
     email: string
     phone: string
   }
-
   interface FormErrors {
     name: string
     email: string
@@ -88,15 +86,12 @@ export default function LeadForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       })
-
       if (!response.ok) throw new Error(`Erro ao enviar: ${response.status}`)
-
       try {
         await sendUTMData(formData.email)
       } catch (_) {}
-
       router.push("/obrigado")
-    } catch (error) {
+    } catch {
       setSubmitError("Ocorreu um erro ao enviar seus dados. Por favor, tente novamente.")
     } finally {
       setIsSubmitting(false)
@@ -106,7 +101,7 @@ export default function LeadForm() {
   return (
     <div
       id="lead-form"
-      className="bg-white/95 mt-14 backdrop-blur-sm px-4 py-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
+      className="bg-white/95 mt-14 backdrop-blur-sm px-4 py-6 pb-10 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
         Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
@@ -131,7 +126,6 @@ export default function LeadForm() {
               value={formData.name}
               onChange={handleChange}
               onBlur={handleChange}
-              aria-invalid={!!errors.name}
               required
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -147,7 +141,6 @@ export default function LeadForm() {
               value={formData.email}
               onChange={handleChange}
               onBlur={handleChange}
-              aria-invalid={!!errors.email}
               required
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -163,7 +156,6 @@ export default function LeadForm() {
               value={formData.phone}
               onChange={handleChange}
               onBlur={handleChange}
-              aria-invalid={!!errors.phone}
               required
             />
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
@@ -174,39 +166,19 @@ export default function LeadForm() {
               Faixa de valor que você está considerando neste momento:
             </label>
             <div className="flex flex-col gap-2">
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="valor-range"
-                  value="Até R$ 800 mil"
-                  checked={selectedRange === "Até R$ 800 mil"}
-                  onChange={() => setSelectedRange("Até R$ 800 mil")}
-                  className="accent-figueira-purple"
-                />
-                Até R$ 800 mil
-              </label>
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="valor-range"
-                  value="R$ 1 milhão a R$ 1,5 milhão"
-                  checked={selectedRange === "R$ 1 milhão a R$ 1,5 milhão"}
-                  onChange={() => setSelectedRange("R$ 1 milhão a R$ 1,5 milhão")}
-                  className="accent-figueira-purple"
-                />
-                R$ 1 milhão a R$ 1,5 milhão
-              </label>
-              <label className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="valor-range"
-                  value="Acima de R$ 1,5 milhão"
-                  checked={selectedRange === "Acima de R$ 1,5 milhão"}
-                  onChange={() => setSelectedRange("Acima de R$ 1,5 milhão")}
-                  className="accent-figueira-purple"
-                />
-                Acima de R$ 1,5 milhão
-              </label>
+              {["Até R$ 800 mil", "R$ 1 milhão a R$ 1,5 milhão", "Acima de R$ 1,5 milhão"].map((range) => (
+                <label key={range} className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="valor-range"
+                    value={range}
+                    checked={selectedRange === range}
+                    onChange={() => setSelectedRange(range)}
+                    className="accent-figueira-purple"
+                  />
+                  {range}
+                </label>
+              ))}
             </div>
           </div>
 
@@ -214,7 +186,7 @@ export default function LeadForm() {
 
           <Button
             type="submit"
-            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white text-base h-10 rounded-lg font-semibold"
+            className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white h-10 rounded-lg"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Enviando..." : "Acessar a tabela completa com prioridade"}
@@ -228,20 +200,18 @@ export default function LeadForm() {
 }
 
 function SocialProofBlock() {
-  const [count, setCount] = useState(221)
+  const [count, setCount] = useState(258)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCount((prev) => prev + 1)
-    }, 10000)
-    return () => clearInterval(interval)
+    const id = setInterval(() => setCount((c) => c + 1), 10_000)
+    return () => clearInterval(id)
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center gap-1 mt-2 mb-10 w-full">
+    <div className="flex flex-col items-center gap-1 mt-2 w-full">
       <div className="flex -space-x-2 overflow-hidden">
         {["aurora", "gil", "monica"].map((img, i) => (
-          <Avatar key={i} className="border-2 border-white w-8 h-8">
+          <Avatar key={i} className="border-2 border-white w-10 h-10">
             <AvatarImage src={`/clientes/${img}.webp`} alt={`Cliente ${i + 1}`} />
             <AvatarFallback />
           </Avatar>
