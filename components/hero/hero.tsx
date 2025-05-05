@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-import LeadForm from "../lead-form"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import LeadForm from "../lead-form"
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -15,27 +15,23 @@ export default function HeroSection() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = new Date("2025-05-10T00:00:00").getTime() - new Date().getTime()
-
-      if (difference > 0) {
+      const diff = new Date("2025-05-10T00:00:00").getTime() - Date.now()
+      if (diff > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
+          days: Math.floor(diff / 86_400_000),
+          hours: Math.floor((diff / 3_600_000) % 24),
+          minutes: Math.floor((diff / 60_000) % 60),
+          seconds: Math.floor((diff / 1_000) % 60),
         })
       }
     }
-
     calculateTimeLeft()
-    const timer = setInterval(calculateTimeLeft, 1000)
-
-    return () => clearInterval(timer)
+    const t = setInterval(calculateTimeLeft, 1000)
+    return () => clearInterval(t)
   }, [])
 
   return (
     <section className="relative w-full min-h-[calc(100vh-72px)] pt-20">
-      {/* BG */}
       <Image
         src="/images/vista-ultimo-andar.webp"
         alt="Vista aérea do Avenida 105 Casa Figueira ao pôr do sol"
@@ -46,14 +42,12 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-      {/* Conteúdo */}
       <div className="relative z-20 flex h-full w-full items-center justify-center px-4">
         <div className="mx-auto w-full max-w-6xl">
-          <div className="grid h-full gap-6 lg:gap-16 lg:grid-cols-2 lg:items-center">
-            {/* Texto */}
-            <div className="space-y-4 text-center lg:text-left lg:flex lg:flex-col lg:justify-center">
-              {/* FIX: w-max evita esticar; justify-self-start garante que fique à esquerda */}
-              <span className="inline-block w-max justify-self-start rounded-full bg-figueira-100/90 px-3 py-1 text-xs font-medium text-figueira-blue">
+          <div className="grid h-full gap-10 lg:grid-cols-2 lg:gap-16 lg:items-center">
+            {/* COLUNA TEXTO + COUNTDOWN */}
+            <div className="flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
+              <span className="inline-block w-max rounded-full bg-figueira-100/90 px-3 py-1 text-xs font-medium text-figueira-blue">
                 Pré-lançamento exclusivo
               </span>
 
@@ -65,10 +59,9 @@ export default function HeroSection() {
                 Pré‑lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
               </p>
 
-              {/* countdown fix – mobile only */}
-              <div className="lg:hidden mx-auto w-full max-w-xs bg-gradient-to-r from-figueira-50 via-white/80 to-figueira-50/80 border border-figueira-purple/20 shadow-lg rounded-2xl p-4 text-figueira-blue">
+              {/* COUNTDOWN – visível em todas as telas */}
+              <div className="w-full max-w-xs bg-gradient-to-r from-figueira-50 via-white/80 to-figueira-50/80 border border-figueira-purple/20 shadow-lg rounded-2xl p-4 text-figueira-blue">
                 <h3 className="text-center text-base font-bold mb-3">A pré‑venda termina em</h3>
-
                 <div className="grid grid-cols-4 gap-3">
                   {["Dias", "Horas", "Min", "Seg"].map((label, i) => (
                     <div key={label} className="flex flex-col items-center">
@@ -80,12 +73,9 @@ export default function HeroSection() {
                   ))}
                 </div>
               </div>
-
-
             </div>
 
-
-            {/* Formulário */}
+            {/* COLUNA FORM */}
             <div className="mx-auto w-full max-w-sm lg:mx-0">
               <LeadForm />
             </div>
