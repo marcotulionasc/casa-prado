@@ -166,7 +166,7 @@ export default function LeadForm() {
               Faixa de valor que você está considerando neste momento:
             </label>
             <div className="flex flex-col gap-2">
-              {["Até R$ 800 mil", "R$ 1 milhão a R$ 1,5 milhão", "Acima de R$ 1,5 milhão"].map((range) => (
+              {["Até R$ 1 milhão", "R$ 2.3 milhões a R$ 2.5 milhões", "Acima de R$ 3 milhões"].map((range) => (
                 <label key={range} className="flex items-center gap-2">
                   <input
                     type="radio"
