@@ -30,7 +30,7 @@ export default function SiteHeader() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             {/* <Building className="h-5 w-5 md:h-6 md:w-6 text-figueira-purple" /> */}
-            <img src="/logo-metropole.webp" alt="Logo" className="h-8 w-auto rounded-lg" /> 
+            <img src="/logo-metropolev2.jpg" alt="Logo" className="h-8 w-auto rounded-full" /> 
             <span className="text-black font-bold text-base md:text-lg">|</span>
             <span className="text-black font-bold text-base md:text-lg">Avenida 105</span>
           </Link>
