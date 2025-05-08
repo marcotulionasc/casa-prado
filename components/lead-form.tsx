@@ -104,7 +104,7 @@ export default function LeadForm() {
       className="bg-white/95 mt-14 backdrop-blur-sm px-4 py-6 pb-10 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
     >
       <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
-        Este é um lançamento de alto padrão com valores a partir de R$ 1 milhão.
+        Este é um lançamento de alto padrão com valores a partir de R$ 2,3 milhões.
       </h3>
       <h5 className="text-sm text-gray-500 text-center mb-4">
         Indicado para quem busca localização premium, conforto e exclusividade.

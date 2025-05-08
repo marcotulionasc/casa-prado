@@ -120,10 +120,6 @@ export default function Home() {
                 Morar com sofisticação&nbsp;e&nbsp;mobilidade ao lado do Iguatemi
               </li>
               <li className="flex items-start gap-3">
-                <DollarSign className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
-                Investir em um imóvel com entrada a partir de&nbsp;R$ 1 milhão
-              </li>
-              <li className="flex items-start gap-3">
                 <HeartPulse className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
                 Qualidade de vida garantida por estrutura de alto&nbsp;padrão
               </li>

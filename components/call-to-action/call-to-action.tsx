@@ -112,7 +112,7 @@ export default function CallToAction() {
             <div className="w-full md:w-auto">
               <div className="bg-gradient-to-br from-[#3F4FA9]/40 to-[#A55298]/40 p-6 rounded-2xl border border-white/10 text-center">
                 <h3 className="text-xl font-bold mb-3 break-words">Oferta expira em:</h3>
-                <CountdownTimer targetDate="2025-05-10T00:00:00" />
+                <CountdownTimer targetDate="2025-05-15T00:00:00" />
               </div>
             </div>
           </div>
