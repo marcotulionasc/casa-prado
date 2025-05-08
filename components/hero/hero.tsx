@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     const tick = () => {
-      const diff = new Date("2025-05-10T00:00:00").getTime() - Date.now()
+      const diff = new Date("2025-05-15T00:00:00").getTime() - Date.now()
       if (diff > 0) {
         setTimeLeft({
           days: Math.floor(diff / 86_400_000),
