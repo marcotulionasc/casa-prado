@@ -13,6 +13,14 @@ export const metadata = {
   description:
     "Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas. Pré-lançamento exclusivo com apenas 80 unidades disponíveis.",
   generator: "marco.nascimento.dev",
+  icons: {
+    icon: [
+      { url: '/logo-metropolev2.jpg' }
+    ],
+    apple: [
+      { url: '/logo-metropolev2.jpg' }
+    ]
+  }
 }
 
 export default function RootLayout({
