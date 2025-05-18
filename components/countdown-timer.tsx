@@ -7,31 +7,49 @@ interface CountdownTimerProps {
 }
 
 export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
-  const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date();
-    let timeLeft: { [key: string]: number } = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutos: Math.floor((difference / 1000 / 60) % 60),
-        segundos: Math.floor((difference / 1000) % 60)
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState<{ [key: string]: number }>(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<{ [key: string]: number }>({});
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    
+    const calculateTimeLeft = () => {
+      const difference = +new Date(targetDate) - +new Date();
+      let timeLeft: { [key: string]: number } = {};
+
+      if (difference > 0) {
+        timeLeft = {
+          dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutos: Math.floor((difference / 1000 / 60) % 60),
+          segundos: Math.floor((difference / 1000) % 60)
+        };
+      }
+
+      return timeLeft;
+    };
+    
+    setTimeLeft(calculateTimeLeft());
+    
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
   }, [targetDate]);
+
+  if (!isMounted) {
+    return (
+      <div className="mt-8">
+        <h3 className="text-2xl font-bold text-white mb-4">
+          Tempo restante para garantir sua unidade!
+        </h3>
+        <div className="flex justify-center">
+          <span>Carregando...</span>
+        </div>
+      </div>
+    );
+  }
 
   const timerComponents = Object.keys(timeLeft).map((interval) => (
     <div key={interval} className="flex flex-col items-center mx-2">

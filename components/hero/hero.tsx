@@ -7,10 +7,13 @@ import LeadForm from "../lead-form"
 
 export default function HeroSection() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+    
     const tick = () => {
-      const diff = new Date("2025-05-15T00:00:00").getTime() - Date.now()
+      const diff = new Date("2025-05-30T00:00:00").getTime() - Date.now()
       if (diff > 0) {
         setTimeLeft({
           days: Math.floor(diff / 86_400_000),
@@ -20,6 +23,7 @@ export default function HeroSection() {
         })
       }
     }
+    
     tick()
     const id = setInterval(tick, 1_000)
     return () => clearInterval(id)
@@ -58,7 +62,7 @@ export default function HeroSection() {
               {["Dias", "Horas", "Min", "Seg"].map((l, i) => (
                 <div key={l} className="flex flex-col items-center">
                   <span className="w-14 h-14 flex items-center justify-center rounded-lg bg-figueira-purple/10 text-2xl font-extrabold text-figueira-purple">
-                    {Object.values(timeLeft)[i]}
+                    {isMounted ? Object.values(timeLeft)[i] : "0"}
                   </span>
                   <span className="mt-1 text-xs font-medium text-figueira-purple">{l}</span>
                 </div>

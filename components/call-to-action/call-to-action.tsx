@@ -16,8 +16,11 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
     minutes: 0,
     seconds: 0,
   })
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+    
     const calculateTimeLeft = () => {
       const difference = new Date(targetDate).getTime() - new Date().getTime()
 
@@ -42,7 +45,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
       {["Dias", "Horas", "Min", "Seg"].map((label, i) => (
         <div key={label} className="flex flex-col items-center min-w-0">
           <div className="bg-white/10 rounded-lg w-14 h-14 flex items-center justify-center text-2xl font-bold">
-            {Object.values(timeLeft)[i]}
+            {isMounted ? Object.values(timeLeft)[i] : "0"}
           </div>
           <span className="text-xs mt-1 break-words">{label}</span>
         </div>
@@ -112,7 +115,7 @@ export default function CallToAction() {
             <div className="w-full md:w-auto">
               <div className="bg-gradient-to-br from-[#3F4FA9]/40 to-[#A55298]/40 p-6 rounded-2xl border border-white/10 text-center">
                 <h3 className="text-xl font-bold mb-3 break-words">Oferta expira em:</h3>
-                <CountdownTimer targetDate="2025-05-15T00:00:00" />
+                <CountdownTimer targetDate="2025-05-30T00:00:00" />
               </div>
             </div>
           </div>

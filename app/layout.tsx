@@ -29,11 +29,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className="overflow-x-hidden"> {/* garante que nada ultrapasse a viewport */}
+    <html lang="pt-BR" className="overflow-x-hidden" suppressHydrationWarning>
       <head />
-      {/* overflow‑x‑hidden no body corta qualquer artefato lateral */}
       <body className={`${inter.className} overflow-x-hidden`}>
-        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KRPCGBGH"
@@ -43,20 +41,17 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* GTM script */}
         <GTM gtmId="GTM-KRPCGBGH" />
 
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
           disableTransitionOnChange
         >
           <GradientBackground />
           {children}
         </ThemeProvider>
 
-        {/* Vercel Analytics */}
         <Analytics />
       </body>
     </html>

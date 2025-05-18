@@ -201,8 +201,10 @@ export default function LeadForm() {
 
 function SocialProofBlock() {
   const [count, setCount] = useState(258)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
     const id = setInterval(() => setCount((c) => c + 1), 10_000)
     return () => clearInterval(id)
   }, [])
@@ -218,7 +220,7 @@ function SocialProofBlock() {
         ))}
       </div>
       <p className="text-xs text-gray-700 font-medium mt-1 text-center">
-        Pré-venda ativa: Interessados desde o lançamento {count}
+        Pré-venda ativa: Interessados desde o lançamento {isMounted ? count : "..."}
       </p>
       <p className="text-[11px] text-gray-400 text-center">Atualizado em tempo real</p>
     </div>
