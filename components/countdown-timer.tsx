@@ -14,29 +14,59 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     setIsMounted(true);
     
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
-      let timeLeft: { [key: string]: number } = {};
+      try {
+        const target = new Date(targetDate);
+        
+        // Validar se a data é válida
+        if (isNaN(target.getTime())) {
+          console.error("Data de destino inválida:", targetDate);
+          return {};
+        }
+        
+        const difference = target.getTime() - new Date().getTime();
+        let timeLeft: { [key: string]: number } = {};
 
-      if (difference > 0) {
-        timeLeft = {
-          dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutos: Math.floor((difference / 1000 / 60) % 60),
-          segundos: Math.floor((difference / 1000) % 60)
-        };
+        if (difference > 0) {
+          timeLeft = {
+            dias: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            horas: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutos: Math.floor((difference / 1000 / 60) % 60),
+            segundos: Math.floor((difference / 1000) % 60)
+          };
+        }
+
+        return timeLeft;
+      } catch (error) {
+        console.error("Erro ao calcular tempo restante:", error);
+        return {};
       }
-
-      return timeLeft;
     };
     
+    // Calcular inicial
     setTimeLeft(calculateTimeLeft());
     
+    // Configurar intervalo
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
+    // Limpar intervalo quando componente for desmontado
     return () => clearInterval(timer);
   }, [targetDate]);
+
+  // Formatando a data para exibição
+  const formatDisplayDate = (dateString: string): string => {
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+    } catch (error) {
+      return '30/05/2025'; // Data padrão caso haja erro de formatação
+    }
+  };
 
   if (!isMounted) {
     return (
@@ -63,6 +93,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
       <h3 className="text-2xl font-bold text-white mb-4">
         Tempo restante para garantir sua unidade!
       </h3>
+      <p className="text-sm mb-4">Oferta válida até {formatDisplayDate(targetDate)}</p>
       <div className="flex justify-center">
         {timerComponents.length > 0 ? timerComponents : <span>Oferta Encerrada</span>}
       </div>

@@ -22,15 +22,29 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
     setIsMounted(true)
     
     const calculateTimeLeft = () => {
-      const difference = new Date(targetDate).getTime() - new Date().getTime()
+      try {
+        const targetTime = new Date(targetDate).getTime()
+        const now = new Date().getTime()
+        const difference = targetTime - now
 
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        })
+        if (difference > 0) {
+          setTimeLeft({
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((difference / 1000 / 60) % 60),
+            seconds: Math.floor((difference / 1000) % 60),
+          })
+        } else {
+          // Se a diferença for negativa (data expirada), zera o timer
+          setTimeLeft({
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+          })
+        }
+      } catch (error) {
+        console.error("Erro ao calcular tempo restante:", error)
       }
     }
 
@@ -42,14 +56,17 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
 
   return (
     <div className="flex justify-center gap-3 mt-2">
-      {["Dias", "Horas", "Min", "Seg"].map((label, i) => (
-        <div key={label} className="flex flex-col items-center min-w-0">
-          <div className="bg-white/10 rounded-lg w-14 h-14 flex items-center justify-center text-2xl font-bold">
-            {isMounted ? Object.values(timeLeft)[i] : "0"}
+      {["Dias", "Horas", "Min", "Seg"].map((label, i) => {
+        const value = Object.values(timeLeft)[i]
+        return (
+          <div key={label} className="flex flex-col items-center min-w-0">
+            <div className="bg-white/10 rounded-lg w-14 h-14 flex items-center justify-center text-2xl font-bold">
+              {isMounted ? value : "0"}
+            </div>
+            <span className="text-xs mt-1 break-words">{label}</span>
           </div>
-          <span className="text-xs mt-1 break-words">{label}</span>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -88,7 +105,7 @@ export default function CallToAction() {
 
               <p className="text-base md:text-lg text-gray-100 mb-6 break-words">
                 Condições especiais válidas até{" "}
-                <span className="font-bold">10/05/2025</span>.
+                <span className="font-bold">30/05/2025</span>.
               </p>
 
               <div className="flex items-start gap-2 mb-2">

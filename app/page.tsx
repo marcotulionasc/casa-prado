@@ -101,6 +101,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Countdown Timer Section */}
+      <section className="py-12 md:py-20 bg-gradient-to-r from-figueira-purple to-figueira-indigo text-white text-center">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Não perca essa oportunidade!</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            As condições especiais de pré-lançamento são válidas até 30/05/2025. 
+            Restam poucas unidades disponíveis.
+          </p>
+          <CountdownTimer targetDate="2025-05-30T00:00:00" />
+          <div className="mt-10">
+            <Button 
+              className="bg-white text-figueira-purple hover:bg-gray-100 text-base font-semibold px-8 py-3"
+              asChild
+            >
+              <Link href="#lead-form">Falar com um consultor</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <CallToAction />
 
       <FAQSection />
