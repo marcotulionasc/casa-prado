@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Countdown Timer Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-r from-figueira-purple to-figueira-indigo text-white text-center">
+      {/* <section className="py-12 md:py-20 bg-gradient-to-r from-figueira-purple to-figueira-indigo text-white text-center">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Não perca essa oportunidade!</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
@@ -119,7 +119,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <CallToAction />
 
