@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { captureUTMParams, sendUTMData, getStoredUTMParams } from '../utils/utmTracker';
+import { captureUTMParams, sendUTMData, getStoredUTMParams } from '@/utils/utmTracker';
 
 export function useUTM() {
   console.log('🎯 useUTM hook iniciado');
@@ -9,7 +9,6 @@ export function useUTM() {
     console.log('🎯 useUTM useEffect executando');
     setIsClient(true);
     
-    // Forçar execução no próximo tick para garantir que window está disponível
     setTimeout(() => {
       console.log('🎯 Tentando capturar UTMs...');
       try {
@@ -20,10 +19,8 @@ export function useUTM() {
     }, 0);
   }, []);
 
-  // Log do estado atual
   console.log('🎯 isClient:', isClient);
 
-  // Só retorna as funções se estivermos no cliente
   if (!isClient) {
     console.log('🎯 Ainda no servidor, retornando funções vazias');
     return {

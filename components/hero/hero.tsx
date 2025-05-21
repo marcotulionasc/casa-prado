@@ -47,17 +47,17 @@ export default function HeroSection() {
         {/* COLUNA ESQUERDA */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full lg:w-1/2">
           <span className="inline-block w-max rounded-full bg-figueira-100/90 px-3 py-1 text-xs font-medium text-figueira-blue">
-            Pré-lançamento exclusivo
+            Lançamento exclusivo
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
             Apartamentos de Alto&nbsp;Padrão ao&nbsp;Lado do&nbsp;Iguatemi&nbsp;Campinas
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-white/90">
-            Pré‑lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
+            Lançamento com unidades limitadas — apenas 80 apartamentos disponíveis em localização privilegiada
           </p>
           {/* COUNTDOWN */}
           <div className="w-full max-w-[90vw] max-w-xs bg-gradient-to-r from-figueira-50 via-white/80 to-figueira-50/80 border border-figueira-purple/20 shadow-lg rounded-2xl p-4 text-figueira-purple">
-            <h3 className="text-base font-bold mb-3 text-center">A pré‑venda termina em</h3>
+            <h3 className="text-base font-bold mb-3 text-center">Condições especiais se encerram em:</h3>
             <div className="grid grid-cols-4 gap-3">
               {["Dias", "Horas", "Min", "Seg"].map((l, i) => (
                 <div key={l} className="flex flex-col items-center">

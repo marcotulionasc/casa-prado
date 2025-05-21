@@ -78,6 +78,7 @@ export default function LeadForm() {
       field01: "morador",
       field02: selectedRange || null,
       field03: null,
+      tenantId: 2,
     }
 
     try {
@@ -220,7 +221,7 @@ function SocialProofBlock() {
         ))}
       </div>
       <p className="text-xs text-gray-700 font-medium mt-1 text-center">
-        Pré-venda ativa: Interessados desde o lançamento {isMounted ? count : "..."}
+        venda ativa: Interessados desde o lançamento {isMounted ? count : "..."}
       </p>
       <p className="text-[11px] text-gray-400 text-center">Atualizado em tempo real</p>
     </div>
