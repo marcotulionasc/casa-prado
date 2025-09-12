@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts: Inter for body, Playfair Display for headings */
+/* Fonts: Inter for headings and body */
 @layer base {
   h1, h2, h3, .font-heading {
-    font-family: var(--font-heading), Georgia, serif;
+    font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   }
   body, p, a, li, span, input, button, textarea {
     font-family: var(--font-body), system-ui, -apple-system, Segoe UI, Roboto, sans-serif;

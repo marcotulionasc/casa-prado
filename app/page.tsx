@@ -10,6 +10,26 @@ import { MobileCta } from "@/components/mobile-cta"
 import LeadForm from "@/components/lead-form"
 import FAQSection from "@/components/faq/faq-section"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
+import {
+  CheckCircle2,
+  Sparkles,
+  Bath,
+  Building2,
+  Utensils,
+  Archive,
+  Plug,
+  Car,
+  BatteryCharging,
+  Ruler,
+  Bed,
+  MapPin as MapPinIcon,
+  ShoppingBag,
+  Navigation,
+  Trees,
+  Timer,
+  Crown,
+  Tag,
+} from "lucide-react"
 
 export default function Home() {
   return (
@@ -22,7 +42,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-figueira-lavender to-white" />
         <div className="container relative px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-center">
-            <span className="inline-block rounded-full bg-figueira-100 text-figueira-800 px-3 py-1 text-xs font-medium mb-4">Lançamento exclusivo</span>
+            <span className="inline-flex items-center gap-2 rounded-full bg-figueira-100 text-figueira-800 px-3 py-1 text-xs font-medium mb-4">
+              <Crown className="h-3.5 w-3.5" /> Lançamento exclusivo
+            </span>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-5 font-heading">
               3 banheiros, varanda gourmet e torre única: o lançamento exclusivo do Parque Prado.
             </h1>
@@ -70,7 +92,10 @@ export default function Home() {
                 "Espaço delivery",
                 "Bicicletário",
               ].map((item) => (
-                <div key={item} className="p-3 bg-neutral-100 rounded-md border border-neutral-200">{item}</div>
+                <div key={item} className="p-3 bg-neutral-100 rounded-md border border-neutral-200 flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-figueira-purple" />
+                  <span>{item}</span>
+                </div>
               ))}
             </div>
           </div>
@@ -103,14 +128,18 @@ export default function Home() {
           <p className="text-gray-600 mb-8 text-center">Diferenciais que resolvem seu dia a dia.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              "3 banheiros em todas as plantas → fim da fila do banho, privacidade para visitas.",
-              "Torre única com apenas 102 unidades → menos moradores e mais privacidade.",
-              "Varanda gourmet integrada ao living → o espaço que transforma jantar em experiência.",
-              "Vaga com depósito privativo → organização até para quem tem muito.",
-              "Infraestrutura para carro elétrico → preparado para o futuro.",
-            ].map((text) => (
+              { icon: Bath, text: "3 banheiros em todas as plantas → fim da fila do banho, privacidade para visitas." },
+              { icon: Building2, text: "Torre única com apenas 102 unidades → menos moradores e mais privacidade." },
+              { icon: Utensils, text: "Varanda gourmet integrada ao living → o espaço que transforma jantar em experiência." },
+              { icon: Archive, text: "Vaga com depósito privativo → organização até para quem tem muito." },
+              { icon: Plug, text: "Infraestrutura para carro elétrico → preparado para o futuro." },
+            ].map(({ icon: Icon, text }) => (
               <div key={text} className="rounded-xl border border-figueira-200 bg-white p-5 shadow-sm text-center">
-                <div className="h-1 w-12 bg-figueira-blue rounded-full mb-4 mx-auto" />
+                <div className="flex justify-center mb-3">
+                  <div className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-figueira-100 text-figueira-purple">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                </div>
                 <p className="text-gray-800">{text}</p>
               </div>
             ))}
@@ -135,7 +164,10 @@ export default function Home() {
                   <Image src="/placeholder-media.svg" alt={p.alt} fill className="object-cover" />
                 </AspectRatio>
                 <div className="p-4">
-                  <h3 className="font-semibold text-center">{p.title}</h3>
+                  <div className="flex items-center justify-center gap-2">
+                    <Ruler className="h-4 w-4 text-figueira-purple" />
+                    <h3 className="font-semibold text-center">{p.title}</h3>
+                  </div>
                   <p className="text-gray-600 text-sm text-center">{p.desc}</p>
                 </div>
               </div>
@@ -158,6 +190,17 @@ export default function Home() {
             <p className="text-gray-700 text-lg text-center lg:text-left">
               O bairro que une tranquilidade residencial e conveniência. Próximo ao Shopping Prado Boulevard, com acesso fácil a rodovias e serviços, o Parque Prado é hoje uma das regiões mais valorizadas de Campinas. Morar aqui significa viver melhor agora e investir em um endereço que só cresce.
             </p>
+            <div className="flex flex-wrap gap-3 mt-4 justify-center lg:justify-start">
+              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+                <MapPinIcon className="h-4 w-4" /> Localização valorizada
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+                <ShoppingBag className="h-4 w-4" /> Próximo ao Prado Boulevard
+              </span>
+              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+                <Navigation className="h-4 w-4" /> Fácil acesso às rodovias
+              </span>
+            </div>
           </div>
           <div className="order-1 lg:order-2 rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
             <AspectRatio ratio={16/9}>
@@ -170,7 +213,9 @@ export default function Home() {
       {/* Seção 5 – Oportunidade */}
       <section id="oportunidade" className="py-14">
         <div className="container px-4 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading">Poucas unidades, muito valor</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading flex items-center justify-center gap-2">
+            <Timer className="h-5 w-5 text-figueira-purple" /> Poucas unidades, muito valor
+          </h2>
           <p className="text-gray-700 text-lg mb-6 text-center max-w-3xl mx-auto">
             O primeiro lançamento desse porte no Parque Prado em mais de 10 anos. O Casa Prado é a chance de conquistar exclusividade e conforto em um produto sem concorrência direta. São apenas 102 unidades e no pré-lançamento, quem chega primeiro escolhe melhor — e com condições especiais.
           </p>

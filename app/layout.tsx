@@ -1,13 +1,12 @@
 import type React from "react"
 import "./globals.css"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import GradientBackground from "@/components/gradient-background"
 import { GTM } from "@/components/GTM"
 import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-body" })
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" })
 
 export const metadata = {
   title: "Casa Prado – Lançamento exclusivo no Parque Prado",
@@ -32,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="overflow-x-hidden" suppressHydrationWarning>
       <head />
-      <body className={`${inter.variable} ${playfair.variable} overflow-x-hidden`}>
+      <body className={`${inter.variable} overflow-x-hidden`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KRPCGBGH"
