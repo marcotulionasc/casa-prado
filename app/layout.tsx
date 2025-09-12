@@ -1,17 +1,18 @@
 import type React from "react"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import GradientBackground from "@/components/gradient-background"
 import { GTM } from "@/components/GTM"
 import { Analytics } from "@vercel/analytics/react"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-body" })
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-heading" })
 
 export const metadata = {
-  title: "Avenida 105 Figueira - Apartamentos de Alto Padrão em Campinas",
+  title: "Casa Prado – Lançamento exclusivo no Parque Prado",
   description:
-    "Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas. Pré-lançamento exclusivo com apenas 80 unidades disponíveis.",
+    "Apartamentos de 2 e 3 dormitórios, 69 a 96 m², todos com 3 banheiros e varanda gourmet. Torre única com 102 unidades no Parque Prado, Campinas.",
   generator: "marco.nascimento.dev",
   icons: {
     icon: [
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="overflow-x-hidden" suppressHydrationWarning>
       <head />
-      <body className={`${inter.className} overflow-x-hidden`}>
+      <body className={`${inter.variable} ${playfair.variable} overflow-x-hidden`}>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KRPCGBGH"

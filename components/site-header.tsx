@@ -32,21 +32,16 @@ export default function SiteHeader() {
             {/* <Building className="h-5 w-5 md:h-6 md:w-6 text-figueira-purple" /> */}
             <img src="/logo-metropolev2.jpg" alt="Logo" className="h-8 w-auto rounded-full" /> 
             <span className="text-black font-bold text-base md:text-lg">|</span>
-            <span className="text-black font-bold text-base md:text-lg">Avenida 105</span>
+            <span className="text-black font-bold text-base md:text-lg">Casa Prado</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="#projeto" className="text-sm font-medium hover:text-figueira-purple transition-colors">
-              O Projeto
-            </Link>
-            <Link href="#localizacao" className="text-sm font-medium hover:text-figueira-purple transition-colors">
-              Localização
-            </Link>
-            <Link href="#diferenciais" className="text-sm font-medium hover:text-figueira-purple transition-colors">
-              Diferenciais
-            </Link>
-            <Link href="#contato" className="text-sm font-medium hover:text-figueira-purple transition-colors">
-              Contato
-            </Link>
+            <Link href="#lazer" className="text-sm font-medium hover:text-figueira-purple transition-colors">Lazer</Link>
+            <Link href="#diferenciais" className="text-sm font-medium hover:text-figueira-purple transition-colors">Diferenciais</Link>
+            <Link href="#plantas" className="text-sm font-medium hover:text-figueira-purple transition-colors">Plantas</Link>
+            <Link href="#bairro" className="text-sm font-medium hover:text-figueira-purple transition-colors">Bairro</Link>
+            <Link href="#oportunidade" className="text-sm font-medium hover:text-figueira-purple transition-colors">Oportunidade</Link>
+            <Link href="#cadastro" className="text-sm font-medium hover:text-figueira-purple transition-colors">Cadastro</Link>
+            <Link href="#faq" className="text-sm font-medium hover:text-figueira-purple transition-colors">FAQ</Link>
           </nav>
         </div>
       </div>

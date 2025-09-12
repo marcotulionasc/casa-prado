@@ -4,7 +4,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { User, Mail, Phone } from "lucide-react"
+import { User, Phone } from "lucide-react"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { useRouter } from "next/navigation"
@@ -14,30 +14,19 @@ export default function LeadForm() {
   const router = useRouter()
   const { sendUTMData } = useUTM()
 
-  interface FormData {
-    name: string
-    email: string
-    phone: string
-  }
-  interface FormErrors {
-    name: string
-    email: string
-    phone: string
-  }
+  interface FormData { name: string; phone: string }
+  interface FormErrors { name: string; phone: string }
 
-  const [formData, setFormData] = useState<FormData>({ name: "", email: "", phone: "" })
+  const [formData, setFormData] = useState<FormData>({ name: "", phone: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState("")
-  const [errors, setErrors] = useState<FormErrors>({ name: "", email: "", phone: "" })
-  const [selectedRange, setSelectedRange] = useState("")
+  const [errors, setErrors] = useState<FormErrors>({ name: "", phone: "" })
 
   const validateField = (name: keyof FormData, value: string): string => {
     switch (name) {
       case "name":
         return value.length < 3 ? "Nome deve ter pelo menos 3 caracteres" : ""
-      case "email":
-        return !/^\S+@\S+\.\S+$/.test(value) ? "Email inválido" : ""
       case "phone":
         return !/^(\d{10,11})$/.test(value.replace(/\D/g, "")) ? "Telefone inválido (10 ou 11 dígitos)" : ""
       default:
@@ -60,7 +49,6 @@ export default function LeadForm() {
     setSubmitError("")
     const newErrors: FormErrors = {
       name: validateField("name", formData.name),
-      email: validateField("email", formData.email),
       phone: validateField("phone", formData.phone),
     }
     if (Object.values(newErrors).some((error) => error !== "")) {
@@ -72,11 +60,11 @@ export default function LeadForm() {
 
     const payload = {
       name: formData.name,
-      email: formData.email,
+      email: `${formatPhoneNumber(formData.phone)}@placeholder.local`,
       cellPhone: formatPhoneNumber(formData.phone),
       interessePrincipal: null,
       field01: "morador",
-      field02: selectedRange || null,
+      field02: null,
       field03: null,
       tenantId: 2,
     }
@@ -104,17 +92,13 @@ export default function LeadForm() {
       id="lead-form"
       className="bg-white/95 mt-14 backdrop-blur-sm px-4 py-6 pb-10 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
     >
-      <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">
-        Este é um lançamento de alto padrão com valores a partir de R$ 2,3 milhões.
-      </h3>
+      <h3 className="text-base sm:text-lg font-semibold mb-2 text-center">Garanta acesso antecipado</h3>
       <h5 className="text-sm text-gray-500 text-center mb-4">
-        Indicado para quem busca localização premium, conforto e exclusividade.
+        Cadastre-se e receba plantas e condições de pré-lançamento no seu WhatsApp.
       </h5>
 
       {isSubmitted ? (
-        <p className="text-green-600 text-sm text-center">
-          Em breve, nossa equipe entrará em contato com mais informações sobre o Avenida 105.
-        </p>
+        <p className="text-green-600 text-sm text-center">Obrigado! Em breve entraremos em contato.</p>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-6">
           <div className="relative">
@@ -133,21 +117,6 @@ export default function LeadForm() {
           </div>
 
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-            <Input
-              type="email"
-              name="email"
-              placeholder="Seu e-mail"
-              className={`pl-10 h-10 text-base ${errors.email ? "border-red-500" : ""}`}
-              value={formData.email}
-              onChange={handleChange}
-              onBlur={handleChange}
-              required
-            />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-          </div>
-
-          <div className="relative">
             <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
             <Input
               type="tel"
@@ -162,27 +131,6 @@ export default function LeadForm() {
             {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
           </div>
 
-          <div className="mt-2">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Faixa de valor que você está considerando neste momento:
-            </label>
-            <div className="flex flex-col gap-2">
-              {["Até R$ 1 milhão", "R$ 2.3 milhões a R$ 2.5 milhões", "Acima de R$ 3 milhões"].map((range) => (
-                <label key={range} className="flex items-center gap-2">
-                  <input
-                    type="radio"
-                    name="valor-range"
-                    value={range}
-                    checked={selectedRange === range}
-                    onChange={() => setSelectedRange(range)}
-                    className="accent-figueira-purple"
-                  />
-                  {range}
-                </label>
-              ))}
-            </div>
-          </div>
-
           {submitError && <p className="text-red-500 text-xs text-center">{submitError}</p>}
 
           <Button
@@ -190,9 +138,8 @@ export default function LeadForm() {
             className="w-full bg-figueira-purple hover:bg-figueira-indigo text-white h-10 rounded-lg"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Enviando..." : "Acessar a tabela completa com prioridade"}
+            {isSubmitting ? "Enviando..." : "Quero receber condições de pré-lançamento"}
           </Button>
-
           <SocialProofBlock />
         </form>
       )}

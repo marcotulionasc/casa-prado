@@ -8,7 +8,7 @@ export default function ObrigadoPage() {
   
   const handleWhatsAppClick = () => {
     const phoneNumber = "5519982535896"
-    const message = "Olá! Acabei de me cadastrar no site do Avenida 105 e gostaria de mais informações."
+    const message = "Olá! Acabei de me cadastrar no site do Casa Prado e gostaria de mais informações."
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
@@ -27,7 +27,7 @@ export default function ObrigadoPage() {
           <div className="space-y-4 mb-8">
             <p className="text-gray-700">
               Devido à alta demanda e número limitado de unidades, um dos nossos consultores entrará em contato em breve
-              para apresentar todos os detalhes do projeto Avenida 105.
+              para apresentar todos os detalhes do Casa Prado.
             </p>
 
             <div className="bg-amber-50 border-l-4 border-amber-500 p-4">

@@ -1,251 +1,211 @@
 "use client"
 
-import {
-  MapPin,
-  Building,
-  Leaf,
-  Palette,
-  Coffee,
-  Wifi,
-  TrendingUp,
-  CheckCircle,
-  Phone,
-  Mail,
-  Award,
-  Users,
-  Shield,
-  DollarSign,
-  HeartPulse,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Phone, Mail, MapPin } from "lucide-react"
 import SiteHeader from "@/components/site-header"
 import ScrollToTop from "@/components/scroll-to-top"
-import TestimonialCard from "@/components/testimonial-card"
-import CountdownTimer from "@/components/countdown-timer"
 import { MobileCta } from "@/components/mobile-cta"
-import CasaFigueiraSection from "@/components/casa-figueira"
-import { InvestmentSection } from "@/components/investment-section"
-import VisaoGeralSection from "@/components/visao-geral/VisaoGeral"
-import PortfolioSection from "@/components/portfolio/Portfolio"
-import DiferenciasSection from "@/components/diferencias/diferencias"
-import LocalizacaoSection from "@/components/localizacao/localizacao"
-import HeroSection from "@/components/hero/hero"
-import AboutSection from "@/components/about/about"
-import ApartmentPlans from "@/components/apartment-plans"
+import LeadForm from "@/components/lead-form"
 import FAQSection from "@/components/faq/faq-section"
-import VimeoPlayer from "@/components/vimeo/video-vimeo"
-import CallToAction from "@/components/call-to-action/call-to-action"
-import { AutoVideoPlayer } from "@/components/video/auto-video-player"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-
       <MobileCta />
       <SiteHeader />
-      <HeroSection />
-      <CasaFigueiraSection />
-      {/* <VimeoPlayer
-        url="https://player.vimeo.com/video/993635020?playsinline=1&badge=0"
-        options={{ loop: true }}
-      /> */}
-      <AutoVideoPlayer
-        src="/casafigueira.mp4"
-        title="Big Buck Bunny"
-      />
-      <DiferenciasSection />
-      <InvestmentSection />
-      <VisaoGeralSection />
-      <ApartmentPlans />
-      <PortfolioSection />
-      <LocalizacaoSection />
-      <AboutSection />
 
-
-      {/* Testimonials Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-neutral-50">
-        <div className="container px-4 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">O que dizem nossos clientes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Depoimentos de quem já investiu em nossos empreendimentos anteriores
+      {/* Hero */}
+      <section className="relative pt-28 pb-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-figueira-lavender to-white" />
+        <div className="container relative px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="text-center lg:text-center">
+            <span className="inline-block rounded-full bg-figueira-100 text-figueira-800 px-3 py-1 text-xs font-medium mb-4">Lançamento exclusivo</span>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-5 font-heading">
+              3 banheiros, varanda gourmet e torre única: o lançamento exclusivo do Parque Prado.
+            </h1>
+            <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+              O Casa Prado é diferente de tudo o que você já viu em Campinas: apartamentos de 2 e 3 dormitórios, plantas de 69 a 96 m², todas com 3 banheiros, varanda gourmet integrada e apenas 102 unidades em torre única. A mais de 10 anos o Parque Prado não via algo como essa oportunidade e quem chega primeiro, escolhe melhor.
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              name="Carlos Mendes"
-              role="Empresário"
-              image="/homem01.webp"
-              rating={5}
-              testimonial="Investir com a Metrópole foi uma decisão acertada. O atendimento personalizado e a qualidade dos empreendimentos superaram minhas expectativas. Já estou no terceiro imóvel."
-            />
-            <TestimonialCard
-              name="Ana Luiza Costa"
-              role="Médica"
-              image="/mulher01.webp"
-              rating={5}
-              testimonial="A localização e o acabamento do meu apartamento são impecáveis. O processo de compra foi tranquilo e transparente. Recomendo a todos que buscam qualidade."
-            />
-            <TestimonialCard
-              name="Roberto Almeida"
-              role="Advogado"
-              image="/homem02.webp"
-              rating={5}
-              testimonial="A valorização do meu imóvel superou as projeções iniciais. O compromisso da Metrópole com a qualidade e os prazos faz toda a diferença no mercado."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Countdown Timer Section */}
-      {/* <section className="py-12 md:py-20 bg-gradient-to-r from-figueira-purple to-figueira-indigo text-white text-center">
-        <div className="container px-4 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Não perca essa oportunidade!</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            As condições especiais de pré-lançamento são válidas até 30/05/2025. 
-            Restam poucas unidades disponíveis.
-          </p>
-          <CountdownTimer targetDate="2025-05-30T00:00:00" />
-          <div className="mt-10">
-            <Button 
-              className="bg-white text-figueira-purple hover:bg-gray-100 text-base font-semibold px-8 py-3"
-              asChild
-            >
-              <Link href="#lead-form">Falar com um consultor</Link>
-            </Button>
-          </div>
-        </div>
-      </section> */}
-
-      <CallToAction />
-
-      <FAQSection />
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-figueira-100 via-white to-white overflow-hidden">
-        {/* glow */}
-        <div className="absolute left-1/2 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-figueira-purple/20 blur-3xl" />
-
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-figueira-purple/30 bg-white/70 p-8 shadow-xl backdrop-blur-sm">
-            <h3 className="mb-6 text-center text-2xl font-extrabold leading-tight text-figueira-purple md:text-3xl">
-              Este lançamento é ideal para quem quer:
-            </h3>
-
-            <ul className="mx-auto mb-10 grid max-w-lg gap-4 text-left text-lg text-gray-800">
-              <li className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
-                Morar com sofisticação&nbsp;e&nbsp;mobilidade ao lado do Iguatemi
-              </li>
-              <li className="flex items-start gap-3">
-                <HeartPulse className="mt-1 h-5 w-5 shrink-0 text-figueira-purple" />
-                Qualidade de vida garantida por estrutura de alto&nbsp;padrão
-              </li>
-            </ul>
-
-            <p className="mb-8 text-center text-lg font-medium text-gray-900">
-              Se você se identifica, fale agora com um especialista e garanta sua prioridade.
-            </p>
-
-            <div className="flex justify-center">
-              <Button
-                className="w-full max-w-xs bg-gradient-to-r from-figueira-purple to-figueira-indigo text-base font-semibold transition-colors hover:from-figueira-indigo hover:to-figueira-purple md:w-auto"
-                asChild
-              >
-                <Link href="#lead-form">Falar com um especialista</Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white px-6 py-6 text-base">
+                <Link href="#cadastro">Quero receber condições de pré-lançamento</Link>
+              </Button>
+              <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100 px-6 py-6 text-base">
+                <Link href="#plantas">Ver plantas</Link>
               </Button>
             </div>
+            <p className="text-xs text-gray-500 mt-3">Sem spam. Atendimento consultivo e personalizado.</p>
+          </div>
+          <div className="max-w-lg mx-auto w-full">
+            <div className="rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
+              <LeadForm />
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Seção 1 – Lazer */}
+      <section id="lazer" className="py-14">
+        <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">+15 ambientes pensados para sua família</h2>
+            <p className="text-gray-600 mb-8 text-center">Lazer de clube com a privacidade de uma torre única.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+              {[
+                "Piscina com deck molhado",
+                "Ofurô e solarium",
+                "Espaço yoga",
+                "Academia completa",
+                "Coworking com estúdio de gravação",
+                "Pub com cinema",
+                "Salão de festas gourmet",
+                "Brinquedoteca e playground",
+                "Sala de jogos",
+                "Quadra de areia",
+                "Pet place",
+                "Mini-mercado",
+                "Espaço delivery",
+                "Bicicletário",
+              ].map((item) => (
+                <div key={item} className="p-3 bg-neutral-100 rounded-md border border-neutral-200">{item}</div>
+              ))}
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+              <AspectRatio ratio={16/9}>
+                <Image src="/placeholder-media.svg" alt="Área de lazer - substitua pela imagem real" fill className="object-cover"/>
+              </AspectRatio>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+                <AspectRatio ratio={4/3}>
+                  <Image src="/placeholder-media.svg" alt="Ambiente 1" fill className="object-cover"/>
+                </AspectRatio>
+              </div>
+              <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+                <AspectRatio ratio={4/3}>
+                  <Image src="/placeholder-media.svg" alt="Ambiente 2" fill className="object-cover"/>
+                </AspectRatio>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* Final CTA Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-neutral-100">
+      {/* Seção 2 – Diferenciais */}
+      <section id="diferenciais" className="py-14 bg-neutral-50">
         <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Uma oportunidade rara em Campinas!</h2>
-            <p className="text-gray-600 text-lg mb-8">
-              São apenas 80 unidades exclusivas no pré-lançamento. Antecipe-se, aproveite condições especiais e garanta prioridade na escolha da sua unidade. Restam poucas opções com valores promocionais.
-            </p>
-            <Button
-              className="w-full md:w-auto bg-figueira-purple hover:bg-figueira-indigo text-white text-sm md:text-base py-3 px-4"
-              asChild
-            >
-              <Link href="#lead-form">Quero garantir minha unidade</Link>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Exclusividade em cada detalhe</h2>
+          <p className="text-gray-600 mb-8 text-center">Diferenciais que resolvem seu dia a dia.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              "3 banheiros em todas as plantas → fim da fila do banho, privacidade para visitas.",
+              "Torre única com apenas 102 unidades → menos moradores e mais privacidade.",
+              "Varanda gourmet integrada ao living → o espaço que transforma jantar em experiência.",
+              "Vaga com depósito privativo → organização até para quem tem muito.",
+              "Infraestrutura para carro elétrico → preparado para o futuro.",
+            ].map((text) => (
+              <div key={text} className="rounded-xl border border-figueira-200 bg-white p-5 shadow-sm text-center">
+                <div className="h-1 w-12 bg-figueira-blue rounded-full mb-4 mx-auto" />
+                <p className="text-gray-800">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 3 – Plantas */}
+      <section id="plantas" className="py-14">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Plantas pensadas em você!</h2>
+          <p className="text-gray-600 mb-8 text-center">Escolhas inteligentes para diferentes perfis.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { title: "69,23 m² – 2 dormitórios | 3 banheiros", desc: "Duas suítes + lavabo.", alt: "Planta 69m²" },
+              { title: "96,04 m² – 3 dormitórios | 3 banheiros", desc: "Uma suíte + banheiro social + lavabo.", alt: "Planta 96m²" },
+              { title: "Garden 123,77 m²", desc: "Sensação de casa com segurança.", alt: "Garden" },
+              { title: "Cobertura 127,62 m²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
+            ].map((p) => (
+              <div key={p.title} className="rounded-xl border border-figueira-200 bg-white overflow-hidden shadow-sm">
+                <AspectRatio ratio={4/3}>
+                  <Image src="/placeholder-media.svg" alt={p.alt} fill className="object-cover" />
+                </AspectRatio>
+                <div className="p-4">
+                  <h3 className="font-semibold text-center">{p.title}</h3>
+                  <p className="text-gray-600 text-sm text-center">{p.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-700 mt-6 text-center">Cada planta foi pensada para maximizar conforto e praticidade.</p>
+          <div className="flex justify-center mt-6">
+            <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white">
+              <Link href="#cadastro">Quero receber as plantas no WhatsApp</Link>
             </Button>
-            <p className="text-sm text-gray-500 mt-4">
-              Ao clicar, você será atendido por um consultor especializado sem qualquer compromisso de compra.
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 4 – Bairro */}
+      <section id="bairro" className="py-14 bg-neutral-50">
+        <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center lg:text-left">Parque Prado: onde a vida acontece</h2>
+            <p className="text-gray-700 text-lg text-center lg:text-left">
+              O bairro que une tranquilidade residencial e conveniência. Próximo ao Shopping Prado Boulevard, com acesso fácil a rodovias e serviços, o Parque Prado é hoje uma das regiões mais valorizadas de Campinas. Morar aqui significa viver melhor agora e investir em um endereço que só cresce.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section className="py-8 md:py-16 lg:py-24 bg-white" id="quem-somos">
-        <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold">Quem Somos</h2>
-              <p className="text-gray-600">
-                A Metrópole Investimentos Imobiliários é uma boutique especializada em imóveis de alto padrão em
-                Campinas e região, com mais de 5 anos no mercado e centenas de clientes satisfeitos.
-              </p>
-              <p className="text-gray-600">
-                Nosso diferencial está no atendimento humano e consultivo, focado em entender as necessidades de cada
-                cliente para oferecer as melhores oportunidades imobiliárias. Trabalhamos exclusivamente com
-                empreendimentos de alto padrão, selecionados criteriosamente por nossa equipe.
-              </p>
-              <div className="flex items-center space-x-4">
-                <div className="bg-neutral-100 p-4 rounded-full">
-                  <CheckCircle className="h-6 w-6 text-figueira-purple" />
-                </div>
-                <div>
-                  <div className="font-bold">Especialistas em alto padrão</div>
-                  <div className="text-gray-600">Conhecimento profundo do mercado premium de Campinas.</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-neutral-100 p-4 rounded-full">
-                  <Users className="h-6 w-6 text-figueira-purple" />
-                </div>
-                <div>
-                  <div className="font-bold">Atendimento personalizado</div>
-                  <div className="text-gray-600">Consultoria imobiliária exclusiva com profissionais certificados.</div>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="bg-neutral-100 p-4 rounded-full">
-                  <Award className="h-6 w-6 text-figueira-purple" />
-                </div>
-                <div>
-                  <div className="font-bold">Reconhecimento do mercado</div>
-                  <div className="text-gray-600">
-                    Reconhecida por sua excelência no atendimento e indicada por quem valoriza exclusividade e segurança na hora de investir.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden">
-              <Image
-                src="/call-to-action/about-us.webp"
-                alt="Metrópole Investimentos Imobiliários - Especialista em imóveis de alto padrão em Campinas"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="order-1 lg:order-2 rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+            <AspectRatio ratio={16/9}>
+              <Image src="/placeholder-media.svg" alt="Bairro Parque Prado - substitua por imagem real" fill className="object-cover" />
+            </AspectRatio>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Seção 5 – Oportunidade */}
+      <section id="oportunidade" className="py-14">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading">Poucas unidades, muito valor</h2>
+          <p className="text-gray-700 text-lg mb-6 text-center max-w-3xl mx-auto">
+            O primeiro lançamento desse porte no Parque Prado em mais de 10 anos. O Casa Prado é a chance de conquistar exclusividade e conforto em um produto sem concorrência direta. São apenas 102 unidades e no pré-lançamento, quem chega primeiro escolhe melhor — e com condições especiais.
+          </p>
+          <div className="flex justify-center">
+            <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white">
+              <Link href="#cadastro">Quero escolher minha unidade</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 6 – Cadastro */}
+      <section id="cadastro" className="py-16 bg-neutral-50">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 font-heading">Garanta acesso antecipado</h2>
+            <p className="text-gray-700">
+              Cadastre-se agora e receba plantas, condições de pré-lançamento e atendimento exclusivo direto no seu WhatsApp e e-mail.
+            </p>
+          </div>
+          <div className="max-w-xl mx-auto rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
+            <LeadForm />
+          </div>
+        </div>
+      </section>
+
+      {/* Seção 7 – FAQ */}
+      <FAQSection />
+
+      {/* Footer principal */}
       <footer className="bg-neutral-900 text-white py-12">
         <div className="container px-4 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="font-bold text-xl mb-4">Avenida 105</div>
+              <div className="font-bold text-xl mb-4">Casa Prado</div>
               <p className="text-gray-400 mb-4">Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas.</p>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
@@ -312,8 +272,20 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Aviso legal abaixo do footer */}
+      <div className="bg-neutral-900 text-white py-10">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-5xl mx-auto">
+            <div className="rounded-lg border border-white/10 bg-white/5 p-6">
+              <p className="text-sm text-gray-200 text-center">
+                Imagens ilustrativas. O empreendimento será comercializado após registro do memorial de incorporação. Especificações técnicas, valores e condições podem sofrer alterações sem aviso prévio. Consulte disponibilidade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <ScrollToTop />
     </div>
   )
 }
-

@@ -54,22 +54,22 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         figueira: {
-          blue: "#3F4FA9",
-          indigo: "#4659B8",
-          purple: "#6E48AE",
-          lavender: "#7E60B9",
-          magenta: "#A55298",
-          wine: "#CC607F",
-          50: "#f5f5ff",
-          100: "#e8eaff",
-          200: "#d1d4ff",
-          300: "#b4b9ff",
-          400: "#9290ff",
-          500: "#7e60b9",
-          600: "#6e48ae",
-          700: "#5a3a9e",
-          800: "#4659b8",
-          900: "#3f4fa9",
+          blue: "#C9A66B",      // Gold accent
+          indigo: "#2F5D50",    // Secondary green
+          purple: "#1E3D34",    // Primary deep green
+          lavender: "#E9EFE6",  // Light sage
+          magenta: "#8C6C3A",   // Gold dark
+          wine: "#0F241F",      // Deep green/black
+          50: "#F4F6F5",
+          100: "#E9EFE6",
+          200: "#D4E1D9",
+          300: "#B8CCBF",
+          400: "#8FB09A",
+          500: "#5F8E75",
+          600: "#2F5D50",
+          700: "#24483E",
+          800: "#1E3D34",
+          900: "#152A24",
         },
       },
       borderRadius: {
