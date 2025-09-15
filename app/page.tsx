@@ -188,10 +188,20 @@ export default function Home() {
               { title: "96,04 m² – 3 dormitórios | 3 banheiros", desc: "Uma suíte + banheiro social + lavabo.", alt: "Planta 96m²" },
               { title: "Garden 123,77 m²", desc: "Sensação de casa com segurança.", alt: "Garden" },
               { title: "Cobertura 127,62 m²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
-            ].map((p) => (
+            ].map((p, i) => (
               <div key={p.title} className="rounded-xl border border-figueira-200 bg-white overflow-hidden shadow-sm">
                 <AspectRatio ratio={4/3}>
-                  <Image src="/placeholder-media.svg" alt={p.alt} fill className="object-cover" />
+                  <Image
+                    src={[
+                      "/images/plantas/planta-tipo-meio-69-23m.webp",
+                      "/images/plantas/planta-tipo-ponta-96-04m.webp",
+                      "/images/plantas/planta-garden-123-77mwebp.webp",
+                      "/images/plantas/planta-cobertura-127-62m.webp",
+                    ][i]}
+                    alt={p.alt}
+                    fill
+                    className="object-cover"
+                  />
                 </AspectRatio>
                 <div className="p-4">
                   <div className="flex items-center justify-center gap-2">
