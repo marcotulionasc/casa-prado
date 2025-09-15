@@ -84,6 +84,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Seção 4.1 – Localização */}
+      <section id="localizacao" className="py-14">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-center">Localização</h2>
+          <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+            <AspectRatio ratio={16/9}>
+              <iframe
+                src="https://www.google.com/maps?q=Parque%20Prado,%20Campinas%20-%20SP,%20Brasil&hl=pt-BR&output=embed"
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa - Parque Prado, Campinas"
+              />
+            </AspectRatio>
+          </div>
+          <div className="flex justify-center mt-4">
+            <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100">
+              <Link href="https://www.google.com/maps/place/Parque+Prado,+Campinas+-+SP,+Brasil/@-22.939538,-47.050069,14z/data=!4m6!3m5!1s0x94c8cec8c0b3590f:0x8b290f64db1c7f6!8m2!3d-22.9407606!4d-47.0497877!16s%2Fg%2F1ymwk7954?hl=pt-BR&entry=ttu">
+                Ver no Google Maps
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Seção 1 – Lazer */}
       <section id="lazer" className="py-14">
         <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
@@ -127,7 +153,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
-                <AspectRatio ratio={4/3}>
+                <AspectRatio ratio={4/3} className="bg-neutral-50">
                   <Image
                     src="/images/gym.webp"
                     alt="Academia completa com equipamentos modernos"
@@ -137,7 +163,7 @@ export default function Home() {
                 </AspectRatio>
               </div>
               <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
-                <AspectRatio ratio={4/3}>
+                <AspectRatio ratio={4/3} className="bg-neutral-50">
                   <Image
                     src="/images/interior-01.webp"
                     alt="Área de convivência com acabamento de alto padrão"
@@ -198,17 +224,80 @@ export default function Home() {
                       "/images/plantas/planta-garden-123-77mwebp.webp",
                       "/images/plantas/planta-cobertura-127-62m.webp",
                     ][i]}
-                    alt={p.alt}
+                    alt={[
+                      "Planta Tipo Meio",
+                      "Planta Tipo Ponta",
+                      "Planta Garden",
+                      "Planta Cobertura",
+                    ][i]}
                     fill
-                    className="object-cover"
+                    className="object-contain p-2"
                   />
                 </AspectRatio>
                 <div className="p-4">
-                  <div className="flex items-center justify-center gap-2">
-                    <Ruler className="h-4 w-4 text-figueira-purple" />
-                    <h3 className="font-semibold text-center">{p.title}</h3>
+                  <h3 className="font-bold text-center font-heading text-lg">
+                    {[
+                      "PLANTA TIPO MEIO",
+                      "Planta Tipo Ponta",
+                      "PLANTA GARDEN",
+                      "PLANTA COBERTURA",
+                    ][i]}
+                  </h3>
+                  <p className="text-gray-600 text-sm text-center mb-3">
+                    {[
+                      "Com suíte",
+                      "Com suíte",
+                      "Área privativa descoberta",
+                      "Com suíte",
+                    ][i]}
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-800">
+                    <div className="flex items-center gap-2 justify-center"><Ruler className="h-4 w-4 text-figueira-purple" />
+                      {[
+                        "69.23 m2",
+                        "96.04 m2",
+                        "123.77 m2",
+                        "127.62 m2",
+                      ][i]}
+                    </div>
+                    <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
+                      {[
+                        "2 Dormitório(s)",
+                        "3 Dormitório(s)",
+                        "3 Dormitório(s)",
+                        "3 Dormitório(s)",
+                      ][i]}
+                    </div>
+                    <div className="flex items-center gap-2 justify-center"><Bath className="h-4 w-4 text-figueira-purple" />
+                      {[
+                        "3 Banheiro(s)",
+                        "3 Banheiro(s)",
+                        "3 Banheiro(s)",
+                        "3 Banheiro(s)",
+                      ][i]}
+                    </div>
+                    <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
+                      {[
+                        "2 Suíte(s)",
+                        "1 Suíte",
+                        "1 Suíte",
+                        "1 Suíte",
+                      ][i]}
+                    </div>
+                    {[null, null, "1 Vaga", null][i] && (
+                      <div className="flex items-center gap-2 justify-center"><Car className="h-4 w-4 text-figueira-purple" />
+                        {["", "", "1 Vaga", ""][i]}
+                      </div>
+                    )}
+                    <div className="flex items-center gap-2 justify-center"><Archive className="h-4 w-4 text-figueira-purple" />
+                      {[
+                        "1 Caracteristica extra",
+                        "1 Caracteristica extra",
+                        "1 Caracteristica extra",
+                        "1 Caracteristica extra",
+                      ][i]}
+                    </div>
                   </div>
-                  <p className="text-gray-600 text-sm text-center">{p.desc}</p>
                 </div>
               </div>
             ))}
