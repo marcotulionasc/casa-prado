@@ -60,6 +60,21 @@ export default function Home() {
               </Button>
             </div>
             <p className="text-xs text-gray-500 mt-3">Sem spam. Atendimento consultivo e personalizado.</p>
+
+            {/* Destaque visual do living (desktop) */}
+            <div className="mt-6 hidden lg:block">
+              <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+                <AspectRatio ratio={16/9}>
+                  <Image
+                    src="/images/sala-e-cozinha.webp"
+                    alt="Living integrado com varanda gourmet"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </AspectRatio>
+              </div>
+            </div>
           </div>
           <div className="max-w-lg mx-auto w-full">
             <div className="rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
@@ -102,18 +117,33 @@ export default function Home() {
           <div className="space-y-4">
             <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
               <AspectRatio ratio={16/9}>
-                <Image src="/placeholder-media.svg" alt="Área de lazer - substitua pela imagem real" fill className="object-cover"/>
+                <Image
+                  src="/images/piscina.webp"
+                  alt="Piscina com deck molhado e solarium"
+                  fill
+                  className="object-cover"
+                />
               </AspectRatio>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
                 <AspectRatio ratio={4/3}>
-                  <Image src="/placeholder-media.svg" alt="Ambiente 1" fill className="object-cover"/>
+                  <Image
+                    src="/images/gym.webp"
+                    alt="Academia completa com equipamentos modernos"
+                    fill
+                    className="object-cover"
+                  />
                 </AspectRatio>
               </div>
               <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
                 <AspectRatio ratio={4/3}>
-                  <Image src="/placeholder-media.svg" alt="Ambiente 2" fill className="object-cover"/>
+                  <Image
+                    src="/images/interior-01.webp"
+                    alt="Área de convivência com acabamento de alto padrão"
+                    fill
+                    className="object-cover"
+                  />
                 </AspectRatio>
               </div>
             </div>
@@ -204,7 +234,12 @@ export default function Home() {
           </div>
           <div className="order-1 lg:order-2 rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
             <AspectRatio ratio={16/9}>
-              <Image src="/placeholder-media.svg" alt="Bairro Parque Prado - substitua por imagem real" fill className="object-cover" />
+              <Image
+                src="/images/interior-02.webp"
+                alt="Ambiente do empreendimento próximo ao Parque Prado"
+                fill
+                className="object-cover"
+              />
             </AspectRatio>
           </div>
         </div>
