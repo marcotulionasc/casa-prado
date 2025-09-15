@@ -135,7 +135,7 @@ export default function Home() {
                 <AspectRatio ratio={4/3} className="bg-neutral-50">
                   <Image
                     src="/images/interior-01.webp"
-                    alt="Ãrea de convivÃªncia com acabamento de alto padrÃ£o"
+                    alt="Área de convivência com acabamento de alto padrão"
                     fill
                     className="object-cover"
                   />
@@ -146,7 +146,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 2 â€“ Diferenciais */}
+      {/* Seção 2 – Diferenciais */}
       <section id="diferenciais" className="py-14 bg-neutral-50">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Exclusividade em cada detalhe</h2>
@@ -172,7 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 3 â€“ Plantas */}
+      {/* Seção 3 – Plantas */}
       <section id="plantas" className="py-14">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Plantas pensadas em você!</h2>
@@ -280,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 4 â€“ Bairro */}
+      {/* Seção 4 – Bairro */}
       {/* Galeria – Imagens do Projeto */}
       <section id="galeria" className="py-14">
         <div className="container px-4 mx-auto">
@@ -345,7 +345,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 5 â€“ Oportunidade */}
+      {/* Seção 5 – Oportunidade */}
       <section id="oportunidade" className="py-14">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading flex items-center justify-center gap-2">
@@ -362,7 +362,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 6 â€“ Cadastro */}
+      {/* Seção 6 – Cadastro */}
       <section id="cadastro" className="py-16 bg-neutral-50">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-8">
@@ -377,8 +377,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SeÃ§Ã£o 7 â€“ FAQ */}
-      {/* LocalizaÃ§Ã£o */}
+      {/* Seção 7 – FAQ */}
+      {/* Localização */}
       <section id="localizacao" className="py-14">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-center">Localização</h2>
