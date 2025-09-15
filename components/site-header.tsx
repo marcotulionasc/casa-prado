@@ -39,6 +39,7 @@ export default function SiteHeader() {
             <Link href="#diferenciais" className="text-sm font-medium hover:text-figueira-purple transition-colors">Diferenciais</Link>
             <Link href="#plantas" className="text-sm font-medium hover:text-figueira-purple transition-colors">Plantas</Link>
             <Link href="#bairro" className="text-sm font-medium hover:text-figueira-purple transition-colors">Bairro</Link>
+            <Link href="#localizacao" className="text-sm font-medium hover:text-figueira-purple transition-colors">Localização</Link>
             <Link href="#oportunidade" className="text-sm font-medium hover:text-figueira-purple transition-colors">Oportunidade</Link>
             <Link href="#cadastro" className="text-sm font-medium hover:text-figueira-purple transition-colors">Cadastro</Link>
             <Link href="#faq" className="text-sm font-medium hover:text-figueira-purple transition-colors">FAQ</Link>

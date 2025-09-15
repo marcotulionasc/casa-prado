@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
 import Image from "next/image"
@@ -43,17 +43,17 @@ export default function Home() {
         <div className="container relative px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-figueira-100 text-figueira-800 px-3 py-1 text-xs font-medium mb-4">
-              <Crown className="h-3.5 w-3.5" /> Lançamento exclusivo
+              <Crown className="h-3.5 w-3.5" /> LanÃ§amento exclusivo
             </span>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-5 font-heading">
-              3 banheiros, varanda gourmet e torre única: o lançamento exclusivo do Parque Prado.
+              3 banheiros, varanda gourmet e torre Ãºnica: o lanÃ§amento exclusivo do Parque Prado.
             </h1>
             <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              O Casa Prado é diferente de tudo o que você já viu em Campinas: apartamentos de 2 e 3 dormitórios, plantas de 69 a 96 m², todas com 3 banheiros, varanda gourmet integrada e apenas 102 unidades em torre única. A mais de 10 anos o Parque Prado não via algo como essa oportunidade e quem chega primeiro, escolhe melhor.
+              O Casa Prado Ã© diferente de tudo o que vocÃª jÃ¡ viu em Campinas: apartamentos de 2 e 3 dormitÃ³rios, plantas de 69 a 96 mÂ², todas com 3 banheiros, varanda gourmet integrada e apenas 102 unidades em torre Ãºnica. A mais de 10 anos o Parque Prado nÃ£o via algo como essa oportunidade e quem chega primeiro, escolhe melhor.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white px-6 py-6 text-base">
-                <Link href="#cadastro">Quero receber condições de pré-lançamento</Link>
+                <Link href="#cadastro">Quero receber condiÃ§Ãµes de prÃ©-lanÃ§amento</Link>
               </Button>
               <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100 px-6 py-6 text-base">
                 <Link href="#plantas">Ver plantas</Link>
@@ -61,77 +61,46 @@ export default function Home() {
             </div>
             <p className="text-xs text-gray-500 mt-3">Sem spam. Atendimento consultivo e personalizado.</p>
 
-            {/* Destaque visual do living (desktop) */}
-            <div className="mt-6 hidden lg:block">
-              <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
-                <AspectRatio ratio={16/9}>
-                  <Image
-                    src="/images/sala-e-cozinha.webp"
-                    alt="Living integrado com varanda gourmet"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </AspectRatio>
-              </div>
-            </div>
+            {/* Destaque visual removido para dar lugar à foto do projeto no hero */}
           </div>
           <div className="max-w-lg mx-auto w-full">
-            <div className="rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
-              <LeadForm />
+            <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+              <AspectRatio ratio={4/3}>
+                <Image
+                  src="/images/casa-prado/predio.jpg"
+                  alt="Fachada do Casa Prado Residence"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Seção 4.1 – Localização */}
-      <section id="localizacao" className="py-14">
-        <div className="container px-4 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-center">Localização</h2>
-          <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
-            <AspectRatio ratio={16/9}>
-              <iframe
-                src="https://www.google.com/maps?q=Parque%20Prado,%20Campinas%20-%20SP,%20Brasil&hl=pt-BR&output=embed"
-                className="absolute inset-0 w-full h-full"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa - Parque Prado, Campinas"
-              />
-            </AspectRatio>
-          </div>
-          <div className="flex justify-center mt-4">
-            <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100">
-              <Link href="https://www.google.com/maps/place/Parque+Prado,+Campinas+-+SP,+Brasil/@-22.939538,-47.050069,14z/data=!4m6!3m5!1s0x94c8cec8c0b3590f:0x8b290f64db1c7f6!8m2!3d-22.9407606!4d-47.0497877!16s%2Fg%2F1ymwk7954?hl=pt-BR&entry=ttu">
-                Ver no Google Maps
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção 1 – Lazer */}
+      {/* Seção 1 - Lazer */}
       <section id="lazer" className="py-14">
         <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">+15 ambientes pensados para sua família</h2>
-            <p className="text-gray-600 mb-8 text-center">Lazer de clube com a privacidade de uma torre única.</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">+15 ambientes pensados para sua famÃ­lia</h2>
+            <p className="text-gray-600 mb-8 text-center">Lazer de clube com a privacidade de uma torre Ãºnica.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
               {[
                 "Piscina com deck molhado",
-                "Ofurô e solarium",
-                "Espaço yoga",
+                "OfurÃ´ e solarium",
+                "EspaÃ§o yoga",
                 "Academia completa",
-                "Coworking com estúdio de gravação",
+                "Coworking com estÃºdio de gravaÃ§Ã£o",
                 "Pub com cinema",
-                "Salão de festas gourmet",
+                "SalÃ£o de festas gourmet",
                 "Brinquedoteca e playground",
                 "Sala de jogos",
                 "Quadra de areia",
                 "Pet place",
                 "Mini-mercado",
-                "Espaço delivery",
-                "Bicicletário",
+                "EspaÃ§o delivery",
+                "BicicletÃ¡rio",
               ].map((item) => (
                 <div key={item} className="p-3 bg-neutral-100 rounded-md border border-neutral-200 flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-figueira-purple" />
@@ -166,7 +135,7 @@ export default function Home() {
                 <AspectRatio ratio={4/3} className="bg-neutral-50">
                   <Image
                     src="/images/interior-01.webp"
-                    alt="Área de convivência com acabamento de alto padrão"
+                    alt="Ãrea de convivÃªncia com acabamento de alto padrÃ£o"
                     fill
                     className="object-cover"
                   />
@@ -177,18 +146,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 2 – Diferenciais */}
+      {/* SeÃ§Ã£o 2 â€“ Diferenciais */}
       <section id="diferenciais" className="py-14 bg-neutral-50">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Exclusividade em cada detalhe</h2>
           <p className="text-gray-600 mb-8 text-center">Diferenciais que resolvem seu dia a dia.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: Bath, text: "3 banheiros em todas as plantas → fim da fila do banho, privacidade para visitas." },
-              { icon: Building2, text: "Torre única com apenas 102 unidades → menos moradores e mais privacidade." },
-              { icon: Utensils, text: "Varanda gourmet integrada ao living → o espaço que transforma jantar em experiência." },
-              { icon: Archive, text: "Vaga com depósito privativo → organização até para quem tem muito." },
-              { icon: Plug, text: "Infraestrutura para carro elétrico → preparado para o futuro." },
+              { icon: Bath, text: "3 banheiros em todas as plantas â†’ fim da fila do banho, privacidade para visitas." },
+              { icon: Building2, text: "Torre Ãºnica com apenas 102 unidades â†’ menos moradores e mais privacidade." },
+              { icon: Utensils, text: "Varanda gourmet integrada ao living â†’ o espaÃ§o que transforma jantar em experiÃªncia." },
+              { icon: Archive, text: "Vaga com depÃ³sito privativo â†’ organizaÃ§Ã£o atÃ© para quem tem muito." },
+              { icon: Plug, text: "Infraestrutura para carro elÃ©trico â†’ preparado para o futuro." },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="rounded-xl border border-figueira-200 bg-white p-5 shadow-sm text-center">
                 <div className="flex justify-center mb-3">
@@ -203,17 +172,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 3 – Plantas */}
+      {/* SeÃ§Ã£o 3 â€“ Plantas */}
       <section id="plantas" className="py-14">
         <div className="container px-4 mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Plantas pensadas em você!</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Plantas pensadas em vocÃª!</h2>
           <p className="text-gray-600 mb-8 text-center">Escolhas inteligentes para diferentes perfis.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "69,23 m² – 2 dormitórios | 3 banheiros", desc: "Duas suítes + lavabo.", alt: "Planta 69m²" },
-              { title: "96,04 m² – 3 dormitórios | 3 banheiros", desc: "Uma suíte + banheiro social + lavabo.", alt: "Planta 96m²" },
-              { title: "Garden 123,77 m²", desc: "Sensação de casa com segurança.", alt: "Garden" },
-              { title: "Cobertura 127,62 m²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
+              { title: "69,23 mÂ² â€“ 2 dormitÃ³rios | 3 banheiros", desc: "Duas suÃ­tes + lavabo.", alt: "Planta 69mÂ²" },
+              { title: "96,04 mÂ² â€“ 3 dormitÃ³rios | 3 banheiros", desc: "Uma suÃ­te + banheiro social + lavabo.", alt: "Planta 96mÂ²" },
+              { title: "Garden 123,77 mÂ²", desc: "SensaÃ§Ã£o de casa com seguranÃ§a.", alt: "Garden" },
+              { title: "Cobertura 127,62 mÂ²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
             ].map((p, i) => (
               <div key={p.title} className="rounded-xl border border-figueira-200 bg-white overflow-hidden shadow-sm">
                 <AspectRatio ratio={4/3}>
@@ -245,10 +214,10 @@ export default function Home() {
                   </h3>
                   <p className="text-gray-600 text-sm text-center mb-3">
                     {[
-                      "Com suíte",
-                      "Com suíte",
-                      "Área privativa descoberta",
-                      "Com suíte",
+                      "Com suÃ­te",
+                      "Com suÃ­te",
+                      "Ãrea privativa descoberta",
+                      "Com suÃ­te",
                     ][i]}
                   </p>
                   <div className="space-y-2 text-sm text-gray-800">
@@ -262,10 +231,10 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
                       {[
-                        "2 Dormitório(s)",
-                        "3 Dormitório(s)",
-                        "3 Dormitório(s)",
-                        "3 Dormitório(s)",
+                        "2 DormitÃ³rio(s)",
+                        "3 DormitÃ³rio(s)",
+                        "3 DormitÃ³rio(s)",
+                        "3 DormitÃ³rio(s)",
                       ][i]}
                     </div>
                     <div className="flex items-center gap-2 justify-center"><Bath className="h-4 w-4 text-figueira-purple" />
@@ -278,10 +247,10 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
                       {[
-                        "2 Suíte(s)",
-                        "1 Suíte",
-                        "1 Suíte",
-                        "1 Suíte",
+                        "2 SuÃ­te(s)",
+                        "1 SuÃ­te",
+                        "1 SuÃ­te",
+                        "1 SuÃ­te",
                       ][i]}
                     </div>
                     {[null, null, "1 Vaga", null][i] && (
@@ -311,31 +280,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 4 – Bairro */}
+      {/* SeÃ§Ã£o 4 â€“ Bairro */}
+      {/* Galeria – Imagens do Projeto */}
+      <section id="galeria" className="py-14">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Imagens do projeto</h2>
+          <p className="text-gray-600 mb-6 text-center">Conheça mais detalhes do Casa Prado.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {[
+              { src: "/images/casa-prado/predio.jpg", alt: "Fachada do Casa Prado" },
+              { src: "/images/casa-prado/entrada-casa-prado.jpg", alt: "Entrada do empreendimento" },
+              { src: "/images/casa-prado/piscina-new.jpg", alt: "Piscina com deck" },
+              { src: "/images/casa-prado/imagem-01.jpg", alt: "Ambiente interno 1" },
+              { src: "/images/casa-prado/imagem-02.jpg", alt: "Ambiente interno 2" },
+              { src: "/images/casa-prado/imagem-03.jpg", alt: "Ambiente interno 3" },
+              { src: "/images/casa-prado/imagem-04.jpg", alt: "Ambiente interno 4" },
+              { src: "/images/casa-prado/imagem-05.jpg", alt: "Ambiente interno 5" },
+              { src: "/images/casa-prado/imagem-06.jpg", alt: "Ambiente interno 6" },
+              { src: "/images/casa-prado/imagem-07.jpg", alt: "Ambiente interno 7" },
+              { src: "/images/casa-prado/imagem-08.jpg", alt: "Ambiente interno 8" },
+              { src: "/images/casa-prado/imagem-09.jpg", alt: "Ambiente interno 9" },
+              { src: "/images/casa-prado/imagem-10.jpg", alt: "Ambiente interno 10" },
+              { src: "/images/casa-prado/imagem-11.jpg", alt: "Ambiente interno 11" },
+            ].map(({ src, alt }) => (
+              <div key={src} className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+                <AspectRatio ratio={4/3} className="bg-neutral-50">
+                  <Image src={src} alt={alt} fill className="object-cover" />
+                </AspectRatio>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="bairro" className="py-14 bg-neutral-50">
         <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center lg:text-left">Parque Prado: onde a vida acontece</h2>
             <p className="text-gray-700 text-lg text-center lg:text-left">
-              O bairro que une tranquilidade residencial e conveniência. Próximo ao Shopping Prado Boulevard, com acesso fácil a rodovias e serviços, o Parque Prado é hoje uma das regiões mais valorizadas de Campinas. Morar aqui significa viver melhor agora e investir em um endereço que só cresce.
+              O bairro que une tranquilidade residencial e conveniÃªncia. PrÃ³ximo ao Shopping Prado Boulevard, com acesso fÃ¡cil a rodovias e serviÃ§os, o Parque Prado Ã© hoje uma das regiÃµes mais valorizadas de Campinas. Morar aqui significa viver melhor agora e investir em um endereÃ§o que sÃ³ cresce.
             </p>
             <div className="flex flex-wrap gap-3 mt-4 justify-center lg:justify-start">
               <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
-                <MapPinIcon className="h-4 w-4" /> Localização valorizada
+                <MapPinIcon className="h-4 w-4" /> LocalizaÃ§Ã£o valorizada
               </span>
               <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
-                <ShoppingBag className="h-4 w-4" /> Próximo ao Prado Boulevard
+                <ShoppingBag className="h-4 w-4" /> PrÃ³ximo ao Prado Boulevard
               </span>
               <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
-                <Navigation className="h-4 w-4" /> Fácil acesso às rodovias
+                <Navigation className="h-4 w-4" /> FÃ¡cil acesso Ã s rodovias
               </span>
             </div>
           </div>
           <div className="order-1 lg:order-2 rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
-            <AspectRatio ratio={16/9}>
+            <AspectRatio ratio={4/3}>
               <Image
-                src="/images/interior-02.webp"
-                alt="Ambiente do empreendimento próximo ao Parque Prado"
+                src="/images/casa-prado/mapa-casa-prado.jpg"
+                alt="Ambiente do empreendimento prÃ³ximo ao Parque Prado"
                 fill
                 className="object-cover"
               />
@@ -344,14 +345,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 5 – Oportunidade */}
+      {/* SeÃ§Ã£o 5 â€“ Oportunidade */}
       <section id="oportunidade" className="py-14">
         <div className="container px-4 mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading flex items-center justify-center gap-2">
             <Timer className="h-5 w-5 text-figueira-purple" /> Poucas unidades, muito valor
           </h2>
           <p className="text-gray-700 text-lg mb-6 text-center max-w-3xl mx-auto">
-            O primeiro lançamento desse porte no Parque Prado em mais de 10 anos. O Casa Prado é a chance de conquistar exclusividade e conforto em um produto sem concorrência direta. São apenas 102 unidades e no pré-lançamento, quem chega primeiro escolhe melhor — e com condições especiais.
+            O primeiro lanÃ§amento desse porte no Parque Prado em mais de 10 anos. O Casa Prado Ã© a chance de conquistar exclusividade e conforto em um produto sem concorrÃªncia direta. SÃ£o apenas 102 unidades e no prÃ©-lanÃ§amento, quem chega primeiro escolhe melhor â€” e com condiÃ§Ãµes especiais.
           </p>
           <div className="flex justify-center">
             <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white">
@@ -361,13 +362,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 6 – Cadastro */}
+      {/* SeÃ§Ã£o 6 â€“ Cadastro */}
       <section id="cadastro" className="py-16 bg-neutral-50">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-3 font-heading">Garanta acesso antecipado</h2>
             <p className="text-gray-700">
-              Cadastre-se agora e receba plantas, condições de pré-lançamento e atendimento exclusivo direto no seu WhatsApp e e-mail.
+              Cadastre-se agora e receba plantas, condiÃ§Ãµes de prÃ©-lanÃ§amento e atendimento exclusivo direto no seu WhatsApp e e-mail.
             </p>
           </div>
           <div className="max-w-xl mx-auto rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
@@ -376,7 +377,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 7 – FAQ */}
+      {/* SeÃ§Ã£o 7 â€“ FAQ */}
+      {/* LocalizaÃ§Ã£o */}
+      <section id="localizacao" className="py-14">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-center">LocalizaÃ§Ã£o</h2>
+          <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+            <AspectRatio ratio={16/9}>
+              <iframe
+                src="https://www.google.com/maps?q=Parque%20Prado,%20Campinas%20-%20SP,%20Brasil&hl=pt-BR&output=embed"
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa - Parque Prado, Campinas"
+              />
+            </AspectRatio>
+          </div>
+          <div className="flex justify-center mt-4">
+            <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100">
+              <Link href="https://www.google.com/maps/place/Parque+Prado,+Campinas+-+SP,+Brasil/@-22.939538,-47.050069,14z/data=!4m6!3m5!1s0x94c8cec8c0b3590f:0x8b290f64db1c7f6!8m2!3d-22.9407606!4d-47.0497877!16s%2Fg%2F1ymwk7954?hl=pt-BR&entry=ttu">
+                Ver no Google Maps
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <FAQSection />
 
       {/* Footer principal */}
@@ -385,7 +412,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="font-bold text-xl mb-4">Casa Prado</div>
-              <p className="text-gray-400 mb-4">Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas.</p>
+              <p className="text-gray-400 mb-4">Apartamentos de alto padrÃ£o ao lado do Shopping Iguatemi Campinas.</p>
               <div className="flex items-center space-x-2 text-gray-400">
                 <Phone className="h-4 w-4" />
                 <span>+55 (19) 98253-5896</span>
@@ -396,12 +423,12 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-2 text-gray-400 mt-2">
                 <MapPin className="h-4 w-4" />
-                <span>Avenida Nossa Senhora de Fátima, 1325 - Taquaral
+                <span>Avenida Nossa Senhora de FÃ¡tima, 1325 - Taquaral
                   Campinas/SP</span>
               </div>
             </div>
             <div>
-              <div className="font-bold text-lg mb-4">Links Rápidos</div>
+              <div className="font-bold text-lg mb-4">Links RÃ¡pidos</div>
               <ul className="space-y-2">
                 <li>
                   <Link href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -415,7 +442,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link href="#localizacao" className="text-gray-400 hover:text-white transition-colors">
-                    Localização
+                    LocalizaÃ§Ã£o
                   </Link>
                 </li>
                 <li>
@@ -436,12 +463,12 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <div className="font-bold text-lg mb-4">Informações Legais</div>
-              <p className="text-gray-400 mb-4">Metrópole Investimentos Imobiliários | CRECI 34150</p>
-              <p className="text-gray-400 mb-4">© 2025 Metrópole Investimentos Imobiliários – Todos os direitos reservados.</p>
+              <div className="font-bold text-lg mb-4">InformaÃ§Ãµes Legais</div>
+              <p className="text-gray-400 mb-4">MetrÃ³pole Investimentos ImobiliÃ¡rios | CRECI 34150</p>
+              <p className="text-gray-400 mb-4">Â© 2025 MetrÃ³pole Investimentos ImobiliÃ¡rios â€“ Todos os direitos reservados.</p>
               <div className="flex space-x-4">
                 <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Política de Privacidade
+                  PolÃ­tica de Privacidade
                 </Link>
                 <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                   Termos de Uso
@@ -458,7 +485,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <div className="rounded-lg border border-white/10 bg-white/5 p-6">
               <p className="text-sm text-gray-200 text-center">
-                Imagens ilustrativas. O empreendimento será comercializado após registro do memorial de incorporação. Especificações técnicas, valores e condições podem sofrer alterações sem aviso prévio. Consulte disponibilidade.
+                Imagens ilustrativas. O empreendimento serÃ¡ comercializado apÃ³s registro do memorial de incorporaÃ§Ã£o. EspecificaÃ§Ãµes tÃ©cnicas, valores e condiÃ§Ãµes podem sofrer alteraÃ§Ãµes sem aviso prÃ©vio. Consulte disponibilidade.
               </p>
             </div>
           </div>
@@ -468,3 +495,11 @@ export default function Home() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
