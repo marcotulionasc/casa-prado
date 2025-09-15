@@ -1,0 +1,505 @@
+1:"use client"
+2:
+3:import Link from "next/link"
+4:import Image from "next/image"
+5:import { Button } from "@/components/ui/button"
+6:import { Phone, Mail, MapPin } from "lucide-react"
+7:import SiteHeader from "@/components/site-header"
+8:import ScrollToTop from "@/components/scroll-to-top"
+9:import { MobileCta } from "@/components/mobile-cta"
+10:import LeadForm from "@/components/lead-form"
+11:import FAQSection from "@/components/faq/faq-section"
+12:import { AspectRatio } from "@/components/ui/aspect-ratio"
+13:import {
+14:  CheckCircle2,
+15:  Sparkles,
+16:  Bath,
+17:  Building2,
+18:  Utensils,
+19:  Archive,
+20:  Plug,
+21:  Car,
+22:  BatteryCharging,
+23:  Ruler,
+24:  Bed,
+25:  MapPin as MapPinIcon,
+26:  ShoppingBag,
+27:  Navigation,
+28:  Trees,
+29:  Timer,
+30:  Crown,
+31:  Tag,
+32:} from "lucide-react"
+33:
+34:export default function Home() {
+35:  return (
+36:    <div className="flex min-h-screen flex-col bg-white">
+37:      <MobileCta />
+38:      <SiteHeader />
+39:
+40:      {/* Hero */}
+41:      <section className="relative pt-28 pb-16 overflow-hidden">
+42:        <div className="absolute inset-0 bg-gradient-to-b from-figueira-lavender to-white" />
+43:        <div className="container relative px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+44:          <div className="text-center lg:text-center">
+45:            <span className="inline-flex items-center gap-2 rounded-full bg-figueira-100 text-figueira-800 px-3 py-1 text-xs font-medium mb-4">
+46:              <Crown className="h-3.5 w-3.5" /> Lançamento exclusivo
+47:            </span>
+48:            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-5 font-heading">
+49:              3 banheiros, varanda gourmet e torre única: o lançamento exclusivo do Parque Prado.
+50:            </h1>
+51:            <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+52:              O Casa Prado é diferente de tudo o que você já viu em Campinas: apartamentos de 2 e 3 dormitórios, plantas de 69 a 96 m², todas com 3 banheiros, varanda gourmet integrada e apenas 102 unidades em torre única. A mais de 10 anos o Parque Prado não via algo como essa oportunidade e quem chega primeiro, escolhe melhor.
+53:            </p>
+54:            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+55:              <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white px-6 py-6 text-base">
+56:                <Link href="#cadastro">Quero receber condições de pré-lançamento</Link>
+57:              </Button>
+58:              <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100 px-6 py-6 text-base">
+59:                <Link href="#plantas">Ver plantas</Link>
+60:              </Button>
+61:            </div>
+62:            <p className="text-xs text-gray-500 mt-3">Sem spam. Atendimento consultivo e personalizado.</p>
+63:
+64:            {/* Destaque visual removido para dar lugar � foto do projeto no hero */}
+65:          </div>
+66:          <div className="max-w-lg mx-auto w-full">
+67:            <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+68:              <AspectRatio ratio={4/3}>
+69:                <Image
+70:                  src="/images/casa-prado/predio.jpg"
+71:                  alt="Fachada do Casa Prado Residence"
+72:                  fill
+73:                  className="object-cover"
+74:                  priority
+75:                />
+76:              </AspectRatio>
+77:            </div>
+78:          </div>
+79:        </div>
+80:      </section>
+81:
+82:      {/* Se��o 1 - Lazer */}
+83:      <section id="lazer" className="py-14">
+84:        <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+85:          <div>
+86:            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">+15 ambientes pensados para sua família</h2>
+87:            <p className="text-gray-600 mb-8 text-center">Lazer de clube com a privacidade de uma torre única.</p>
+88:            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+89:              {[
+90:                "Piscina com deck molhado",
+91:                "Ofurô e solarium",
+92:                "Espaço yoga",
+93:                "Academia completa",
+94:                "Coworking com estúdio de gravação",
+95:                "Pub com cinema",
+96:                "Salão de festas gourmet",
+97:                "Brinquedoteca e playground",
+98:                "Sala de jogos",
+99:                "Quadra de areia",
+100:                "Pet place",
+101:                "Mini-mercado",
+102:                "Espaço delivery",
+103:                "Bicicletário",
+104:              ].map((item) => (
+105:                <div key={item} className="p-3 bg-neutral-100 rounded-md border border-neutral-200 flex items-center gap-2">
+106:                  <CheckCircle2 className="h-4 w-4 text-figueira-purple" />
+107:                  <span>{item}</span>
+108:                </div>
+109:              ))}
+110:            </div>
+111:          </div>
+112:          <div className="space-y-4">
+113:            <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+114:              <AspectRatio ratio={16/9}>
+115:                <Image
+116:                  src="/images/piscina.webp"
+117:                  alt="Piscina com deck molhado e solarium"
+118:                  fill
+119:                  className="object-cover"
+120:                />
+121:              </AspectRatio>
+122:            </div>
+123:            <div className="grid grid-cols-2 gap-4">
+124:              <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+125:                <AspectRatio ratio={4/3} className="bg-neutral-50">
+126:                  <Image
+127:                    src="/images/gym.webp"
+128:                    alt="Academia completa com equipamentos modernos"
+129:                    fill
+130:                    className="object-cover"
+131:                  />
+132:                </AspectRatio>
+133:              </div>
+134:              <div className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+135:                <AspectRatio ratio={4/3} className="bg-neutral-50">
+136:                  <Image
+137:                    src="/images/interior-01.webp"
+138:                    alt="Área de convivência com acabamento de alto padrão"
+139:                    fill
+140:                    className="object-cover"
+141:                  />
+142:                </AspectRatio>
+143:              </div>
+144:            </div>
+145:          </div>
+146:        </div>
+147:      </section>
+148:
+149:      {/* Seção 2 – Diferenciais */}
+150:      <section id="diferenciais" className="py-14 bg-neutral-50">
+151:        <div className="container px-4 mx-auto">
+152:          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Exclusividade em cada detalhe</h2>
+153:          <p className="text-gray-600 mb-8 text-center">Diferenciais que resolvem seu dia a dia.</p>
+154:          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+155:            {[
+156:              { icon: Bath, text: "3 banheiros em todas as plantas → fim da fila do banho, privacidade para visitas." },
+157:              { icon: Building2, text: "Torre única com apenas 102 unidades → menos moradores e mais privacidade." },
+158:              { icon: Utensils, text: "Varanda gourmet integrada ao living → o espaço que transforma jantar em experiência." },
+159:              { icon: Archive, text: "Vaga com depósito privativo → organização até para quem tem muito." },
+160:              { icon: Plug, text: "Infraestrutura para carro elétrico → preparado para o futuro." },
+161:            ].map(({ icon: Icon, text }) => (
+162:              <div key={text} className="rounded-xl border border-figueira-200 bg-white p-5 shadow-sm text-center">
+163:                <div className="flex justify-center mb-3">
+164:                  <div className="h-10 w-10 inline-flex items-center justify-center rounded-full bg-figueira-100 text-figueira-purple">
+165:                    <Icon className="h-5 w-5" />
+166:                  </div>
+167:                </div>
+168:                <p className="text-gray-800">{text}</p>
+169:              </div>
+170:            ))}
+171:          </div>
+172:        </div>
+173:      </section>
+174:
+175:      {/* Seção 3 – Plantas */}
+176:      <section id="plantas" className="py-14">
+177:        <div className="container px-4 mx-auto">
+178:          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Plantas pensadas em você!</h2>
+179:          <p className="text-gray-600 mb-8 text-center">Escolhas inteligentes para diferentes perfis.</p>
+180:          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+181:            {[
+182:              { title: "69,23 m² – 2 dormitórios | 3 banheiros", desc: "Duas suítes + lavabo.", alt: "Planta 69m²" },
+183:              { title: "96,04 m² – 3 dormitórios | 3 banheiros", desc: "Uma suíte + banheiro social + lavabo.", alt: "Planta 96m²" },
+184:              { title: "Garden 123,77 m²", desc: "Sensação de casa com segurança.", alt: "Garden" },
+185:              { title: "Cobertura 127,62 m²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
+186:            ].map((p, i) => (
+187:              <div key={p.title} className="rounded-xl border border-figueira-200 bg-white overflow-hidden shadow-sm">
+188:                <AspectRatio ratio={4/3}>
+189:                  <Image
+190:                    src={[
+191:                      "/images/plantas/planta-tipo-meio-69-23m.webp",
+192:                      "/images/plantas/planta-tipo-ponta-96-04m.webp",
+193:                      "/images/plantas/planta-garden-123-77mwebp.webp",
+194:                      "/images/plantas/planta-cobertura-127-62m.webp",
+195:                    ][i]}
+196:                    alt={[
+197:                      "Planta Tipo Meio",
+198:                      "Planta Tipo Ponta",
+199:                      "Planta Garden",
+200:                      "Planta Cobertura",
+201:                    ][i]}
+202:                    fill
+203:                    className="object-contain p-2"
+204:                  />
+205:                </AspectRatio>
+206:                <div className="p-4">
+207:                  <h3 className="font-bold text-center font-heading text-lg">
+208:                    {[
+209:                      "PLANTA TIPO MEIO",
+210:                      "Planta Tipo Ponta",
+211:                      "PLANTA GARDEN",
+212:                      "PLANTA COBERTURA",
+213:                    ][i]}
+214:                  </h3>
+215:                  <p className="text-gray-600 text-sm text-center mb-3">
+216:                    {[
+217:                      "Com suíte",
+218:                      "Com suíte",
+219:                      "Área privativa descoberta",
+220:                      "Com suíte",
+221:                    ][i]}
+222:                  </p>
+223:                  <div className="space-y-2 text-sm text-gray-800">
+224:                    <div className="flex items-center gap-2 justify-center"><Ruler className="h-4 w-4 text-figueira-purple" />
+225:                      {[
+226:                        "69.23 m2",
+227:                        "96.04 m2",
+228:                        "123.77 m2",
+229:                        "127.62 m2",
+230:                      ][i]}
+231:                    </div>
+232:                    <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
+233:                      {[
+234:                        "2 Dormitório(s)",
+235:                        "3 Dormitório(s)",
+236:                        "3 Dormitório(s)",
+237:                        "3 Dormitório(s)",
+238:                      ][i]}
+239:                    </div>
+240:                    <div className="flex items-center gap-2 justify-center"><Bath className="h-4 w-4 text-figueira-purple" />
+241:                      {[
+242:                        "3 Banheiro(s)",
+243:                        "3 Banheiro(s)",
+244:                        "3 Banheiro(s)",
+245:                        "3 Banheiro(s)",
+246:                      ][i]}
+247:                    </div>
+248:                    <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
+249:                      {[
+250:                        "2 Suíte(s)",
+251:                        "1 Suíte",
+252:                        "1 Suíte",
+253:                        "1 Suíte",
+254:                      ][i]}
+255:                    </div>
+256:                    {[null, null, "1 Vaga", null][i] && (
+257:                      <div className="flex items-center gap-2 justify-center"><Car className="h-4 w-4 text-figueira-purple" />
+258:                        {["", "", "1 Vaga", ""][i]}
+259:                      </div>
+260:                    )}
+261:                    <div className="flex items-center gap-2 justify-center"><Archive className="h-4 w-4 text-figueira-purple" />
+262:                      {[
+263:                        "1 Caracteristica extra",
+264:                        "1 Caracteristica extra",
+265:                        "1 Caracteristica extra",
+266:                        "1 Caracteristica extra",
+267:                      ][i]}
+268:                    </div>
+269:                  </div>
+270:                </div>
+271:              </div>
+272:            ))}
+273:          </div>
+274:          <p className="text-gray-700 mt-6 text-center">Cada planta foi pensada para maximizar conforto e praticidade.</p>
+275:          <div className="flex justify-center mt-6">
+276:            <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white">
+277:              <Link href="#cadastro">Quero receber as plantas no WhatsApp</Link>
+278:            </Button>
+279:          </div>
+280:        </div>
+281:      </section>
+282:
+283:      {/* Seção 4 – Bairro */}
+284:      {/* Galeria � Imagens do Projeto */}
+285:      <section id="galeria" className="py-14">
+286:        <div className="container px-4 mx-auto">
+287:          <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center">Imagens do projeto</h2>
+288:          <p className="text-gray-600 mb-6 text-center">Conhe�a mais detalhes do Casa Prado.</p>
+289:          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+290:            {[
+291:              { src: "/images/casa-prado/predio.jpg", alt: "Fachada do Casa Prado" },
+292:              { src: "/images/casa-prado/entrada-casa-prado.jpg", alt: "Entrada do empreendimento" },
+293:              { src: "/images/casa-prado/piscina-new.jpg", alt: "Piscina com deck" },
+294:              { src: "/images/casa-prado/imagem-01.jpg", alt: "Ambiente interno 1" },
+295:              { src: "/images/casa-prado/imagem-02.jpg", alt: "Ambiente interno 2" },
+296:              { src: "/images/casa-prado/imagem-03.jpg", alt: "Ambiente interno 3" },
+297:              { src: "/images/casa-prado/imagem-04.jpg", alt: "Ambiente interno 4" },
+298:              { src: "/images/casa-prado/imagem-05.jpg", alt: "Ambiente interno 5" },
+299:              { src: "/images/casa-prado/imagem-06.jpg", alt: "Ambiente interno 6" },
+300:              { src: "/images/casa-prado/imagem-07.jpg", alt: "Ambiente interno 7" },
+301:              { src: "/images/casa-prado/imagem-08.jpg", alt: "Ambiente interno 8" },
+302:              { src: "/images/casa-prado/imagem-09.jpg", alt: "Ambiente interno 9" },
+303:              { src: "/images/casa-prado/imagem-10.jpg", alt: "Ambiente interno 10" },
+304:              { src: "/images/casa-prado/imagem-11.jpg", alt: "Ambiente interno 11" },
+305:            ].map(({ src, alt }) => (
+306:              <div key={src} className="rounded-lg overflow-hidden border border-figueira-200 shadow-sm">
+307:                <AspectRatio ratio={4/3} className="bg-neutral-50">
+308:                  <Image src={src} alt={alt} fill className="object-cover" />
+309:                </AspectRatio>
+310:              </div>
+311:            ))}
+312:          </div>
+313:        </div>
+314:      </section>
+315:
+316:      <section id="bairro" className="py-14 bg-neutral-50">
+317:        <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+318:          <div className="order-2 lg:order-1">
+319:            <h2 className="text-2xl md:text-3xl font-bold mb-2 font-heading text-center lg:text-left">Parque Prado: onde a vida acontece</h2>
+320:            <p className="text-gray-700 text-lg text-center lg:text-left">
+321:              O bairro que une tranquilidade residencial e conveniência. Próximo ao Shopping Prado Boulevard, com acesso fácil a rodovias e serviços, o Parque Prado é hoje uma das regiões mais valorizadas de Campinas. Morar aqui significa viver melhor agora e investir em um endereço que só cresce.
+322:            </p>
+323:            <div className="flex flex-wrap gap-3 mt-4 justify-center lg:justify-start">
+324:              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+325:                <MapPinIcon className="h-4 w-4" /> Localização valorizada
+326:              </span>
+327:              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+328:                <ShoppingBag className="h-4 w-4" /> Próximo ao Prado Boulevard
+329:              </span>
+330:              <span className="inline-flex items-center gap-2 text-sm px-3 py-1 rounded-full bg-figueira-100 text-figueira-800">
+331:                <Navigation className="h-4 w-4" /> Fácil acesso às rodovias
+332:              </span>
+333:            </div>
+334:          </div>
+335:          <div className="order-1 lg:order-2 rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+336:            <AspectRatio ratio={4/3}>
+337:              <Image
+338:                src="/images/casa-prado/mapa-casa-prado.jpg"
+339:                alt="Ambiente do empreendimento próximo ao Parque Prado"
+340:                fill
+341:                className="object-cover"
+342:              />
+343:            </AspectRatio>
+344:          </div>
+345:        </div>
+346:      </section>
+347:
+348:      {/* Seção 5 – Oportunidade */}
+349:      <section id="oportunidade" className="py-14">
+350:        <div className="container px-4 mx-auto">
+351:          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center font-heading flex items-center justify-center gap-2">
+352:            <Timer className="h-5 w-5 text-figueira-purple" /> Poucas unidades, muito valor
+353:          </h2>
+354:          <p className="text-gray-700 text-lg mb-6 text-center max-w-3xl mx-auto">
+355:            O primeiro lançamento desse porte no Parque Prado em mais de 10 anos. O Casa Prado é a chance de conquistar exclusividade e conforto em um produto sem concorrência direta. São apenas 102 unidades e no pré-lançamento, quem chega primeiro escolhe melhor — e com condições especiais.
+356:          </p>
+357:          <div className="flex justify-center">
+358:            <Button asChild className="bg-figueira-purple hover:bg-figueira-700 text-white">
+359:              <Link href="#cadastro">Quero escolher minha unidade</Link>
+360:            </Button>
+361:          </div>
+362:        </div>
+363:      </section>
+364:
+365:      {/* Seção 6 – Cadastro */}
+366:      <section id="cadastro" className="py-16 bg-neutral-50">
+367:        <div className="container px-4 mx-auto">
+368:          <div className="max-w-3xl mx-auto text-center mb-8">
+369:            <h2 className="text-2xl md:text-3xl font-bold mb-3 font-heading">Garanta acesso antecipado</h2>
+370:            <p className="text-gray-700">
+371:              Cadastre-se agora e receba plantas, condições de pré-lançamento e atendimento exclusivo direto no seu WhatsApp e e-mail.
+372:            </p>
+373:          </div>
+374:          <div className="max-w-xl mx-auto rounded-xl border border-figueira-200 bg-white/80 backdrop-blur-sm p-4 shadow-sm">
+375:            <LeadForm />
+376:          </div>
+377:        </div>
+378:      </section>
+379:
+380:      {/* Seção 7 – FAQ */}
+381:      {/* Localização */}
+382:      <section id="localizacao" className="py-14">
+383:        <div className="container px-4 mx-auto">
+384:          <h2 className="text-2xl md:text-3xl font-bold mb-4 font-heading text-center">Localização</h2>
+385:          <div className="rounded-xl overflow-hidden border border-figueira-200 shadow-sm">
+386:            <AspectRatio ratio={16/9}>
+387:              <iframe
+388:                src="https://www.google.com/maps?q=Parque%20Prado,%20Campinas%20-%20SP,%20Brasil&hl=pt-BR&output=embed"
+389:                className="absolute inset-0 w-full h-full"
+390:                loading="lazy"
+391:                allowFullScreen
+392:                referrerPolicy="no-referrer-when-downgrade"
+393:                title="Mapa - Parque Prado, Campinas"
+394:              />
+395:            </AspectRatio>
+396:          </div>
+397:          <div className="flex justify-center mt-4">
+398:            <Button asChild variant="outline" className="border-figueira-300 text-figueira-800 hover:bg-figueira-100">
+399:              <Link href="https://www.google.com/maps/place/Parque+Prado,+Campinas+-+SP,+Brasil/@-22.939538,-47.050069,14z/data=!4m6!3m5!1s0x94c8cec8c0b3590f:0x8b290f64db1c7f6!8m2!3d-22.9407606!4d-47.0497877!16s%2Fg%2F1ymwk7954?hl=pt-BR&entry=ttu">
+400:                Ver no Google Maps
+401:              </Link>
+402:            </Button>
+403:          </div>
+404:        </div>
+405:      </section>
+406:
+407:      <FAQSection />
+408:
+409:      {/* Footer principal */}
+410:      <footer className="bg-neutral-900 text-white py-12">
+411:        <div className="container px-4 mx-auto">
+412:          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+413:            <div>
+414:              <div className="font-bold text-xl mb-4">Casa Prado</div>
+415:              <p className="text-gray-400 mb-4">Apartamentos de alto padrão ao lado do Shopping Iguatemi Campinas.</p>
+416:              <div className="flex items-center space-x-2 text-gray-400">
+417:                <Phone className="h-4 w-4" />
+418:                <span>+55 (19) 98253-5896</span>
+419:              </div>
+420:              <div className="flex items-center space-x-2 text-gray-400 mt-2">
+421:                <Mail className="h-4 w-4" />
+422:                <span>eduardocampari<br></br>@metropoleinvestimentosimobiliarios.com</span>
+423:              </div>
+424:              <div className="flex items-center space-x-2 text-gray-400 mt-2">
+425:                <MapPin className="h-4 w-4" />
+426:                <span>Avenida Nossa Senhora de Fátima, 1325 - Taquaral
+427:                  Campinas/SP</span>
+428:              </div>
+429:            </div>
+430:            <div>
+431:              <div className="font-bold text-lg mb-4">Links Rápidos</div>
+432:              <ul className="space-y-2">
+433:                <li>
+434:                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+435:                    Home
+436:                  </Link>
+437:                </li>
+438:                <li>
+439:                  <Link href="#projeto" className="text-gray-400 hover:text-white transition-colors">
+440:                    Sobre o Projeto
+441:                  </Link>
+442:                </li>
+443:                <li>
+444:                  <Link href="#localizacao" className="text-gray-400 hover:text-white transition-colors">
+445:                    Localização
+446:                  </Link>
+447:                </li>
+448:                <li>
+449:                  <Link href="#diferenciais" className="text-gray-400 hover:text-white transition-colors">
+450:                    Diferenciais
+451:                  </Link>
+452:                </li>
+453:                <li>
+454:                  <Link href="#faq" className="text-gray-400 hover:text-white transition-colors">
+455:                    FAQ
+456:                  </Link>
+457:                </li>
+458:                <li>
+459:                  <Link href="#quem-somos" className="text-gray-400 hover:text-white transition-colors">
+460:                    Quem Somos
+461:                  </Link>
+462:                </li>
+463:              </ul>
+464:            </div>
+465:            <div>
+466:              <div className="font-bold text-lg mb-4">Informações Legais</div>
+467:              <p className="text-gray-400 mb-4">Metrópole Investimentos Imobiliários | CRECI 34150</p>
+468:              <p className="text-gray-400 mb-4">© 2025 Metrópole Investimentos Imobiliários – Todos os direitos reservados.</p>
+469:              <div className="flex space-x-4">
+470:                <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+471:                  Política de Privacidade
+472:                </Link>
+473:                <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
+474:                  Termos de Uso
+475:                </Link>
+476:              </div>
+477:            </div>
+478:          </div>
+479:        </div>
+480:      </footer>
+481:
+482:      {/* Aviso legal abaixo do footer */}
+483:      <div className="bg-neutral-900 text-white py-10">
+484:        <div className="container px-4 mx-auto">
+485:          <div className="max-w-5xl mx-auto">
+486:            <div className="rounded-lg border border-white/10 bg-white/5 p-6">
+487:              <p className="text-sm text-gray-200 text-center">
+488:                Imagens ilustrativas. O empreendimento será comercializado após registro do memorial de incorporação. Especificações técnicas, valores e condições podem sofrer alterações sem aviso prévio. Consulte disponibilidade.
+489:              </p>
+490:            </div>
+491:          </div>
+492:        </div>
+493:      </div>
+494:      <ScrollToTop />
+495:    </div>
+496:  )
+497:}
+498:
+499:
+500:
+501:
+502:
+503:
+504:
+505:
