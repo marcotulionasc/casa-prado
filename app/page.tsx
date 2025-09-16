@@ -179,7 +179,7 @@ export default function Home() {
           <p className="text-gray-600 mb-8 text-center">Escolhas inteligentes para diferentes perfis.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: "69,23 m² – 2 dormitórios | 3 banheiros", desc: "Duas suítes + lavabo.", alt: "Planta 69m²" },
+              { title: "69,23 m² – 2 dormitórios | 3 banheiros", desc: "DUAS SUÍTES + LAVABO: o diferencial que você procurava.", alt: "Planta 69m²" },
               { title: "96,04 m² – 3 dormitórios | 3 banheiros", desc: "Uma suíte + banheiro social + lavabo.", alt: "Planta 96m²" },
               { title: "Garden 123,77 m²", desc: "Sensação de casa com segurança.", alt: "Garden" },
               { title: "Cobertura 127,62 m²", desc: "Vista exclusiva do Parque Prado.", alt: "Cobertura" },
