@@ -247,7 +247,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2 justify-center"><Bed className="h-4 w-4 text-figueira-purple" />
                       {[
-                        "2 Suíte(s)",
+                        "2 Suíte(s) + Lavabo",
                         "1 Suíte",
                         "1 Suíte",
                         "1 Suíte",
