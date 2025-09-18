@@ -67,6 +67,7 @@ export default function LeadForm() {
       field02: null,
       field03: null,
       tenantId: 2,
+      product: "casa-prado",
     }
 
     try {
