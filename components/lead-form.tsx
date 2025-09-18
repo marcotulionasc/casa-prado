@@ -42,7 +42,13 @@ export default function LeadForm() {
     }
   }
 
-  const formatPhoneNumber = (phone: string): string => phone.replace(/\D/g, "")
+  const formatPhoneNumber = (phone: string): string => {
+    const cleaned = phone.replace(/\D/g, "")
+    if (cleaned.length === 11) {
+      return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7)}`
+    }
+    return cleaned
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault()
@@ -60,7 +66,7 @@ export default function LeadForm() {
 
     const payload = {
       name: formData.name,
-      email: `${formatPhoneNumber(formData.phone)}@placeholder.local`,
+      email: null,
       cellPhone: formatPhoneNumber(formData.phone),
       interessePrincipal: null,
       field01: "morador",
@@ -78,7 +84,7 @@ export default function LeadForm() {
       })
       if (!response.ok) throw new Error(`Erro ao enviar: ${response.status}`)
       try {
-        await sendUTMData(formData.email)
+        await sendUTMData(formatPhoneNumber(formData.phone))
       } catch (_) {}
       router.push("/obrigado")
     } catch {
